@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Node.js REST API Client</title>
+</head>
+<body>
+
+  <h1>Node.js REST API Client</h1>
+
+  <div id="loginForm">
+    <h2>Login</h2>
+    <form id="login">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required value="exampleUser">
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required value="yourSecretKey">
+      <br>
+      <button type="button" onclick="login()">Login</button>
+    </form>
+  </div>
+
+  <div id="apiInteractions" style="display: none;">
+    <h2>API Interactions</h2>
+    <button onclick="getBooks()">Get Books</button>
+    <br>
+    <label for="newBook">New Book Title:</label>
+    <input type="text" id="newBook" name="newBook" required>
+    <button onclick="addBook()">Add Book</button>
+    <br>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <div id="output"></div>
+
+  <script>
+    // Function to set a cookie
+    function setCookie(name, value, days) {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/`;
+    }
+
+    // Function to get a cookie value
+    function getCookie(name) {
+      const keyValue = document.cookie.match(`(^|;) ?${name}=([^;]*)(;|$)`);
+      return keyValue ? keyValue[2] : null;
+    }
+
+    let accessToken = getCookie('accessToken');
+
+    function login() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      fetch('http://localhost:3000/api/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, password }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        accessToken = data.token;
+        setCookie('accessToken', accessToken, 1); // Store the token in a cookie for 1 day
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('apiInteractions').style.display = 'block';
+        document.getElementById('output').innerHTML = `Logged in successfully. Access Token: ${accessToken}`;
+      })
+      .catch(error => {
+        console.error('Login error:', error);
+        document.getElementById('output').innerHTML = 'Login failed. Check the console for details.';
+      });
+    }
+
+    function getBooks() {
+      fetch('http://localhost:3000/api/books', {
+        method: 'GET',
+        headers: {
+          'Authorization': accessToken,
+        },
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('output').innerHTML = JSON.stringify(data, null, 2);
+      })
+      .catch(error => {
+        console.error('API request error:', error);
+        document.getElementById('output').innerHTML = 'API request failed. Check the console for details.';
+      });
+    }
+
+    function addBook() {
+      const newBookTitle = document.getElementById('newBook').value;
+
+      fetch('http://localhost:3000/api/books', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': accessToken,
+        },
+        body: JSON.stringify({ title: newBookTitle }),
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('output').innerHTML = `New book added: ${JSON.stringify(data)}`;
+      })
+      .catch(error => {
+        console.error('API request error:', error);
+        document.getElementById('output').innerHTML = 'API request failed. Check the console for details.';
+      });
+    }
+
+    function logout() {
+      accessToken = null;
+      setCookie('accessToken', '', -1); // Delete the cookie
+      document.getElementById('loginForm').style.display = 'block';
+      document.getElementById('apiInteractions').style.display = 'none';
+      document.getElementById('output').innerHTML = 'Logged out.';
+    }
+  </script>
+
+</body>
+</html>

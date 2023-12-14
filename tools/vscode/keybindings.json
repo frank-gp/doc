@@ -1,0 +1,119 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+d",
+    "command": "-geeebe.duplicateText",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+l alt+p",
+    "command": "livePreview.start.internalPreview.atFile"
+  },
+  {
+    "key": "cmd+l",
+    "command": "settings.cycle.lineNumbers",
+    "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+l ctrl+;",
+    "command": "editor.action.defineKeybinding",
+    "when": "resource == 'vscode-userdata:/c%3A/Users/Frank%20GP/AppData/Roaming/Code/User/keybindings.json'"
+  },
+  {
+    "key": "ctrl+k ctrl+k",
+    "command": "-editor.action.defineKeybinding",
+    "when": "resource == 'vscode-userdata:/c%3A/Users/Frank%20GP/AppData/Roaming/Code/User/keybindings.json'"
+  },
+  // fgp custom
+  {
+    "key": "ctrl+t ctrl+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "args": { "text": "php --version\n" },
+    "when": "!terminalFocus OR terminalFocus"
+  },
+  {
+    "key": "ctrl+k ctrl+k",
+    "command": "workbench.action.terminal.kill"
+  },
+  {
+    "key": "alt+l alt+k",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "alt+l alt+k",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "php --version\n" },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "alt+l alt+;",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "alt+l alt+;",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "start http://localhost:3000\n php -S localhost:3000\n" },
+    "when": "terminalFocus"
+  },
+  // git
+  {
+    "key": "ctrl+g ctrl+s",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+g ctrl+s",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "git status\n" },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+g ctrl+l",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+g ctrl+l",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "git log --oneline\n" },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+g ctrl+p ctrl+f",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+g ctrl+p ctrl+f",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "git add .\n git commit --amend --no-edit\n git push --force\n git status\n git log --oneline\n git config --get remote.origin.url\n" },
+    "when": "terminalFocus"
+  },
+
+  // demo
+
+  {
+    "key": "ctrl+p ctrl+p",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+p ctrl+p",
+    "command": "workbench.action.terminal.focus",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+p ctrl+p",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "mysql --version\n php --version\n" },
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+t ctrl+n",
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "node --watch index.js\n" },
+    "when": "terminalFocus"
+  }
+]

@@ -1,0 +1,8 @@
+<%- include('partials/header', { title: 'Home - Your Blog' }) %>
+  <h1>Welcome to My Blog</h1>
+  <ul>
+    <% for (let post of posts) { %>
+      <li><a href="/<%= post.title %>"><%= post.title %></a></li>
+    <% } %>
+  </ul>
+<%- include('partials/footer') %>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple SPA with Router</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        nav {
+            margin-bottom: 20px;
+        }
+
+        section {
+            display: none;
+        }
+
+        section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar"></nav>
+
+    <div id="content">
+        <section id="home" class="active">
+            <h1>Home</h1>
+            <p>Welcome to the home page!</p>
+        </section>
+
+        <section id="about">
+            <h1>About</h1>
+            <p>Learn more about us.</p>
+        </section>
+
+        <section id="contact">
+            <h1>Contact</h1>
+            <p>Get in touch with us.</p>
+        </section>
+    </div>
+
+    <!-- <script type="module" src="./js/router.js"></script> -->
+    <script type="module" src="./js/navigation.js"></script>
+</body>
+</html>

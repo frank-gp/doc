@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frank GP — Android Developer</title>
+    <style>
+      body {
+        background-color: #113;
+        color: bisque;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Frontend</h1>
+    <button onclick="getApi()">getApi</button>
+    <button onclick="postApi()">postApi</button>
+    <button onclick="deletedApi()">deletedApi</button>
+    <pre></pre>
+    <script>
+      let preElement = document.querySelector("pre");
+
+      let getApi = () => {
+        fetch("http://localhost:3000/")
+          .then((res) => res.json())
+          .then((data) => {
+            preElement.textContent = JSON.stringify(data, null, 1);
+          });
+      };
+
+      let postApi = () => {
+        let data = { name: "new", email: "new@mail.com" };
+        fetch("http://localhost:3000/", {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            preElement.textContent = JSON.stringify(data, null, 1);
+          });
+      };
+
+      let deletedApi = () => {
+        fetch("http://localhost:3000/", { method: "DELETE" })
+          .then((res) => res.json())
+          .then((data) => {
+            preElement.textContent = JSON.stringify(data, null, 1);
+          });
+      };
+
+      getApi();
+    </script>
+  </body>
+</html>
