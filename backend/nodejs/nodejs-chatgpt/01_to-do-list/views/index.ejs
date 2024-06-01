@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>To-Do List</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+  <h1>To-Do List</h1>
+
+  <form action="/addTask" method="POST">
+    <input type="text" name="task" placeholder="Add a new task" required>
+    <button type="submit">Add</button>
+  </form>
+
+  <ul>
+    <% tasks.forEach((task, index) => { %>
+      <li>
+        <%= task %>
+        <a href="/deleteTask/<%= index %>">Delete</a>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>

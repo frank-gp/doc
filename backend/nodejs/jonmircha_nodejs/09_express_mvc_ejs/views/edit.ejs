@@ -1,0 +1,13 @@
+<%- include("partials/head.ejs") %>
+
+<main class="container">
+  <h1><%= title %></h1>
+  <form action="/edit/<%= task.id %>" method="POST">
+    <label for="title">Nuevo Título de la Tarea</label>
+    <input type="text" name="title" id="title" value="<%= task.title %>" required />
+    <button type="submit" class="edit-button">Editar</button>
+  </form>
+  <a href="/" class="back-button">↩️🏠 Volver</a>
+</main>
+
+<%- include("partials/footer.ejs") %>

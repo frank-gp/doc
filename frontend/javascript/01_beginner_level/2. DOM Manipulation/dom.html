@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Example</title>
+</head>
+<body>
+
+  <!-- HTML content to be manipulated -->
+  <h1 id="mainHeading">Hello, DOM!</h1>
+  <p class="paragraph">This is a paragraph.</p>
+  <button id="changeTextBtn">Change Text</button>
+
+  <script>
+    // Wait for the HTML document to be fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // Get reference to the h1 element using its ID
+      var heading = document.getElementById('mainHeading');
+
+      // Change the text content of the h1 element
+      heading.textContent = 'DOM Manipulation Example';
+
+      // Get reference to the paragraph using its class
+      var paragraph = document.querySelector('.paragraph');
+
+      // Change the text content of the paragraph
+      paragraph.textContent = 'This paragraph has been updated.';
+
+      // Add an event listener to the button for click events
+      var changeTextBtn = document.getElementById('changeTextBtn');
+      changeTextBtn.addEventListener('click', function () {
+        // Change the text content of the paragraph when the button is clicked
+        paragraph.textContent = 'Text changed by button click!';
+      });
+
+    });
+  </script>
+
+</body>
+</html>

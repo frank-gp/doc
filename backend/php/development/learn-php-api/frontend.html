@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD API Example</title>
+</head>
+<body>
+
+<h2>Users</h2>
+
+<button onclick="getUsers()">Get Users</button>
+
+<h3>Add User</h3>
+<form id="addUserForm" onsubmit="addUser(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <button type="submit">Add User</button>
+</form>
+
+<h3>Update User</h3>
+<form id="updateUserForm" onsubmit="updateUser(event)">
+    <label for="updateId">User ID:</label>
+    <input type="number" id="updateId" name="updateId" required>
+    <br>
+    <label for="updateName">Name:</label>
+    <input type="text" id="updateName" name="updateName" required>
+    <br>
+    <label for="updateEmail">Email:</label>
+    <input type="email" id="updateEmail" name="updateEmail" required>
+    <br>
+    <button type="submit">Update User</button>
+</form>
+
+<h3>Delete User</h3>
+<form id="deleteUserForm" onsubmit="deleteUser(event)">
+    <label for="deleteId">User ID:</label>
+    <input type="number" id="deleteId" name="deleteId" required>
+    <br>
+    <button type="submit">Delete User</button>
+</form>
+
+<div id="usersList"></div>
+
+<script>
+    function getUsers() {
+        fetch('http://localhost:99/index.php')
+            .then(response => response.json())
+            .then(data => {
+                const usersList = document.getElementById('usersList');
+                usersList.innerHTML = '<h3>Users</h3>';
+                if (data.length === 0) {
+                    usersList.innerHTML += '<p>No users found.</p>';
+                } else {
+                    data.forEach(user => {
+                        usersList.innerHTML += `<p>ID: ${user.id}, Name: ${user.name}, Email: ${user.email}</p>`;
+                    });
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    function addUser(event) {
+        event.preventDefault();
+        const form = new FormData(event.target);
+        fetch('http://localhost:99/index.php', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: form.get('name'),
+                email: form.get('email')
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            getUsers();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function updateUser(event) {
+        event.preventDefault();
+        const form = new FormData(event.target);
+        fetch('http://localhost:99/index.php', {
+            method: 'PUT',
+            body: JSON.stringify({
+                id: form.get('updateId'),
+                name: form.get('updateName'),
+                email: form.get('updateEmail')
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            getUsers();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function deleteUser(event) {
+        event.preventDefault();
+        const form = new FormData(event.target);
+        fetch(`http://localhost:99/index.php?id=${form.get('deleteId')}`, {
+            method: 'DELETE',
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+            getUsers();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+</script>
+
+</body>
+</html>

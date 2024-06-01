@@ -1,0 +1,26 @@
+npm install --save-dev @babel/core @babel/cli @babel/preset-env
+
+.babelrc
+
+{
+  "presets": ["@babel/preset-env"]
+}
+
+
+babel src -d dist
+
+
+npm install --production
+
+
+
+npx babel --plugins @babel/plugin-transform-modules-commonjs myModule.js -o myModuleCommonJS.js
+npx babel src --out-dir dist --ignore node_modules
+
+
+  host: "localhost",
+  user: "fgpooswu_nodejs",
+  password: "1234!@#$asdfASDF",
+  database: "fgpooswu_nodejs",
+
+

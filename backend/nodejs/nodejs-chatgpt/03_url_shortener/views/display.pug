@@ -1,0 +1,15 @@
+html
+  head
+    title Display URLs
+  body
+    h1 All Shortened URLs
+    table
+      tr
+        th Shortened URL
+        th Original URL
+      each url in urls
+        tr
+          td
+            a(href=currentDomain + '/' + url.short_code)= currentDomain + '/' + url.short_code
+          td
+            a(href=url.original_url)= url.original_url

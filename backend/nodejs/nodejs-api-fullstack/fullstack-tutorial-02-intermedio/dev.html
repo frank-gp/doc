@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frank GP — Android Developer</title>
+  </head>
+
+  <body>
+    <style></style>
+
+    <script>
+      // Supongamos que tenemos un arreglo de recursos (objetos)
+      let data = [
+        { id: 1, name: "Recurso 1", value: 100 },
+        { id: 2, name: "Recurso 2", value: 200 },
+        { id: 3, name: "Recurso 3", value: 300 },
+      ];
+
+      // Supongamos que queremos actualizar el recurso en el índice 1 con nuevos datos
+      let resourceIndex = 1; // Índice del recurso que queremos actualizar
+
+      // Datos actualizados que queremos aplicar al recurso en el índice 1
+      let updatedData = { name: "Nuevo Recurso 2", value: 250 };
+
+      // Usamos la expresión para actualizar el recurso en el arreglo
+      data[resourceIndex] = { ...data[resourceIndex], ...updatedData };
+
+      // Imprimimos el arreglo actualizado
+      console.log(data);
+    </script>
+  </body>
+</html>

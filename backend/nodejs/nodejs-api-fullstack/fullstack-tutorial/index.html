@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Your head content here -->
+  </head>
+  <body>
+    <h1>User List</h1>
+    <form>
+      <input type="text" value="Name First" />
+      <input type="email" value="user@mail.com" />
+      <input type="submit" value="submit" />
+      <input type="button" value="delete" />
+    </form>
+    <br />
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      let [name, email, submit, deleted] = document.querySelectorAll("input");
+      const tableBody = document.querySelector("tbody");
+      const api_url = "http://localhost:3000/api";
+
+      function fetchData(method, data = null) {
+        const headers = {
+          "Content-Type": "application/json",
+        };
+
+        const requestOptions = {
+          method: method,
+          headers: headers,
+        };
+
+        if (data) {
+          requestOptions.body = JSON.stringify(data);
+        }
+
+        fetch(api_url, requestOptions)
+          .then((response) => response.json())
+          .then((data) => {
+            tableBody.innerHTML = "";
+            data.forEach((user) => {
+              const row = `<tr>
+              <td>${user.name}</td>
+              <td>${user.email}</td>
+              </tr>`;
+              tableBody.innerHTML += row;
+            });
+          });
+      }
+
+      // getApi
+      function getApi() {
+        fetchData("GET");
+      }
+      getApi();
+
+      // postApi
+      function postApi(event) {
+        event.preventDefault();
+        const data = {
+          name: name.value,
+          email: email.value,
+        };
+        fetchData("POST", data);
+      }
+      submit.onclick = postApi;
+
+      // deleteApi
+      function deleteApi() {
+        fetchData("DELETE");
+      }
+
+      deleted.onclick = deleteApi;
+    </script>
+  </body>
+</html>

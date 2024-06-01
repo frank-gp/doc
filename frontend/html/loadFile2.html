@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Read File from URL and Display in DOM</title>
+  </head>
+  <body>
+    <pre><code id="fileContent1" data-url="./styles.css"></code></pre>
+    <pre><code id="fileContent2" data-url="./styles.css"></code></pre>
+    <pre><code id="fileContent3" data-url="./styles.css"></code></pre>
+
+    <script>
+      function loadFile1(url) {
+        return fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Network response was not ok");
+            }
+            return response.text();
+          })
+          .catch((error) => {
+            console.error("There was a problem fetching the file:", error);
+          });
+      }
+
+      // Get all elements with data-url attribute
+      const fileContentElements = document.querySelectorAll('[data-url]');
+
+      // Iterate over each element and load its respective file
+      fileContentElements.forEach((element, index) => {
+        const url = element.getAttribute('data-url');
+        loadFile1(url)
+          .then((contents) => {
+            displayFileContents(contents, index + 1);
+          });
+      });
+
+      function displayFileContents(contents, index) {
+        const fileContentDiv = document.getElementById(`fileContent${index}`);
+        fileContentDiv.textContent = contents;
+      }
+    </script>
+  </body>
+</html>

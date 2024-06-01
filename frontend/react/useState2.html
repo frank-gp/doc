@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>useState Simulation</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // Function to simulate useState
+      function useState(initialValue) {
+        let _value = initialValue; // Store the initial value
+        let _setter; // Placeholder for the setter function
+
+        // Function to get the current value
+        function getValue() {
+          return _value;
+        }
+
+        // Function to set a new value and trigger a re-render
+        function setValue(newValue) {
+          _value = newValue;
+          _setter(); // Trigger the re-render
+        }
+
+        // Custom hook to return the current value and setter function
+        function stateHook(setter) {
+          _setter = setter;
+          return [getValue, setValue];
+        }
+
+        return stateHook;
+      }
+
+      // Function to simulate a component with state
+      function Counter() {
+        const [getCount, setCount] = useState(0)(render);
+
+        function increment() {
+          setCount(getCount() + 1);
+        }
+
+        function render() {
+          const app = document.getElementById("app");
+          app.innerHTML = `
+            <div>
+                <p>Count: ${getCount()}</p>
+                <button id="increment">Increment</button>
+            </div>
+        `;
+          document.getElementById("increment").addEventListener("click", increment);
+        }
+
+        render();
+      }
+
+      // Initial render of the component
+      Counter();
+    </script>
+  </body>
+</html>

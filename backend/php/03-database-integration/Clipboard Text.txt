@@ -1,0 +1,6 @@
+8. Database Basics:
+Introduction to databases.
+Basics of SQL (Structured Query Language).
+9. PHP and MySQL:
+Connecting PHP to MySQL databases.
+Executing SQL queries from PHP.

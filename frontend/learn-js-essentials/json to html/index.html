@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JSON TO HTML</title>
+  </head>
+  <body>
+    <style>
+      .products {
+        background-color: indianred;
+        margin: 10vh auto;
+        max-width: 35em;
+        padding: 1em;
+      }
+      img {
+        max-width: 100%;
+      }
+      .products article {
+        background-color: bisque;
+        padding: 1em;
+        text-align: center;
+        margin: 1em;
+        border-radius: 0.3em;
+      }
+    </style>
+    <h2 style="text-align: center">Products</h2>
+    <section class="products"></section>
+
+    <script>
+      let products = document.querySelector(".products");
+      let contentHTML = "";
+
+      fetch("data.json")
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (items) {
+          console.log(items[0].id);
+          console.log(items[0].name);
+          console.log(items[0].img);
+
+          // loop...
+          for (let item of items) {
+            contentHTML += /*html*/ `<!-- html... -->
+                <article>
+                  <h2>${item.name}</h2>
+                  <img src="${item.img}" alt="" />
+                </article>
+
+                <!-- html. -->
+                `;
+          }
+          // loop.
+
+          products.innerHTML = contentHTML;
+        });
+    </script>
+  </body>
+</html>

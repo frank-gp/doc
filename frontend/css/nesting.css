@@ -1,0 +1,18 @@
+.container {
+    background-color: bisque;
+    color: rebeccapurple;
+    & div {
+        margin: 1em;
+        background-color: peru;
+        > article .title {
+            margin: 1em;
+            background-color: tomato;
+        }
+        & article p a {
+            background-color: bisque;
+            &:hover {
+                background-color: peru;
+            }
+        }
+    }
+}

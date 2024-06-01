@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Requests</title>
+</head>
+<body>
+  <h1>API Requests</h1>
+
+  <!-- Form to create a new resource using POST -->
+  <form id="postForm">
+    <h2>Create New Resource (POST)</h2>
+    <label for="postName">Name:</label>
+    <input type="text" id="postName" name="name">
+    <label for="postDescription">Description:</label>
+    <input type="text" id="postDescription" name="description">
+    <button type="submit">Create Resource</button>
+  </form>
+
+  <!-- Form to update a resource using PUT -->
+  <form id="putForm">
+    <h2>Update Resource (PUT)</h2>
+    <label for="putId">Resource ID:</label>
+    <input type="text" id="putId" name="id">
+    <label for="putName">New Name:</label>
+    <input type="text" id="putName" name="name">
+    <label for="putDescription">New Description:</label>
+    <input type="text" id="putDescription" name="description">
+    <button type="submit">Update Resource</button>
+  </form>
+
+  <!-- Form to partially update a resource using PATCH -->
+  <form id="patchForm">
+    <h2>Partial Update Resource (PATCH)</h2>
+    <label for="patchId">Resource ID:</label>
+    <input type="text" id="patchId" name="id">
+    <label for="patchName">New Name:</label>
+    <input type="text" id="patchName" name="name">
+    <label for="patchDescription">New Description:</label>
+    <input type="text" id="patchDescription" name="description">
+    <button type="submit">Partial Update Resource</button>
+  </form>
+
+  <div id="response"></div>
+
+  <script>
+    document.getElementById('postForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('postName').value;
+      const description = document.getElementById('postDescription').value;
+
+      const response = await fetch('http://localhost:3000/api/resource', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, description }),
+      });
+
+      const data = await response.json();
+      document.getElementById('response').innerText = JSON.stringify(data, null, 2);
+    });
+
+    document.getElementById('putForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const id = document.getElementById('putId').value;
+      const name = document.getElementById('putName').value;
+      const description = document.getElementById('putDescription').value;
+
+      const response = await fetch(`http://localhost:3000/api/resource/${id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, description }),
+      });
+
+      const data = await response.json();
+      document.getElementById('response').innerText = JSON.stringify(data, null, 2);
+    });
+
+    document.getElementById('patchForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      const id = document.getElementById('patchId').value;
+      const name = document.getElementById('patchName').value;
+      const description = document.getElementById('patchDescription').value;
+
+      const response = await fetch(`http://localhost:3000/api/resource/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, description }),
+      });
+
+      const data = await response.json();
+      document.getElementById('response').innerText = JSON.stringify(data, null, 2);
+    });
+  </script>
+</body>
+</html>

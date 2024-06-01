@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Frontend</title>
+    <style>
+      * {
+        background-color: #335;
+        color: white;
+        /* outline: none; */
+        border: none;
+      }
+      input,
+      pre {
+        border: 1px solid;
+        padding: 0.3em;
+        margin: 0.3em;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input type="button" value="get" />
+      <input type="button" value="post" />
+      <input type="button" value="deleted" />
+    </form>
+    <br />
+    <form>
+      <input type="text" value="Name" />
+      <input type="email" value="user@mail.com" />
+    </form>
+    <pre></pre>
+
+    <script type="module">
+      let [get, post, deleted, name, email] = document.querySelectorAll("input");
+      const url = "http://localhost:3000/";
+      let preElement = document.querySelector("pre");
+      let data = [];
+
+      // data = [
+      //   { name: "Frank", email: "front@mail.com" },
+      //   { name: "Frank", email: "front@mail.com" },
+      // ];
+
+      const displayData = (data) => {
+        var jsonString = JSON.stringify(data, null, 2);
+        preElement.textContent = jsonString;
+      };
+
+      function getApi() {
+        fetch(url)
+          .then((response) => response.json())
+          .then((data) => displayData(data));
+      }
+
+      function postApi() {
+        data = {
+          name: name.value,
+          email: email.value,
+        };
+        fetch(url, {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response) => response.json())
+          .then((data) => displayData(data));
+      }
+
+      function deletedApi() {
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => displayData(data));
+      }
+
+      get.onclick = getApi;
+      post.onclick = postApi;
+      deleted.onclick = deletedApi;
+    </script>
+  </body>
+</html>

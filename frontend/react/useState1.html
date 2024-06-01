@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>useState Simulation</title>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    // Step 1: Create a function to manage state
+    function useState(initialValue) {
+      let state = initialValue;
+      const setState = (newValue) => {
+        state = newValue;
+        render();
+      };
+      return [() => state, setState];
+    }
+
+    // Step 2: Define a component function
+    function Counter() {
+      const [getCount, setCount] = useState(0);
+
+      // Create the component structure
+      const container = document.createElement('div');
+      const countDisplay = document.createElement('span');
+      countDisplay.innerText = `Count: ${getCount()}`;
+      const button = document.createElement('button');
+      button.innerText = 'Increment';
+
+      // Button click handler to update state
+      button.addEventListener('click', () => {
+        setCount(getCount() + 1);
+      });
+
+      // Append elements to the container
+      container.appendChild(countDisplay);
+      container.appendChild(button);
+
+      return container;
+    }
+
+    // Step 3: Render function to update the DOM
+    function render() {
+      const root = document.getElementById('root');
+      root.innerHTML = ''; // Clear the existing content
+      root.appendChild(Counter()); // Render the component
+    }
+
+    // Initial render
+    render();
+  </script>
+</body>
+</html>

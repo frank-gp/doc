@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Buscar en google",
+    "description": "Buscar programadornovato en Google",
+    "version": "1",
+    "icons": {
+      "128": "icon_128.png"
+    },
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting",
+      "tabs"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "host_permissions": [
+      "https://www.google.com/*"
+    ]
+  }

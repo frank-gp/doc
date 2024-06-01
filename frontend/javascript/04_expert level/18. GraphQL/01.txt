@@ -1,0 +1,19 @@
+GraphQL: An Alternative to REST APIs
+GraphQL is a query language for APIs and a runtime environment that was developed by Facebook. It provides a more efficient, powerful, and flexible alternative to traditional REST APIs. Here's an overview of GraphQL and its key concepts:
+
+Key Concepts:
+1. Declarative Data Fetching:
+With GraphQL, clients can request only the data they need, and nothing more. This eliminates over-fetching and under-fetching of data.
+2. Single Endpoint:
+Unlike REST, which often has multiple endpoints for different resources, GraphQL typically exposes a single endpoint for all interactions.
+3. Schema and Types:
+GraphQL APIs are defined by a schema that specifies the types of data that can be queried and the relationships between them.
+4. Queries and Mutations:
+Queries: Used for fetching data. Clients can specify the shape of the response they need.
+Mutations: Used for modifying data on the server. Similar to POST, PUT, or DELETE in REST.
+5. Real-time Data with Subscriptions:
+GraphQL supports real-time updates through subscriptions. Clients can subscribe to specific events and receive real-time updates when data changes on the server.
+6. Introspection:
+Clients can introspect the schema to discover available types, queries, and mutations. This enables powerful tools and documentation.
+7. Nested Resolvers:
+Resolvers in GraphQL handle how to retrieve or mutate data for a specific type. Resolvers can be nested, allowing complex data structures to be fetched in a single request.

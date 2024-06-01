@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog Posts</title>
+</head>
+<body>
+  <h1>Blog Posts</h1>
+  
+  <!-- Create a form to add new blog posts -->
+  <form method="POST" action="/create-post">
+    <input type="text" name="title" placeholder="Title" required>
+    <textarea name="content" placeholder="Content" required></textarea>
+    <button type="submit">Create Post</button>
+  </form>
+  
+  <!-- Display existing blog posts -->
+  <ul>
+    <% for (const post of posts) { %>
+      <li>
+        <h2><%= post.title %></h2>
+        <p><%= post.content %></p>
+      </li>
+    <% } %>
+  </ul>
+</body>
+</html>

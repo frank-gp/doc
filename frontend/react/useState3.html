@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>useState Simulation</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // Function to create a state container similar to React's useState
+      function useState(initialValue) {
+        let _val = initialValue; // The state value
+        const state = () => _val; // Function to get the current state value
+        const setState = (newVal) => {
+          _val = newVal; // Function to update the state value
+          render(); // Re-render the component when state changes
+        };
+        return [state, setState];
+      }
+
+      // Dummy render function to simulate a component re-render
+      function render() {
+        // Clear the previous output
+        document.getElementById("app").innerHTML = "";
+
+        // Create elements and use the state
+        const [count, setCount] = myState; // Access the state and setState function
+
+        // Create a div to display the current count
+        const countDisplay = document.createElement("div");
+        countDisplay.textContent = `Count: ${count()}`;
+
+        // Create a button to increment the count
+        const button = document.createElement("button");
+        button.textContent = "Increment";
+        button.onclick = () => setCount(count() + 1);
+
+        // Append elements to the app container
+        document.getElementById("app").appendChild(countDisplay);
+        document.getElementById("app").appendChild(button);
+      }
+
+      // Initialize the state with an initial value
+      const myState = useState(0);
+
+      // Initial render
+      render();
+    </script>
+  </body>
+</html>

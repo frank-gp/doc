@@ -1,0 +1,18 @@
+
+# from http to https
+    RewriteEngine On
+    RewriteCond %{ENV:HTTPS} !on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # OR
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  
+
+#   You may use the following lines to force both HTTPS and WWW :
+    RewriteEngine On
+    RewriteCond %{ENV:HTTPS} !on [OR]
+    RewriteCond %{HTTP_HOST} !^www.YOURDOMAIN.COM$ [NC]
+    RewriteRule ^(.*)$ https://www.YOURDOMAIN.COM/$1 [L,R=301]
+    

@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  background-color: #336;
+  color: wheat;
+}
+nav {
+  background-color: #000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  & ul {
+    display: flex;
+    gap: 1em;
+    & li {
+      list-style: none;
+    }
+  }
+  & a {
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 85vh;
+}
+
+footer {
+  text-align: center;
+  background-color: #000;
+  padding: 1em;
+}

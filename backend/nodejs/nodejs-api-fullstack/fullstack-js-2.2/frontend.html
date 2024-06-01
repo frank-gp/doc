@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Form</title>
+  </head>
+  <body>
+    <h1>API Form</h1>
+    <form id="apiForm">
+      <input type="text" id="name" value="Frank" /><br /><br />
+      <input type="email" id="email" value="name@email.com" /><br /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <button id="deleteButton">Delete All</button>
+
+    <div id="response"></div>
+
+    <script>
+      let apiForm = document.getElementById("apiForm");
+
+      apiForm.onsubmit = function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        // Create an object to hold the data
+        const data = {
+          name: name,
+          email: email,
+        };
+
+        // Send the data to the server
+        fetch("http://localhost:3000/api", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        })
+          .then((response) => response.json())
+          .then((responseData) => {
+            response.innerHTML = "API Response: " + JSON.stringify(responseData);
+          })
+          .catch((error) => {
+            response.innerHTML = "API Request Failed: " + error.message;
+          });
+      };
+
+      function handleDeleteClick() {
+        fetch("http://localhost:3000/delete", {
+          method: "DELETE",
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            response.innerText = data.message;
+          })
+          .catch((error) => {
+            response.innerText = error.message;
+          });
+      }
+
+      deleteButton.onclick = handleDeleteClick;
+    </script>
+  </body>
+</html>

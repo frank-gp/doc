@@ -1,0 +1,5 @@
+
+.youtube_embed iframe[src*="youtube.com"] { 
+    width:100%;
+    aspect-ratio:16/9; 
+}

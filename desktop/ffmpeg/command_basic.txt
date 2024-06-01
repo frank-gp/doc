@@ -1,0 +1,8 @@
+ffmpeg -i input.mp4 -ab 256k -vn -c:a copy output.m4a
+
+
+ffmpeg -i 01.jpg -c:v libwebp -lossless 1 output.webp
+ffmpeg -i 01.jpg -c:v libwebp output.webp
+
+
+ffmpeg -i input.mp4 output.mp3

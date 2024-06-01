@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://frankgp.com/icon/icomoon/style.css" />
+    <link rel="stylesheet" href="https://frankgp.com/component/global.css" />
+    <link rel="stylesheet" href="https://frankgp.com/wp-assets/style/wp-content.css" />
+
+    <!-- JS -->
+    <script src="https://frankgp.com/component/head.js"></script>
+    <script src="https://frankgp.com/component/header.js"></script>
+    <script src="https://frankgp.com/component/social.js" defer></script>
+    <script src="https://frankgp.com/component/contact.js" defer></script>
+    <script src="https://frankgp.com/component/footer.js"></script>
+
+    <!-- stat -->
+    <!-- <script src="https://frankgp.com/stats/send.js" type="module"></script> -->
+
+    <!-- SEO -->
+    <title>Frank GP — Android Developer</title>
+    <meta name="description" content="Design and Developer Android" />
+    <meta property="og:image" content="https://i0.wp.com/fgp.one/media/fgp-fb-cover.webp" />
+  </head>
+
+  <body>
+    <script src="https://frankgp.com/lib/js/loader.js"></script>
+
+    <header-component></header-component>
+
+    <!-- https://fgp.one/wp-admin/post.php?post=96&action=edit -->
+    <header>
+      <!-- <img src="https://fgp.one/media/vscode-snippet.webp" alt="vscode-snippet" /> -->
+      <youtube_embed data-url="https://youtu.be/dIVUujAVBBI"></youtube_embed>
+    </header>
+    <main class="wp-content dark">
+      <section>
+
+        <h2>snippet</h2>
+        <pre><code class="hljs language-json">{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // &quot;Print to console&quot;: {
+  // 	&quot;scope&quot;: &quot;javascript,typescript&quot;,
+  // 	&quot;prefix&quot;: &quot;log&quot;,
+  // 	&quot;body&quot;: [
+  // 		&quot;console.log(&#39;$1&#39;);&quot;,
+  // 		&quot;$2&quot;
+  // 	],
+  // 	&quot;description&quot;: &quot;Log output to console&quot;
+  // }
+  &quot;media query&quot;: {
+    &quot;scope&quot;: &quot;css&quot;,
+    &quot;prefix&quot;: &quot;mq&quot;,
+    &quot;body&quot;: [&quot;@media (min-width: $1) {\n\t$0\n}&quot;],
+    &quot;description&quot;: &quot;media query&quot;
+
+  },
+
+  &quot;Print to console&quot;: {
+    &quot;scope&quot;: &quot;javascript,typescript&quot;,
+    &quot;prefix&quot;: &quot;cc&quot;,
+    &quot;body&quot;: [&quot;console.log(&#39;${1:TEST}&#39;);&quot;, &quot;$2&quot;],
+    &quot;description&quot;: &quot;Log output to console&quot;
+  },
+
+  &quot;af1&quot;: {
+    &quot;scope&quot;: &quot;javascript&quot;,
+    &quot;prefix&quot;: &quot;af1&quot;,
+    &quot;body&quot;: [&quot;let ${1:arrowFunc} = () =&gt; {&quot;, &quot; console.log(&#39;test ${1:arrowFunc}&#39;)&quot;, &quot;}&quot;, &quot;&quot;],
+    &quot;description&quot;: &quot;af1&quot;
+  },
+
+  &quot;f1&quot;: {
+    &quot;scope&quot;: &quot;javascript&quot;,
+    &quot;prefix&quot;: &quot;f1&quot;,
+    &quot;body&quot;: [&quot;function ${1:func1}(){&quot;, &quot;   ${2:console.log(&#39;TEST ${1:func1}&#39;)}&quot;, &quot;}&quot;, &quot;${1:func1}()&quot;, &quot;&quot;],
+    &quot;description&quot;: &quot;f1&quot;
+  },
+
+  &quot;dq&quot;: {
+    &quot;scope&quot;: &quot;javascript&quot;,
+    &quot;prefix&quot;: &quot;dq&quot;,
+    &quot;body&quot;: [&quot;document.querySelector(&#39;${1:tag}&#39;)&quot;, &quot;&quot;],
+    &quot;description&quot;: &quot;dq&quot;
+  },
+
+  &quot;qsa&quot;: {
+    &quot;scope&quot;: &quot;javascript&quot;,
+    &quot;prefix&quot;: &quot;qsa&quot;,
+    &quot;body&quot;: [&quot;let ${1:array} = document.querySelectorAll(&#39;${2:array}&#39;);&quot;, &quot;&quot;, &quot;${1:array}.forEach((element) =&gt; {&quot;, &quot;  element.onclick = function () {&quot;, &quot;   console.log(element);&quot;, &quot;  };&quot;, &quot;});&quot;],
+    &quot;description&quot;: &quot;qsa&quot;
+  },
+  &quot;webc&quot;: {
+    &quot;scope&quot;: &quot;javascript&quot;,
+    &quot;prefix&quot;: &quot;webc&quot;,
+    &quot;body&quot;: [
+      &quot;let html = `&lt;p&gt;web component&lt;/p&gt;`&quot;,
+      &quot;let css = `&lt;style&gt;:host{color: tomato;}&lt;/style&gt;`&quot;,
+&quot;&quot;,
+      &quot;class ${1:WebComponent} extends HTMLElement {&quot;,
+          &quot;constructor() {&quot;,
+              &quot;super();&quot;,
+              &quot;const shadow = this.attachShadow({ mode: &#39;open&#39; });&quot;,
+              &quot;shadow.innerHTML = html + css&quot;,
+          &quot;}&quot;,
+      &quot;}&quot;,
+      &quot;customElements.define(&#39;${2:web-component}&#39;, ${1:WebComponent});&quot;,
+    ],
+    &quot;description&quot;: &quot;webc&quot;
+  },
+
+  &quot;icon&quot;: {
+    &quot;scope&quot;: &quot;html, css, javascript&quot;,
+    &quot;prefix&quot;: &quot;icon&quot;,
+    &quot;body&quot;: [&quot;https://frank-gp.github.io/icon/icomoon/style.css&quot;],
+    &quot;description&quot;: &quot;icon&quot;
+  },
+  &quot;dark&quot;: {
+    &quot;scope&quot;: &quot;html&quot;,
+    &quot;prefix&quot;: &quot;dark&quot;,
+    &quot;body&quot;: [&quot;&lt;link rel=&#39;stylesheet&#39; href=&#39;https://frank-gp.github.io/lib/css/dark.css&#39; /&gt;&quot;],
+    &quot;description&quot;: &quot;dark&quot;
+  },
+  &quot;dev1&quot;: {
+    &quot;scope&quot;: &quot;html&quot;,
+    &quot;prefix&quot;: &quot;dev1&quot;,
+    &quot;body&quot;: [
+      &quot;&lt;!DOCTYPE html&gt;\n&lt;html lang=&#39;en&#39;&gt;\n  &lt;head&gt;\n    &lt;title&gt;Frank GP — Android Developer&lt;/title&gt;\n    &lt;script src=&#39;https://frankgp.com/component/layout.js&#39; type=&#39;module&#39;&gt;&lt;/script&gt;\n  &lt;/head&gt;\n\n  &lt;body&gt;\n\n\n\n  &lt;/body&gt;\n&lt;/html&gt;&quot;
+    ],
+    &quot;description&quot;: &quot;dev1&quot;
+  },
+  &quot;dev2&quot;: {
+    &quot;scope&quot;: &quot;html&quot;,
+    &quot;prefix&quot;: &quot;dev2&quot;,
+    &quot;body&quot;: [
+      &quot;&lt;!DOCTYPE html&gt;\n&lt;html lang=&#39;en&#39;&gt;\n  &lt;head&gt;\n    &lt;!-- SEO --&gt;\n    &lt;title&gt;Frank GP — Android Developer&lt;/title&gt;\n    &lt;meta name=&#39;description&#39; content=&#39;Design and Developer Android&#39; /&gt;\n    &lt;meta property=&#39;og:image&#39; content=&#39;https://i0.wp.com/fgp.one/media/fgp-fb-cover.webp&#39; /&gt;\n    &lt;script src=&#39;https://frankgp.com/component/layout.js&#39; type=&#39;module&#39;&gt;&lt;/script&gt;\n  &lt;/head&gt;\n\n  &lt;body&gt;\n    &lt;header-component&gt;&lt;/header-component&gt;\n\n    &lt;section id=&#39;consoleLog&#39;&gt;&lt;/section&gt;\n    &lt;script src=&#39;https://frank-gp.github.io/lib/js/console.js&#39;&gt;&lt;/script&gt;\n\n    &lt;!-- https://frankgp.com/app/snippet/body.html --&gt;\n    &lt;header&gt;&lt;/header&gt;\n    &lt;main class=&#39;wp-content&#39;&gt;\n      &lt;h1&gt;Developer Mode&lt;/h1&gt;\n      &lt;style&gt;\n\n      &lt;/style&gt;\n\n      &lt;script&gt;\n\n      &lt;/script&gt;\n    &lt;/main&gt;\n\n    &lt;footer-component&gt;&lt;/footer-component&gt;\n  &lt;/body&gt;\n&lt;/html&gt;&quot;
+    ],
+    &quot;description&quot;: &quot;dev2&quot;
+  },
+  &quot;favicon&quot;: {
+    &quot;scope&quot;: &quot;html&quot;,
+    &quot;prefix&quot;: &quot;favicon&quot;,
+    &quot;body&quot;: [&quot;&lt;link rel=&#39;icon&#39; href=&#39;${1:https://i0.wp.com/fgp.one/media/favicon.webp}&#39; sizes=&#39;${2:256x256}&#39; /&gt;&quot;],
+    &quot;description&quot;: &quot;favicon&quot;
+  },
+  &quot;fgp1&quot;: {
+    &quot;scope&quot;: &quot;html&quot;,
+    &quot;prefix&quot;: &quot;fgp1&quot;,
+    &quot;body&quot;: [
+      &quot;&lt;!DOCTYPE html&gt;\n&lt;html lang=&#39;en&#39;&gt;\n  &lt;head&gt;\n    &lt;!-- CSS --&gt;\n    &lt;link rel=&#39;stylesheet&#39; href=&#39;https://frankgp.com/icon/icomoon/style.css&#39; /&gt;\n    &lt;link rel=&#39;stylesheet&#39; href=&#39;https://frankgp.com/component/global.css&#39; /&gt;\n    &lt;link rel=&#39;stylesheet&#39; href=&#39;https://frankgp.com/wp-assets/style/wp-content.css&#39; /&gt;\n\n    &lt;!-- JS --&gt;\n    &lt;script src=&#39;https://frankgp.com/component/head.js&#39;&gt;&lt;/script&gt;\n    &lt;script src=&#39;https://frankgp.com/component/header.js&#39;&gt;&lt;/script&gt;\n    &lt;script src=&#39;https://frankgp.com/component/footer.js&#39;&gt;&lt;/script&gt;\n\n    &lt;!-- stat --&gt;\n    &lt;!-- &lt;script src=&#39;https://frankgp.com/stats/send.js&#39; type=&#39;module&#39;&gt;&lt;/script&gt; --&gt;\n\n    &lt;!-- SEO --&gt;\n    &lt;title&gt;Frank GP — Android Developer&lt;/title&gt;\n    &lt;meta name=&#39;description&#39; content=&#39;Design and Developer Android&#39; /&gt;\n    &lt;meta property=&#39;og:image&#39; content=&#39;https://i0.wp.com/fgp.one/media/fgp-fb-cover.webp&#39; /&gt;\n  &lt;/head&gt;\n\n  &lt;body&gt;\n    &lt;script src=&#39;https://frankgp.com/lib/js/loader.js&#39;&gt;&lt;/script&gt;\n\n    &lt;header-component&gt;&lt;/header-component&gt;\n\n    &lt;!-- https://frankgp.com/app/snippet/body.html --&gt;\n    &lt;header&gt;\n      &lt;!-- &lt;img src=&#39;https://fgp.one/media/vscode-snippet.webp&#39; alt=&#39;vscode-snippet&#39; /&gt; --&gt;\n      &lt;h1&gt;Web Component&lt;/h1&gt;\n    &lt;/header&gt;\n    &lt;main class=&#39;wp-content&#39;&gt;\n      &lt;section class=&#39;dark p1&#39;&gt;\n        &lt;style&gt;\n          .linkContainer {\n            max-width: 30rem;\n            margin: auto;\n            /* text-align: left; */\n            display: flex;\n            flex-direction: column;\n            gap: 0.5em;\n          }\n        &lt;/style&gt;\n        &lt;section class=&#39;linkContainer&#39;&gt;&lt;/section&gt;\n        &lt;script&gt;\n          // Assuming you have an array of links\n          const array = [&#39;head.js&#39;, &#39;social/github.js&#39;,  &#39;social/whatsapp.js&#39;, &#39;social/youtube.js&#39;];\n\n          let base_url = &#39;https://frankgp.com/component/&#39;;\n          array.forEach((item) =&gt; {\n            let url = base_url + item;\n            const anchor = `&lt;a href=&#39;` + url + `&#39;&gt;` + url + `&lt;/a&gt;`;\n            document.querySelector(&#39;.linkContainer&#39;).insertAdjacentHTML(&#39;beforeend&#39;, anchor);\n          });\n        &lt;/script&gt;\n      &lt;/section&gt;\n    &lt;/main&gt;\n    &lt;script&gt;\n      var h1Content = document.querySelector(&#39;h1&#39;).textContent;\n      document.querySelector(&#39;title&#39;).textContent = h1Content;\n    &lt;/script&gt;\n    &lt;fgp-lib&gt;\n      &lt;!-- &lt;script src=&#39;https://f-gp.github.io/lib/highlight.js&#39; type=&#39;module&#39;&gt;&lt;/script&gt; --&gt;\n      &lt;!-- &lt;script src=&#39;https://frankgp.com/lib/js/clipboard.js&#39; defer&gt;&lt;/script&gt; --&gt;\n      &lt;!-- &lt;script src=&#39;https://frankgp.com/web-component/youtube-embed.js&#39; defer&gt;&lt;/script&gt; --&gt;\n    &lt;/fgp-lib&gt;\n\n    &lt;footer-component&gt;&lt;/footer-component&gt;\n  &lt;/body&gt;\n&lt;/html&gt;&quot;
+    ],
+    &quot;description&quot;: &quot;fgp1&quot;
+  },
+  &quot;fgp2&quot;: {
+    &quot;scope&quot;: &quot;html&quot;,
+    &quot;prefix&quot;: &quot;fgp2&quot;,
+    &quot;body&quot;: [
+      &quot;&lt;!DOCTYPE html&gt;\n&lt;html lang=&#39;en&#39;&gt;\n  &lt;head&gt;\n    &lt;!-- SEO --&gt;\n    &lt;title&gt;Frank GP — Android Developer&lt;/title&gt;\n    &lt;meta name=&#39;description&#39; content=&#39;Design and Developer Android&#39; /&gt;\n    &lt;meta property=&#39;og:image&#39; content=&#39;https://i0.wp.com/fgp.one/media/fgp-fb-cover.webp&#39; /&gt;\n    &lt;script src=&#39;https://frankgp.com/component/layout.js&#39; type=&#39;module&#39;&gt;&lt;/script&gt;\n    &lt;!-- &lt;script src=&#39;https://frankgp.com/stats/send.js&#39;&gt;&lt;/script&gt; --&gt;\n  &lt;/head&gt;\n\n  &lt;body&gt;\n    &lt;header-component&gt;&lt;/header-component&gt;\n\n    &lt;!-- https://frankgp.com/app/snippet/body.html --&gt;\n    &lt;header&gt;\n      &lt;!-- &lt;img src=&#39;https://fgp.one/media/vscode-snippet.webp&#39; alt=&#39;vscode-snippet&#39; /&gt; --&gt;\n      &lt;h1&gt;Web Component&lt;/h1&gt;\n    &lt;/header&gt;\n    &lt;main class=&#39;wp-content&#39;&gt;\n      &lt;section class=&#39;dark p1&#39;&gt;\n        &lt;style&gt;\n          .linkContainer {\n            max-width: 30rem;\n            margin: auto;\n            /* text-align: left; */\n            display: flex;\n            flex-direction: column;\n            gap: 0.5em;\n          }\n        &lt;/style&gt;\n        &lt;section class=&#39;linkContainer&#39;&gt;&lt;/section&gt;\n        &lt;script&gt;\n          // Assuming you have an array of links\n          const array = [\n            &#39;head.js&#39;,\n            &#39;social/github.js&#39;,\n            &#39;social/whatsapp.js&#39;,\n            &#39;social/youtube.js&#39;,\n            // Add more files here\n          ];\n\n          let base_url = &#39;https://frankgp.com/component/&#39;;\n          array.forEach((item) =&gt; {\n            let url = base_url + item;\n            const anchor = `&lt;a href=&#39;` + url + `&#39;&gt;` + url + `&lt;/a&gt;`;\n            document.querySelector(&#39;.linkContainer&#39;).insertAdjacentHTML(&#39;beforeend&#39;, anchor);\n          });\n        &lt;/script&gt;\n      &lt;/section&gt;\n    &lt;/main&gt;\n    &lt;fgp-lib&gt;\n      &lt;!-- &lt;script src=&#39;https://f-gp.github.io/lib/highlight.js&#39; type=&#39;module&#39;&gt;&lt;/script&gt; --&gt;\n      &lt;!-- &lt;script src=&#39;https://frankgp.com/lib/js/clipboard.js&#39; defer&gt;&lt;/script&gt; --&gt;\n    &lt;/fgp-lib&gt;\n\n    &lt;footer-component&gt;&lt;/footer-component&gt;\n  &lt;/body&gt;\n&lt;/html&gt;&quot;
+    ],
+    &quot;description&quot;: &quot;fgp2&quot;
+  },
+  &quot;tt&quot;: {
+    &quot;scope&quot;: &quot;html&quot;,
+    &quot;prefix&quot;: &quot;tt&quot;,
+    &quot;body&quot;: [
+      &quot;&lt;!DOCTYPE html&gt;&quot;
+    ],
+    &quot;description&quot;: &quot;tt&quot;
+  }
+}
+</code></pre>
+      </section>
+    </main>
+    <fgp-lib>
+      <script src="https://f-gp.github.io/lib/highlight.js" type="module"></script>
+      <!-- <script src="https://frankgp.com/lib/js/clipboard.js" defer></script> -->
+      <script src="https://frankgp.com/lib/js/youtube-embed.js"></script>
+    </fgp-lib>
+
+    <section class="social"></section>
+    <!-- <section class="contact"></section> -->
+    <footer-component></footer-component>
+  </body>
+</html>

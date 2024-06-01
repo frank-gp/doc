@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "product 1",
+        "img": "https://fgp.one/img1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "product 2",
+        "img": "https://fgp.one/img2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "product 3",
+        "img": "https://fgp.one/img3.jpg"
+    },
+    {
+        "id": 4,
+        "name": "product 4",
+        "img": "https://fgp.one/img4.jpg"
+    }
+]

@@ -1,0 +1,23 @@
+html
+  head
+    title URL Shortener
+  body
+    h1 URL Shortener
+    form(action='/shorten', method='post')
+      label(for='originalUrl') Original URL:
+      input#originalUrl(type='text', name='originalUrl', required)
+      button(type='submit') Shorten
+
+    h2 All Shortened URLs
+    table
+      tr
+        th Shortened URL
+        th Original URL
+      each url in urls
+        tr
+          td
+            a(href=currentDomain + '/' + url.short_code)= currentDomain + '/' + url.short_code
+          td
+            a(href=url.original_url)= url.original_url
+    if error
+      p.error= error
