@@ -1,0 +1,58 @@
+Content-Type: text/plain
+Content-Type: application/x-www-form-urlencoded
+Content-Type: application/json
+
+
+### https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+###
+GET  http://127.0.0.1:3000/api
+Content-Type: text/plain
+
+key1=value1&key2=value2
+
+###
+GET  http://127.0.0.1:3000/api
+Content-Type: application/x-www-form-urlencoded
+
+key1=value1&key2=value2
+
+
+###
+GET  http://127.0.0.1:3000/api
+Content-Type: application/json
+
+[
+{
+  "name": "GET user 1"
+}
+]
+
+###
+POST http://127.0.0.1:3000/api
+Content-Type: application/json
+
+[
+{
+  "name": "POST user 1"
+}
+]
+
+###
+PUT http://127.0.0.1:3000/ap
+Content-Type: application/json
+
+[
+{
+  "name": "PUT user 1"
+}
+]
+
+###
+DELETE  http://127.0.0.1:3000/ap
+Content-Type: application/json
+
+[
+{
+  "name": "DELETE user 1"
+}
+]

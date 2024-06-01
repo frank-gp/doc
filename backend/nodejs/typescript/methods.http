@@ -1,0 +1,39 @@
+### Create an item
+POST http://localhost:3000/items
+Content-Type: application/json
+
+{
+  "name": "Item 1",
+  "description": "description"
+}
+
+###
+
+### Read all items
+GET http://localhost:3000/items
+
+###
+
+### Read an item by id
+GET http://localhost:3000/items/1
+
+###
+
+### Update an item by id
+PUT http://localhost:3000/items/1
+Content-Type: application/json
+
+{
+  "name": "Updated Item 1",
+  "description": "This is the updated first item"
+}
+
+###
+
+### Delete an item by id
+DELETE http://localhost:3000/items/1
+
+###
+
+### Verify deletion by reading all items
+GET http://localhost:3000/items

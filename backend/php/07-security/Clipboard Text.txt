@@ -1,0 +1,3 @@
+PHP and Web Security:
+Cross-Site Scripting (XSS) and Cross-Site Request Forgery (CSRF) prevention.
+Secure coding practices.

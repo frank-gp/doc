@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Virtual DOM Simulation</title>
+    <style>
+      #app {
+        font-family: Arial, sans-serif;
+      }
+      button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // Virtual DOM element creation function
+      function h(tag, props, ...children) {
+        return { tag, props: props || {}, children };
+      }
+
+      // Render virtual DOM to real DOM
+      function renderElement(vNode) {
+        if (typeof vNode === "string") {
+          return document.createTextNode(vNode);
+        }
+
+        const { tag, props, children } = vNode;
+        const element = document.createElement(tag);
+
+        Object.keys(props).forEach((key) => {
+          element.setAttribute(key, props[key]);
+        });
+
+        children.forEach((child) => {
+          element.appendChild(renderElement(child));
+        });
+
+        return element;
+      }
+
+      // Diffing algorithm
+      function diff(oldVNode, newVNode) {
+        if (oldVNode === undefined) {
+          return function (parent) {
+            parent.appendChild(renderElement(newVNode));
+          };
+        }
+
+        if (newVNode === undefined) {
+          return function (parent) {
+            parent.removeChild(parent.firstChild);
+          };
+        }
+
+        if (typeof oldVNode === "string" || typeof newVNode === "string") {
+          if (oldVNode !== newVNode) {
+            return function (parent) {
+              parent.replaceChild(renderElement(newVNode), parent.firstChild);
+            };
+          } else {
+            return function () {};
+          }
+        }
+
+        if (oldVNode.tag !== newVNode.tag) {
+          return function (parent) {
+            parent.replaceChild(renderElement(newVNode), parent.firstChild);
+          };
+        }
+
+        const patchProps = diffProps(oldVNode.props, newVNode.props);
+        const patchChildren = diffChildren(oldVNode.children, newVNode.children);
+
+        return function (parent) {
+          patchProps(parent.firstChild);
+          patchChildren(parent.firstChild);
+        };
+      }
+
+      function diffProps(oldProps, newProps) {
+        const patches = [];
+
+        Object.keys(newProps).forEach((key) => {
+          if (newProps[key] !== oldProps[key]) {
+            patches.push(function (element) {
+              element.setAttribute(key, newProps[key]);
+            });
+          }
+        });
+
+        Object.keys(oldProps).forEach((key) => {
+          if (!(key in newProps)) {
+            patches.push(function (element) {
+              element.removeAttribute(key);
+            });
+          }
+        });
+
+        return function (element) {
+          patches.forEach((patch) => patch(element));
+        };
+      }
+
+      function diffChildren(oldChildren, newChildren) {
+        const childPatches = [];
+        const additionalPatches = [];
+
+        oldChildren.forEach((oldChild, i) => {
+          childPatches.push(diff(oldChild, newChildren[i]));
+        });
+
+        for (const additionalChild of newChildren.slice(oldChildren.length)) {
+          additionalPatches.push(function (parent) {
+            parent.appendChild(renderElement(additionalChild));
+          });
+        }
+
+        return function (parent) {
+          childPatches.forEach((patch, i) => {
+            patch(parent.childNodes[i]);
+          });
+
+          additionalPatches.forEach((patch) => patch(parent));
+        };
+      }
+
+      // Patch the real DOM
+      function patch(parent, patchFn) {
+        patchFn(parent);
+      }
+
+      // Initial virtual DOM
+      let vNode = h("div", { id: "container" }, h("h1", null, "Hello, world!"), h("p", null, "This is a simple VDOM implementation."));
+
+      const app = document.getElementById("app");
+      const root = renderElement(vNode);
+      app.appendChild(root);
+
+      // New virtual DOM for updating
+      let newVNode = h("div", { id: "container" }, h("h1", null, "Hello, Virtual DOM!"), h("p", null, "This text has changed."), h("p", null, "A new paragraph added."));
+
+      // Apply the diff and patch the real DOM
+      const patches = diff(vNode, newVNode);
+      patch(app, patches);
+
+      // Update the virtual DOM reference
+      vNode = newVNode;
+    </script>
+  </body>
+</html>

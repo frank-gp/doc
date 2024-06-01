@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Handling Example</title>
+  <style>
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HTML content with a button -->
+  <button id="myButton">Click Me</button>
+
+  <script>
+    // Wait for the HTML document to be fully loaded
+    document.addEventListener('DOMContentLoaded', function () {
+
+      // Get reference to the button element
+      var myButton = document.getElementById('myButton');
+
+      // Function to handle the click event
+      function handleClick() {
+        // Change the text content of the button
+        myButton.textContent = 'Clicked!';
+
+        // Add a CSS class to highlight the button
+        myButton.classList.add('highlight');
+
+        // Unsubscribe the click event listener after the first click
+        myButton.removeEventListener('click', handleClick);
+      }
+
+      // Add a click event listener to the button
+      myButton.addEventListener('click', handleClick);
+
+    });
+  </script>
+
+</body>
+</html>
