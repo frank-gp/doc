@@ -196,7 +196,7 @@ SendMode("Input")
 
         #Numpad4::
             {
-                SendInput("git remote remove origin_tutorial")
+                SendInput("git status && git log --oneline && git remote -v")
                 Return
             }
 
@@ -209,6 +209,18 @@ SendMode("Input")
         #Numpad6::
             {
                 SendInput("git add . && git commit --amend --no-edit && git push origin_cyclic main --force")
+                Return
+            }
+
+        #Numpad8::
+            {
+                SendInput("git checkout head~1")
+                Return
+            }
+
+        #Numpad9::
+            {
+                SendInput("git checkout main")
                 Return
             }
 
