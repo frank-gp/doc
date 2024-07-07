@@ -1,0 +1,15 @@
+###
+GET http://127.0.0.1:3001/reset-schema
+
+###
+GET http://127.0.0.1:3001/data
+
+###
+POST http://127.0.0.1:3001/data
+Content-Type: application/json
+
+{ 
+"name":"Frank", 
+"email":"email@mail.com", 
+"password":"password" 
+}

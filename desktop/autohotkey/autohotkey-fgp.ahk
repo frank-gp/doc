@@ -202,13 +202,13 @@ SendMode("Input")
 
         #Numpad5::
             {
-                SendInput("git remote add origin_cyclic https://github.com/fgp555/frankgp.cyclic.app.git")
+                SendInput("git remote add origin https://github.com/fgp555/tutorial.git")
                 Return
             }
 
         #Numpad6::
             {
-                SendInput("git add . && git commit --amend --no-edit && git push origin_cyclic main --force")
+                SendInput("git add . && git commit --amend --no-edit && git push origin main --force")
                 Return
             }
 
