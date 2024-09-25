@@ -3,14 +3,16 @@
 git clone https://github.com/user/repo.git
 git clone https://github.com/user/repo.git .
 
-# ========== two origin ==========
+# ========== remote ==========
+
 git remote -v
+git remote remove origin
+git remote add origin https://github.com/user/repo.git
 
-git remote add origin_tutorial https://github.com/user/repo.git
+git branch -M main
+git push -u origin main
+git push origin main --force
 
-git push origin_tutorial main --force
 
-git remote remove origin_tutorial
-
-## agregar una rama diferente
-    git remote add other_branch https://github.com/user/repo.git
+## agregar un origin diferente
+git remote add other_origin https://github.com/user/repo.git

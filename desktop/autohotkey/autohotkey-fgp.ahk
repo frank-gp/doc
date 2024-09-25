@@ -196,7 +196,7 @@ SendMode("Input")
 
         #Numpad4::
             {
-                SendInput("git status && git log --oneline && git remote -v")
+                SendInput("git status && git remote -v && git log --oneline")
                 Return
             }
 

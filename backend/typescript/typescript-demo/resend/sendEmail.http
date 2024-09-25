@@ -1,0 +1,9 @@
+### Send Email
+POST http://localhost:3000/send-email
+Content-Type: application/json
+
+{
+  "to": "user123@gmail.com",
+  "subject": "Test Email",
+  "text": "Hello, this is a test email!"
+}
