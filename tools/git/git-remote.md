@@ -13,6 +13,9 @@ git branch -M main
 git push -u origin main
 git push origin main --force
 
+## Change the remote URL
+git remote set-url origin https://github.com/user/repo.git
 
-## agregar un origin diferente
+## add other origin
 git remote add other_origin https://github.com/user/repo.git
+git push other_origin main
