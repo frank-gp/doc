@@ -1,5 +1,5 @@
 {
-   "name": "myproject",
+   "name": "typeorm-sample",
    "version": "0.0.1",
    "description": "Awesome project developed with TypeORM.",
    "type": "commonjs",
@@ -11,7 +11,9 @@
    "dependencies": {
       "typeorm": "0.3.20",
       "reflect-metadata": "^0.1.13",
-      "pg": "^8.4.0"
+      "mysql": "^2.14.1",
+      "express": "^4.17.2",
+      "body-parser": "^1.19.1"
    },
    "scripts": {
       "start": "ts-node src/index.ts",
