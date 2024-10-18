@@ -130,7 +130,7 @@ SendMode("Input")
             SendEvent '<script>{Enter}'
         }
 
-        :*:/..:: {
+        :*://.:: {
             SetKeyDelay 15, 15
             SendEvent '========== =========='
             Loop 11
@@ -208,7 +208,7 @@ SendMode("Input")
 
         #Numpad6::
             {
-                SendInput("git add . && git commit --amend --no-edit && git push origin main --force")
+                SendInput("git clone https://github.com/fgp555/nestjs-initial.git .")
                 Return
             }
 
@@ -220,7 +220,7 @@ SendMode("Input")
 
         #Numpad9::
             {
-                SendInput("git checkout main")
+                SendInput("rm -rf .git && git init && git add . && git commit -m 'initial commit'")
                 Return
             }
 

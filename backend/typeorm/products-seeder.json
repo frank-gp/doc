@@ -1,0 +1,98 @@
+[
+  {
+    "id": "products-0001-abcd-efgh-36characters",
+    "name": "Iphone 15",
+    "description": "The best smartphone in the world",
+    "price": 199.99,
+    "stock": 12,
+    "category": "smartphone"
+  },
+  {
+    "id": "products-0002-abcd-efgh-36characters",
+    "name": "Samsung Galaxy S23",
+    "description": "The best smartphone in the world",
+    "price": 150.0,
+    "stock": 12,
+    "category": "smartphone"
+  },
+  {
+    "id": "products-0003-abcd-efgh-36characters",
+    "name": "Motorola Edge 40",
+    "description": "The best smartphone in the world",
+    "price": 179.89,
+    "stock": 12,
+    "category": "smartphone"
+  },
+  {
+    "id": "products-0004-abcd-efgh-36characters",
+    "name": "Samsung Odyssey G9",
+    "description": "The best monitor in the world",
+    "price": 299.99,
+    "stock": 12,
+    "category": "monitor"
+  },
+  {
+    "id": "products-0005-abcd-efgh-36characters",
+    "name": "LG UltraGear",
+    "description": "The best monitor in the world",
+    "price": 199.99,
+    "stock": 12,
+    "category": "monitor"
+  },
+  {
+    "id": "products-0006-abcd-efgh-36characters",
+    "name": "Acer Predator",
+    "description": "The best monitor in the world",
+    "price": 150.0,
+    "stock": 12,
+    "category": "monitor"
+  },
+  {
+    "id": "products-0007-abcd-efgh-36characters",
+    "name": "Razer BlackWidow V3",
+    "description": "The best keyboard in the world",
+    "price": 99.99,
+    "stock": 12,
+    "category": "keyboard"
+  },
+  {
+    "id": "products-0008-abcd-efgh-36characters",
+    "name": "Corsair K70",
+    "description": "The best keyboard in the world",
+    "price": 79.99,
+    "stock": 12,
+    "category": "keyboard"
+  },
+  {
+    "id": "products-0009-abcd-efgh-36characters",
+    "name": "Logitech G Pro",
+    "description": "The best keyboard in the world",
+    "price": 59.99,
+    "stock": 12,
+    "category": "keyboard"
+  },
+  {
+    "id": "products-0010-abcd-efgh-36characters",
+    "name": "Razer Viper",
+    "description": "The best mouse in the world",
+    "price": 49.99,
+    "stock": 12,
+    "category": "mouse"
+  },
+  {
+    "id": "products-0011-abcd-efgh-36characters",
+    "name": "Logitech G502 Pro",
+    "description": "The best mouse in the world",
+    "price": 39.99,
+    "stock": 12,
+    "category": "mouse"
+  },
+  {
+    "id": "products-0012-abcd-efgh-36characters",
+    "name": "SteelSeries Rival 3",
+    "description": "The best mouse in the world",
+    "price": 29.99,
+    "stock": 12,
+    "category": "mouse"
+  }
+]

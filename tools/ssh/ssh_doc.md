@@ -1,38 +1,15 @@
 ```bash
 
-# Most used commands
-
-# To remove files
-rm *
-
-# To remove a non-empty folder
-rm -rf *
-
-# To remove.git folder
-rm -rf .git
-
-# To remove all hidden files and folders
-rm -rf .*
-
-
 # connect to cPanel via SSH using a specific port
-ssh -p 21077 frankgp@199.188.200.111
+ssh -p 21098 fgpone@67.223.118.47
+ssh -o ConnectTimeout=30 -p 21098 fgpone@67.223.118.47
 
-# or
-ssh -p 21077 frankgp@frankgp.com
+ssh giomr@185.27.133.19
 
 
 # To copy a folder from your local machine
 # to a remote server using SSH.
 scp -P 21077 -r "C:\web" user@199.188.200.111:/home/user/htdoc
-
-
-# Clone
-git clone https://github.com/fgp555/temp.git
-
-# Update
-git pull
-git fetch
 
 
 
@@ -65,4 +42,22 @@ git clone git@github.com:frank-gp/temp.git
 # Update repository
 git pull
 git fetch
+
+
+# ==========  ==========
+# Most used commands
+
+# To remove files
+rm *
+
+# To remove a non-empty folder
+rm -rf *
+
+# To remove.git folder
+rm -rf .git
+
+# To remove all hidden files and folders
+rm -rf .*
+
 ```
+

@@ -1,6 +1,12 @@
 crypto.randomUUID();
 
 console.log(crypto.randomUUID());
+console.log(Date.now() + '-' + Math.round(Math.random() * 1e9))
+console.log(Date.now() + '-' + Math.round(Math.random() * 1e9))
+console.log(Date.now() + '-' + Math.round(Math.random() * 100))
+console.log(Date.now() + '-' + Math.round(Math.random() * 100))
+console.log(Date.now())
+console.log(Date.now())
 
 // ========== generateUUID... ==========
 

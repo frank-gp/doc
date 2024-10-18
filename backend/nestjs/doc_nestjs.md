@@ -12,6 +12,8 @@ nest new .
 # nest generate|g <schematic> [name] [path]
 nest generate resource user modules
 nest g res user modules
+nest g res user --no-spec
+
 
 npm run test
 npm run test:e2e
