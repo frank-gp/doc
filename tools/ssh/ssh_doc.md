@@ -16,10 +16,10 @@ rm -rf .*
 
 
 # connect to cPanel via SSH using a specific port
-ssh -p 21077 frankgp@199.188.200.111
+ssh -p 21098 fgpone@67.223.118.47
+ssh -o ConnectTimeout=30 -p 21098 fgpone@67.223.118.47
 
-# or
-ssh -p 21077 frankgp@frankgp.com
+ssh giomr@185.27.133.19
 
 
 # To copy a folder from your local machine
