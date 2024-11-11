@@ -22,8 +22,6 @@ git remote set-url origin https://github.com/user/repo.git
 git remote add origin2 https://github.com/user/repo.git
 git push origin2 main
 
-# To install dependencies in production mode
-npm install --only=production
-
-# if you want to install fresh with only production dependencies
-npm ci --only=production
+# pushear todas las ramas locales
+  git push --all origin
+```

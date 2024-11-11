@@ -1,37 +1,3 @@
-# PostgreSQL
-
-### PostgreSQL Downloads
-
-[https://www.postgresql.org/download/](https://www.postgresql.org/download/)
-
-## Commands PostgreSQL
-
-```bash
-
-# Alt + F8 = Reset Console in git bash
-
-# Config PostgreSQL environment
-# PostgreSQL installation path
-# C:\Program Files\PostgreSQL\15\bin
-
-# Command to check the installed psql version
-psql --version
-
-# Connect to PostgreSQL as the 'postgres' user
-psql -U postgres
-
-# List databases
-\l
-
-# Connect to the 'my_database' database
-\c my_database;
-
-# Display tables available in the current database
-\dt
-
-# Describe a specific table
-\d credentials_table;
-```
 
 ## Queries SQL
 
@@ -149,46 +115,6 @@ CREATE USER my_user WITH
 -- Exit the current PostgreSQL session and return to the command prompt
 \q
 
-```
-
----
-
----
-
----
-
-### Change Password user in postgreSQL
-
-Open _**pg_hba.conf**_ in vscode (15 = version)
-
-```
-C:\Program Files\PostgreSQL\15\data\pg_hba.conf
-```
-
-Find line 90 in _**pg_hba.conf**_ file
-
-```bash
-# IPv6 local connections:
-host    all             all             ::1/128                 scram-sha-256
-```
-
-change "scram-sha-256" to "trust"
-
-```bash
-# IPv6 local connections:
-host    all             all             ::1/128                 trust
-```
-
-Access in SQL shell without password, and command for change password en shell
-
-```bash
-\password
-```
-
-Restore Config: change "trust" to "scram-sha-256"
-```bash
-# IPv6 local connections:
-host    all             all             ::1/128                 scram-sha-256
 ```
 
 ---

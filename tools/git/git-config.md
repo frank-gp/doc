@@ -26,4 +26,14 @@ git config --global --unset-all safe.directory
 
 # puedes agregar la configuración global para que todos los directorios sean seguros:
 git config --global safe.directory '*'
+
+
+
+# Verificar si la carpeta está realmente rastreada por Git
+git ls-files | grep backups
+# Deja de rastrear la carpeta /backups:
+git rm -r --cached backups
+# Forzar el reindexado (si la carpeta está en .gitignore)
+git rm -r --cached .
+
 ```

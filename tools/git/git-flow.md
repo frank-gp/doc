@@ -1,33 +1,37 @@
 ```bash
 ## 1. Clonar un Repositorio
   git clone https://github.com/usuario/repositorio.git
-  git clone --branch dev --single-branch https://github.com/JosemAVSG/Henry_PF.git
+  git clone --single-branch --branch dev https://github.com/usuario/repositorio.git
 
 ## 2. Ramas
   # Crea una nueva rama.
-  git branch rama-frank
+  git branch rama2
   # Cambia a la rama especificada.
-  git checkout rama-frank
+  git checkout rama2
   # Crear y cambiarse a la nueva rama
-  git checkout -b rama-frank
+  git checkout -b rama2
   # ver ramas
   git branch
+  # ver todas las ramas remotas
+  git branch -r
   # ver Todas las ramas (all)
   git branch -a
   # renombrar rama (modify)
   git branch -m nuevo-nombre
   # eliminar rama (delete)
-  git branch -d rama-frank
+  git branch -d rama2
+  git branch -D rama2
 
 ## 3. Agregar Cambios
   git add .
   git commint -m "comentario1"
   # como la rama de seguimiento (upstream) para la rama actual
-  git push -u origin rama-frank
+  git push -u origin rama2
+
 
 ## 4. Actualizar el Repositorio Local
   git pull
-  git pull origin nameBranch
+  git pull origin rama2
 
 ## 7. Revisar el Historial de Cambios
    git log
@@ -37,17 +41,8 @@
 ## Fusionar Cambios
   # Fusiona la rama especificada con la rama actual.
   git checkout main
-  git merge feature-nueva
-
-
-## Resolver Conflictos
-  git status
-  # Abre una herramienta de fusión para resolver conflictos.
-  git mergetool
-
-
-## Revisar el Estado del Repositorio
-  git status
+  git merge rama2
+  git merge --abort
 
 
 ## Colaboración con Pull Requests (GitHub)

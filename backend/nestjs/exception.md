@@ -1,8 +1,9 @@
 ```ts
-  async update(id: number, updateProductDto: UpdateProductDto) {
-    if (this.findOne(id)) throw new NotFoundException('Product not found');
-    return this.productRepository.save({ ...updateProductDto, id });
-  }
+throw new NotFoundException("Product not found");
+
+throw new ConflictException("El email ya esta registrado");
+
+throw new UnauthorizedException("Email o contraseña incorrectos");
 ```
 
 | - NotFoundException | 404 Not Found |
@@ -59,8 +60,6 @@ npm install class-validator class-transformer
 | - ServiceUnavailableException      | 503 Service Unavailable        |
 | - GatewayTimeoutException          | 504 Gateway Timeout            |
 | - PreconditionFailedException      | 412 Precondition Failed        |
-
-
 
 🎉 – Confeti de fiesta
 🥳 – Carita de fiesta

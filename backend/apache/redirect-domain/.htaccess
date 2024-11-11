@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Redirect to https://gremiodelaindustriagrafica.com
+RewriteCond %{HTTP_HOST} !^gremiodelaindustriagrafica\.com$ [NC]
+RewriteRule ^(.*)$ https://gremiodelaindustriagrafica.com/$1 [L,R=301]

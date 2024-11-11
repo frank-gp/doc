@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Redirect to https://crefi.giomr.site
+RewriteCond %{HTTP_HOST} !^crefi.giomr\.site$ [NC]
+RewriteRule ^(.*)$ https://crefi.giomr.site/$1 [L,R=301]

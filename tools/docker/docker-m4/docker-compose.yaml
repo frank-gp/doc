@@ -1,0 +1,34 @@
+# back\docker-compose.yaml
+
+# docker-compose.yml
+# docker-compose up
+# docker-compose down
+# docker-compose up --build
+# docker-compose down -v
+
+# version: '3.8'
+
+services:
+   nestjs_app:
+     build: .
+     image: nestjs_henry:latest # Nombre personalizado para la imagen
+     container_name: nestjs_container # Nombre personalizado para el contenedor
+     ports:
+       - "3000:3000"
+     env_file:
+       - .env
+     depends_on:
+       - postgres_host
+     volumes:
+       - .:/app
+
+   postgres_host:
+     image: postgres
+     container_name: postgres_container # Nombre personalizado para el contenedor
+     volumes:
+       - pgdata:/var/lib/postgresql/data
+     env_file:
+       - .env
+
+volumes:
+  pgdata:
