@@ -1,3 +1,5 @@
+const date = new Date().toISOString().replace(/-/g, "").replace(/T/g, "-").slice(0, 14); //20241201-14:50
+
 console.log(new Date().toISOString()); // 2024-10-30T16:49:17.529Z
 console.log(new Date().toISOString().slice(0, 10)); // 2024-10-30
 console.log(new Date().toISOString().split("T")[0]); // 2024-10-30

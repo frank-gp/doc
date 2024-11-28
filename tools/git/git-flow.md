@@ -58,3 +58,10 @@
 
   # ocurre cuando Git detecta que las dos ramas que intentas fusionar no comparten un historial común.
   git pull origin dev --allow-unrelated-histories
+
+# Clonar nueva rama git
+git fetch
+git branch -r
+git branch
+git checkout -b gio-appointments origin/gio-appointments
+

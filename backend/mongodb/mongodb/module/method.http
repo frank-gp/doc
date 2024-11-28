@@ -1,0 +1,27 @@
+
+###
+POST http://localhost:3610/api/
+Content-Type: application/json
+
+{
+    "_id":"241202145652",
+    "name":"name"
+}
+
+###
+GET http://localhost:3610/api/
+
+###
+GET http://localhost:3610/api/241202145652
+
+###
+PUT http://localhost:3610/api/241202145652
+Content-Type: application/json
+
+{
+    "_id":"241202145652",
+    "name":"name updated"
+}
+
+###
+DELETE http://localhost:3610/api/241202145651

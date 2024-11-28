@@ -159,7 +159,8 @@ SendMode("Input")
 :*:get..::$_GET['']{NumpadLeft}{NumpadLeft}
 
 #b:: Run "notepad"
-#c:: Run "cmd /k cd D:\Inbox\"
+#f:: Run "cmd /k cd D:\frankgp.com\"
+#c:: Run "https://chatgpt.com"
 #t:: Run "https://translate.google.com/"
 #w:: Run "https://web.whatsapp.com/"
 #g:: Run "https://github.com/fgp555?tab=repositories"
@@ -202,7 +203,7 @@ SendMode("Input")
 
 #Numpad5::
 {
-    SendInput("git remote add origin https://github.com/fgp555/tutorial.git")
+    SendInput("git remote add origin2 https://github.com/fgp555/tutorial.git")
     return
 }
 
@@ -220,7 +221,8 @@ SendMode("Input")
 
 #Numpad9::
 {
-    SendInput("rm -rf .git && git init && git add . && git commit -m 'initial commit'")
+    SendInput("git restore . && git clean -fd")
+    ; SendInput("rm -rf .git && git init && git add . && git commit -m 'initial commit'")
     return
 }
 
@@ -240,6 +242,12 @@ SendMode("Input")
 {
     command := "winver"
     Run(A_ComSpec " /c " command)
+    return
+}
+
+#F12::
+{
+    SendInput("rm -rf .git && git init && git add . && git commit -m 'initial commit'")
     return
 }
 

@@ -1,7 +1,22 @@
 {
+  "name": "mongodb",
+  "version": "1.0.0",
+  "main": "index.js",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongodb": "^6.5.0",
-    "mongoose": "^8.3.0"
-  }
+    "mongoose": "^8.3.0",
+    "morgan": "^1.10.0"
+  },
+  "scripts": {
+    "env": "node --env-file=.env index.js",
+    "mongoose": "node --watch --env-file=.env scripts/mongoose_connect.js",
+    "mongodb": "node --watch --env-file=.env.private ./mongodb/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
