@@ -8,7 +8,7 @@
 
 ## Instalación
 
-https://docker.com Download for Windows - AMD64
+Download for Windows - AMD64 https://docker.com 
 
 ```bash
 

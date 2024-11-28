@@ -4,3 +4,7 @@ package-lock.json
 *.jpg
 *.png
 *.ignore*
+*.private*
+*.key
+*.cert
+*.pem
