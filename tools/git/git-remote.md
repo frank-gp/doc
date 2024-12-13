@@ -23,5 +23,9 @@ git remote add origin2 https://github.com/user/repo.git
 git push origin2 main
 
 # pushear todas las ramas locales
-  git push --all origin
+git push --all origin
+
+# sacar todos los archivos del staging area (es decir, deshacerlos de la etapa preparada para el commit),
+git restore --staged .
+git restore . && git clean -fd
 ```
