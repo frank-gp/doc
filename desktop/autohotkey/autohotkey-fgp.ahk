@@ -203,13 +203,13 @@ SendMode("Input")
 
 #Numpad5::
 {
-    SendInput("git remote add origin2 https://github.com/fgp555/tutorial.git")
+    SendInput("git remote add origin2 https://github.com/frank-gp/deploy-tutorial.git")
     return
 }
 
 #Numpad6::
 {
-    SendInput("git clone https://github.com/fgp555/nestjs-initial.git .")
+    SendInput("git push origin2 main --force")
     return
 }
 
