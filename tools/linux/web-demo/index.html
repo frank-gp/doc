@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple SPA Without #</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    nav {
+      background-color: #333;
+      padding: 10px;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    #app {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <a href="/home" data-link>Home</a>
+    <a href="/about" data-link>About</a>
+    <a href="/contact" data-link>Contact</a>
+  </nav>
+
+  <!-- Main Content Area -->
+  <div id="app"></div>
+
+  <script>
+    // Define your "routes" and their content
+    const routes = {
+      '/home': `<h1>Welcome to Home Page</h1><p>This is the home page of our simple SPA.</p>`,
+      '/about': `<h1>About Us</h1><p>Learn more about our mission and vision.</p>`,
+      '/contact': `<h1>Contact Us</h1><p>Reach out to us through email or phone.</p>`
+    };
+
+    // Function to handle navigation and update content
+    function navigateTo(path) {
+      history.pushState({}, "", path); // Update the URL without reloading
+      updateContent(path); // Load the corresponding content
+    }
+
+    // Function to update content based on the current path
+    function updateContent(path) {
+      const appDiv = document.getElementById('app');
+      appDiv.innerHTML = routes[path] || `<h1>404</h1><p>Page not found!</p>`;
+    }
+
+    // Event listener for navigation clicks
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('[data-link]');
+      if (link) {
+        event.preventDefault(); // Prevent the default link behavior
+        navigateTo(link.getAttribute('href')); // Navigate to the new path
+      }
+    });
+
+    // Handle back/forward navigation
+    window.onpopstate = () => updateContent(window.location.pathname);
+
+    // Load the initial route on page load
+    window.onload = () => updateContent(window.location.pathname || '/home');
+  </script>
+</body>
+</html>

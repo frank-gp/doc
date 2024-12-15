@@ -160,10 +160,10 @@ SendMode("Input")
 
 #b:: Run "notepad"
 #f:: Run "cmd /k cd D:\frankgp.com\"
-#c:: Run "https://chatgpt.com"
+#c:: Run "https://github.com/copilot"
 #t:: Run "https://translate.google.com/"
 #w:: Run "https://web.whatsapp.com/"
-#g:: Run "https://github.com/fgp555?tab=repositories"
+#g:: Run "https://chatgpt.com"
 
 #NumpadDot::
 {
@@ -203,13 +203,13 @@ SendMode("Input")
 
 #Numpad5::
 {
-    SendInput("git remote add origin2 https://github.com/fgp555/tutorial.git")
+    SendInput("git remote add origin2 https://github.com/frank-gp/deploy-tutorial.git")
     return
 }
 
 #Numpad6::
 {
-    SendInput("git clone https://github.com/fgp555/nestjs-initial.git .")
+    SendInput("git push origin2 main --force")
     return
 }
 
@@ -247,7 +247,7 @@ SendMode("Input")
 
 #F12::
 {
-    SendInput("rm -rf .git && git init && git add . && git commit -m 'initial commit'")
+    SendInput("rm -rf .git && git init && git add . && git commit -m 'initial_commit'")
     return
 }
 
