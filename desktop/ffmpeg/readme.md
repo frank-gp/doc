@@ -1,3 +1,25 @@
+## Download FFMPEG
+
+https://www.ffmpeg.org/download.html
+
+## Download FFMPEG install-ffmpeg.zip
+
+https://mega.nz/folder/rPIRxbjJ#b2LbcriqBfiRnXTpDz5Qpg/folder/bCpF3SjJ
+
+## FFMPEG Commands
+
+```sh
+ffmpeg -i input.mp4 -ab 256k -vn -c:a copy output.m4a
+
+
+ffmpeg -i 01.jpg -c:v libwebp -lossless 1 output.webp
+ffmpeg -i 01.jpg -c:v libwebp output.webp
+
+
+ffmpeg -i input.mp4 output.mp3
+```
+
+```sh
 @REM ========== Documentation... ==========
 @REM -vn === no video
 @REM -s === size (ratio)
@@ -59,7 +81,7 @@ ffmpeg -framerate 30 -pattern_type glob -i 'image.jpg' \
 ffmpeg -framerate 1 -i image.jpg -i A20_01_Pro.mp3 output.mp4
 ffmpeg -framerate 1 -i image.jpg -i 'audioaaa.mp3' -t 00:03:00 output.mp4
 ffmpeg -i image.jpg -t 00:03:00 image.mp4
- 
+
 ffmpeg -i image.jpg -i audio.mp3 -b:v 2M -b:a 192k output.mp4
 
 ffmpeg -i audio5.mp3 -i image.jpg output.mp4
@@ -159,7 +181,7 @@ ffmpeg -i in.mp4 -vf ass=smart.ass out.mp4
 @REM ========== -filter ==========
 ffmpeg -i monkey.mp4 -filter:a "volume=0.5" monkey-volumen.mp4
 ffmpeg -i monkey.mp4 -filter:v "crop=1280:720:0:0" -t 00:01:00 monkey.mkv
- 
+
 
 
 @REM ========== reemplace audio... ==========
@@ -185,3 +207,4 @@ ffmpeg -i monkey.mp4 -i monkey.jpg -filter_complex "overlay=50:50" output.mkv
 
 ffmpeg -i image.jpg -i music.mp3 output.mp4
 
+```
