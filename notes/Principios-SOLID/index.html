@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section>
+      <div id="some">bla bla bla</div>
+      <button onclick="titleStyle.changeColor('#f00', document.getElementById('some'))">Red</button>
+      <button onclick="titleStyle.changeColor('#00f', document.getElementById('some'))">Blue</button>
+      <button onclick="titleStyle.changeBold(document.getElementById('some'))">Bold</button>
+      <button onclick="titleStyle.changeBorder(document.getElementById('some'))">Border</button>
+    </section>
+    <hr />
+    <h2>heading 2</h2>
+    <section>
+      <button onclick="loader.load()">Cargar</button>
+      <button onclick="loader.clear()">Eliminar</button>
+      <div id="content"></div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
