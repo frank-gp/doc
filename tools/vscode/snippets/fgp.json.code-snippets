@@ -1,5 +1,5 @@
 {
-  // https://frankgp.com/app/snippet/
+  // https://frank-gp.github.io/app/snippet/
   // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
   // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
   // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
@@ -39,7 +39,7 @@
     "scope": "javascript",
     "prefix": "fgpConsole",
     "body": [
-      "import 'https://frankgp.com/lib/console.js';\n\nconsole.log('TEST');"
+      "import 'https://frank-gp.github.io/lib/console.js';\n\nconsole.log('TEST');"
     ],
     "description": "fgpConsole"
   },
@@ -99,7 +99,7 @@
     "scope": "html",
     "prefix": "fgpDev",
     "body": [
-      "<!DOCTYPE html>\n<html lang='en'>\n  <head>\n    <meta charset='UTF-8' />\n    <meta name='viewport' content='width=device-width, initial-scale=1.0' />\n    <script src=\"https://frankgp.com/component/layout.js\" type=\"module\"></script>\n    <title>Frank GP — Developer</title>\n  </head>\n\n  <body>\n    <style>\n\n    </style>\n\n    \n\n    <script>\n\n    </script>\n  </body>\n</html>"
+      "<!DOCTYPE html>\n<html lang='en'>\n  <head>\n    <meta charset='UTF-8' />\n    <meta name='viewport' content='width=device-width, initial-scale=1.0' />\n    <script src=\"https://frank-gp.github.io/component/layout.js\" type=\"module\"></script>\n    <title>Frank GP — Developer</title>\n  </head>\n\n  <body>\n    <style>\n\n    </style>\n\n    \n\n    <script>\n\n    </script>\n  </body>\n</html>"
     ],
     "description": "fgpDev"
   },
@@ -115,7 +115,7 @@
     "scope": "html",
     "prefix": "fgpDeployBasic",
     "body": [
-      "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <script src=\"https://frankgp.com/component/stat.js\" type=\"module\"></script>\n    <script src=\"https://frankgp.com/component/layout.js\" type=\"module\"></script>\n    <script src=\"https://frankgp.com/component/loader.js\"></script>\n    <title>Frank GP | Developer</title>\n  </head>\n  <body>\n    ${1:<main>\n      <h2>Frank GP | Developer</h2>\n    </main>}\n  </body>\n</html>"
+      "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <script src=\"https://frank-gp.github.io/component/stat.js\" type=\"module\"></script>\n    <script src=\"https://frank-gp.github.io/component/layout.js\" type=\"module\"></script>\n    <script src=\"https://frank-gp.github.io/component/loader.js\"></script>\n    <title>Frank GP | Developer</title>\n  </head>\n  <body>\n    ${1:<main>\n      <h2>Frank GP | Developer</h2>\n    </main>}\n  </body>\n</html>"
     ],
     "description": "fgpDeployBasic"
   },
@@ -123,7 +123,7 @@
     "scope": "html",
     "prefix": "fgpDeploy",
     "body": [
-      "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://fgp.one/favicon.webp\" sizes=\"256x256\" />\n    <meta name=\"theme-color\" content=\"#347\" />\n    <meta name=\"author\" content=\"Frank GP\" />\n    <meta name=\"site_locale\" content=\"en_PE\" />\n\n    <!-- CSS -->\n    <link rel=\"stylesheet\" href=\"https://frankgp.com/icon/icomoon/style.css\" />\n    <link rel=\"stylesheet\" href=\"https://frankgp.com/component/global.css\" />\n\n    <!-- component -->\n    <script src=\"https://frankgp.com/component/header.js\" type=\"module\"></script>\n    <script src=\"https://frankgp.com/component/footer.js\" type=\"module\"></script>\n    <script src=\"https://frankgp.com/component/stat.js\" type=\"module\"></script>\n    <!-- <script src=\"https://frankgp.com/component/social.js\" defer></script> -->\n    <!-- <script src=\"https://frankgp.com/component/contact.js\" defer></script> -->\n\n    <!-- lib -->\n    <!-- <script src=\"https://frankgp.com/lib/js/clipboard.js\" defer></script> -->\n    <!-- <script src=\"https://frankgp.com/lib/js/highlight.js\"></script> -->\n    <!-- <script src=\"https://frankgp.com/lib/js/youtube-embed.js\"></script> -->\n\n    <!-- SEO -->\n    <title>Frank GP — Android Developer</title>\n    <meta name=\"robots\" content=\"index\" />\n    <meta name=\"description\" content=\"Research, design and development\" />\n\n    <!-- Open Graph tags -->\n    <meta property=\"og:title\" content=\"Frank GP — Android Developer\" />\n    <meta property=\"og:description\" content=\"Research, design and development\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:url\" content=\"https://frankgp.com\" />\n    <meta property=\"og:image\" content=\"https://fgp.one/fb-cover.webp\" />\n    <meta property=\"og:image:width\" content=\"600\" />\n    <meta property=\"og:image:height\" content=\"314\" />\n    <meta property=\"fb:app_id\" content=\"1526445401046904\" />\n  </head>\n\n  <body>\n    <script src=\"https://frankgp.com/component/loader.js\"></script>\n\n    <main>\n      <h2>main</h2>\n      <img src=\"https://source.unsplash.com/1080x1080\" alt=\"\" />\n    </main>\n  </body>\n</html>"
+      "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"icon\" href=\"https://fgp.one/favicon.webp\" sizes=\"256x256\" />\n    <meta name=\"theme-color\" content=\"#347\" />\n    <meta name=\"author\" content=\"Frank GP\" />\n    <meta name=\"site_locale\" content=\"en_PE\" />\n\n    <!-- CSS -->\n    <link rel=\"stylesheet\" href=\"https://frank-gp.github.io/icon/icomoon/style.css\" />\n    <link rel=\"stylesheet\" href=\"https://frank-gp.github.io/component/global.css\" />\n\n    <!-- component -->\n    <script src=\"https://frank-gp.github.io/component/header.js\" type=\"module\"></script>\n    <script src=\"https://frank-gp.github.io/component/footer.js\" type=\"module\"></script>\n    <script src=\"https://frank-gp.github.io/component/stat.js\" type=\"module\"></script>\n    <!-- <script src=\"https://frank-gp.github.io/component/social.js\" defer></script> -->\n    <!-- <script src=\"https://frank-gp.github.io/component/contact.js\" defer></script> -->\n\n    <!-- lib -->\n    <!-- <script src=\"https://frank-gp.github.io/lib/js/clipboard.js\" defer></script> -->\n    <!-- <script src=\"https://frank-gp.github.io/lib/js/highlight.js\"></script> -->\n    <!-- <script src=\"https://frank-gp.github.io/lib/js/youtube-embed.js\"></script> -->\n\n    <!-- SEO -->\n    <title>Frank GP — Android Developer</title>\n    <meta name=\"robots\" content=\"index\" />\n    <meta name=\"description\" content=\"Research, design and development\" />\n\n    <!-- Open Graph tags -->\n    <meta property=\"og:title\" content=\"Frank GP — Android Developer\" />\n    <meta property=\"og:description\" content=\"Research, design and development\" />\n    <meta property=\"og:type\" content=\"website\" />\n    <meta property=\"og:url\" content=\"https://frank-gp.github.io\" />\n    <meta property=\"og:image\" content=\"https://fgp.one/fb-cover.webp\" />\n    <meta property=\"og:image:width\" content=\"600\" />\n    <meta property=\"og:image:height\" content=\"314\" />\n    <meta property=\"fb:app_id\" content=\"1526445401046904\" />\n  </head>\n\n  <body>\n    <script src=\"https://frank-gp.github.io/component/loader.js\"></script>\n\n    <main>\n      <h2>main</h2>\n      <img src=\"https://source.unsplash.com/1080x1080\" alt=\"\" />\n    </main>\n  </body>\n</html>"
     ],
     "description": "fgpDeploy"
   },
@@ -187,7 +187,7 @@
     "scope": "html",
     "prefix": "fgpIllustrator",
     "body": [
-      "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <script src=\"https://frankgp.com/stats/send.js\" type=\"module\"></script>\n    <script src=\"https://enyeinnovation.github.io/illustrator/web.js\" defer></script>\n  </head>\n  <body></body>\n</html>"
+      "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <script src=\"https://frank-gp.github.io/stats/send.js\" type=\"module\"></script>\n    <script src=\"https://enyeinnovation.github.io/illustrator/web.js\" defer></script>\n  </head>\n  <body></body>\n</html>"
     ],
     "description": "fgpIllustrator"
   },
@@ -195,7 +195,7 @@
     "scope": "html",
     "prefix": "fgp404",
     "body": [
-      "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"preload\" as=\"image\" id=\"loaderImg\" href=\"/favicon.ico\" />\n    <script src=\"https://frankgp.com/component/stat.js\"></script>\n    <title>404 Not Found</title>\n    <script>\n      var data = {\n        example: \"https://example.com/\",\n        whatsapp: \"http://wa.me/51993812588?text=Hola,%20Fou%20De%20Toi\",\n      };\n    </script>\n    <script src=\"https://frankgp.com/component/404.js\" type=\"module\"></script>\n    <script src=\"https://frankgp.com/component/loader.js\"></script>\n    <script src=\"https://frankgp.com/component/layout.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <main></main>\n  </body>\n</html>"
+      "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link rel=\"preload\" as=\"image\" id=\"loaderImg\" href=\"/favicon.ico\" />\n    <script src=\"https://frank-gp.github.io/component/stat.js\"></script>\n    <title>404 Not Found</title>\n    <script>\n      var data = {\n        example: \"https://example.com/\",\n        whatsapp: \"http://wa.me/51993812588?text=Hola,%20Fou%20De%20Toi\",\n      };\n    </script>\n    <script src=\"https://frank-gp.github.io/component/404.js\" type=\"module\"></script>\n    <script src=\"https://frank-gp.github.io/component/loader.js\"></script>\n    <script src=\"https://frank-gp.github.io/component/layout.js\" type=\"module\"></script>\n  </head>\n  <body>\n    <main></main>\n  </body>\n</html>"
     ],
     "description": "fgp404"
   },
@@ -203,7 +203,7 @@
     "scope": "html",
     "prefix": "fgpLayout",
     "body": [
-      "<script src=\"https://frankgp.com/component/layout.js\" type=\"module\"></script>"
+      "<script src=\"https://frank-gp.github.io/component/layout.js\" type=\"module\"></script>"
     ],
     "description": "fgpLayout"
   },
@@ -211,7 +211,7 @@
     "scope": "html",
     "prefix": "fgpHead",
     "body": [
-      "<!-- CSS -->\n    <link rel=\"stylesheet\" href=\"https://frankgp.com/icon/icomoon/style.css\" />\n    <link rel=\"stylesheet\" href=\"https://frankgp.com/component/global.css\" />\n\n    <!-- component -->\n    <script src=\"https://frankgp.com/component/stat.js\" type=\"module\"></script>\n    <script src=\"https://frankgp.com/component/layout.js\" type=\"module\"></script>\n    <!--  body  -->\n    <script src=\"https://frankgp.com/component/loader.js\"></script>"
+      "<!-- CSS -->\n    <link rel=\"stylesheet\" href=\"https://frank-gp.github.io/icon/icomoon/style.css\" />\n    <link rel=\"stylesheet\" href=\"https://frank-gp.github.io/component/global.css\" />\n\n    <!-- component -->\n    <script src=\"https://frank-gp.github.io/component/stat.js\" type=\"module\"></script>\n    <script src=\"https://frank-gp.github.io/component/layout.js\" type=\"module\"></script>\n    <!--  body  -->\n    <script src=\"https://frank-gp.github.io/component/loader.js\"></script>"
     ],
     "description": "fgpHead"
   },
@@ -219,7 +219,7 @@
     "scope": "html",
     "prefix": "fgpStat",
     "body": [
-      "<script src=\"https://frankgp.com/component/stat.js\" type=\"module\"></script>"
+      "<script src=\"https://frank-gp.github.io/component/stat.js\" type=\"module\"></script>"
     ],
     "description": "fgpStat"
   },
@@ -227,7 +227,7 @@
     "scope": "html",
     "prefix": "fgpLoader",
     "body": [
-      "<script src=\"https://frankgp.com/component/loader.js\"></script>"
+      "<script src=\"https://frank-gp.github.io/component/loader.js\"></script>"
     ],
     "description": "fgpLoader"
   },
@@ -251,7 +251,7 @@
     "scope": "javascript",
     "prefix": "fgpImport",
     "body": [
-      "/* commonjs */\n        // import(\"https://frankgp.com/lib/console.js\");\n\n        /* <script type=\"module\"> */\n\n        import \"https://frankgp.com/lib/console.js\";\n        console.log(\"console.log\");"
+      "/* commonjs */\n        // import(\"https://frank-gp.github.io/lib/console.js\");\n\n        /* <script type=\"module\"> */\n\n        import \"https://frank-gp.github.io/lib/console.js\";\n        console.log(\"console.log\");"
     ],
     "description": "fgpImport"
   },
@@ -331,7 +331,7 @@
     "scope": "html",
     "prefix": "fgp_highlight",
     "body": [
-      "<script src=\"https://frankgp.com/lib/highlight.js\" type=\"module\"></script>"
+      "<script src=\"https://frank-gp.github.io/lib/highlight.js\" type=\"module\"></script>"
     ],
     "description": "fgp_highlight"
   },

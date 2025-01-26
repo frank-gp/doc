@@ -1,5 +1,5 @@
 app online para generer snippets
-https://frankgp.com/app/snippet/
+https://frank-gp.github.io/app/snippet/
 
 puedes copiar el `fgp.json.code-snippets` al siguiente directorio
 

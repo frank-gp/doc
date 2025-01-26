@@ -17,7 +17,7 @@ function checkWebsiteAvailability($url) {
 }
 
 // URL de tu sitio web
-$websiteURL = "https://frankgp.com/";
+$websiteURL = "https://frank-gp.github.io/";
 
 // Verificar la disponibilidad del sitio web
 if (checkWebsiteAvailability($websiteURL)) {

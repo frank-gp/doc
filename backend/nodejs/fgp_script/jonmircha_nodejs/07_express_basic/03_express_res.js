@@ -24,7 +24,7 @@ app.get("/template", (req, res) => {
 });
 
 app.get("/redirect", (req, res) => {
-    res.redirect(301, "https://frankgp.com/")
+    res.redirect(301, "https://frank-gp.github.io/")
 });
 
 app.listen(8080, () => console.log("web http://localhost:3000"));

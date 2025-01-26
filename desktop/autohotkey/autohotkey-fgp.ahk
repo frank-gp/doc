@@ -159,7 +159,7 @@ SendMode("Input")
 :*:get..::$_GET['']{NumpadLeft}{NumpadLeft}
 
 #b:: Run "notepad"
-#f:: Run "cmd /k cd D:\frankgp.com\"
+#f:: Run "cmd /k cd D:\frank-gp.github.io\"
 #c:: Run "https://github.com/copilot"
 #t:: Run "https://translate.google.com/"
 #w:: Run "https://web.whatsapp.com/"
