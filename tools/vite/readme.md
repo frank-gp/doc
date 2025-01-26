@@ -1,3 +1,4 @@
+```sh
 
 # Run Vite Without Install
 npx vite

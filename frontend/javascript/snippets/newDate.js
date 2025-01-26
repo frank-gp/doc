@@ -1,14 +1,14 @@
 const date = new Date().toISOString().replace(/-/g, "").replace(/T/g, "-").slice(0, 14); //20241201-14:50
 
-console.log(new Date().toISOString()); // 2024-10-30T16:49:17.529Z
-console.log(new Date().toISOString().slice(0, 10)); // 2024-10-30
-console.log(new Date().toISOString().split("T")[0]); // 2024-10-30
-console.log(new Date().toISOString().split(":")[0]); // 2024-10-30T16
-console.log(new Date().toISOString().replace(/:/g, ".")); // 2024-10-30T16.49.17.536Z
-console.log(new Date().toISOString().replace(/[:.]/g, "-")); // 2024-10-30T16-49-17-536Z
-console.log(new Date().toISOString().replace(/[:.\-TZ]/g, "")); //20241030165528027
+// console.log(new Date().toISOString()); // 2024-10-30T16:49:17.529Z
+// console.log(new Date().toISOString().slice(0, 10)); // 2024-10-30
+// console.log(new Date().toISOString().split("T")[0]); // 2024-10-30
+// console.log(new Date().toISOString().split(":")[0]); // 2024-10-30T16
+// console.log(new Date().toISOString().replace(/:/g, ".")); // 2024-10-30T16.49.17.536Z
+// console.log(new Date().toISOString().replace(/[:.]/g, "-")); // 2024-10-30T16-49-17-536Z
+// console.log(new Date().toISOString().replace(/[:.\-TZ]/g, "")); //20241030165528027
 const uniqueSuffix2 = new Date().toISOString().replace(/[^0-9]/g, ""); //20241102013616943
-console.log("uniqueSuffix2: ", uniqueSuffix2);
+// console.log("uniqueSuffix2: ", uniqueSuffix2);
 console.log(
   new Date()
     .toISOString()
@@ -16,22 +16,31 @@ console.log(
     .slice(2, -3)
 ); //241101120023
 
-console.log(new Date().toISOString().replace(":", "-").replace(":", "-").replace(".", "-")); // 2024-10-30T16-49-17-536Z
+const backupFile = `mysql-${new Date()
+  //
+  .toISOString()
+  .replace(/[:.Z]/g, "")
+  .replace("T", "-")
+  .slice(0, -3)}.sql`;
+
+console.log(backupFile);
+
+// console.log(new Date().toISOString().replace(":", "-").replace(":", "-").replace(".", "-")); // 2024-10-30T16-49-17-536Z
 
 const localTime = new Date().toLocaleTimeString();
-console.log(localTime); // Ejemplo de salida: "15:53:30"
+// console.log(localTime); // Ejemplo de salida: "15:53:30"
 
 const localDateTime = new Date(new Date().getTime() - new Date().getTimezoneOffset() * 60000).toISOString();
-console.log(localDateTime); // Ejemplo de salida: "2024-10-30T16:49:17.529"
-console.log(Date.now());
-console.log(new Date().getTime());
-console.log(new Date().getTimezoneOffset() * 60000);
+// console.log(localDateTime); // Ejemplo de salida: "2024-10-30T16:49:17.529"
+// console.log(Date.now());
+// console.log(new Date().getTime());
+// console.log(new Date().getTimezoneOffset() * 60000);
 const fechaHoraLocal = new Date();
-console.log(fechaHoraLocal);
+// console.log(fechaHoraLocal);
 const fechaLocal = new Date().toLocaleDateString();
-console.log(fechaLocal);
+// console.log(fechaLocal);
 const horaLocal = new Date().toLocaleString("es-PE", {});
-console.log(horaLocal);
+// console.log(horaLocal);
 
 const fechaCompleta = new Date().toLocaleString("es-PE", {
   year: "numeric",
