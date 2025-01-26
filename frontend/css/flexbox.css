@@ -1,0 +1,14 @@
+.card_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .card_item {
+    width: 100%;
+    aspect-ratio: 9/16;
+    background-color: tomato;
+    flex: 0 1 16rem; 
+    padding: 1rem;
+    max-width: 20rem;
+  }
+  
