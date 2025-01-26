@@ -1,3 +1,5 @@
+```sh
+
 node --watch app.js
 
 # "dev": "node --watch --env-file=.env app.js"
@@ -17,3 +19,4 @@ npm update vite
 
 # to update globally installed packages
 npm update -g
+```

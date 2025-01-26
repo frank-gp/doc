@@ -1,0 +1,38 @@
+@token=eyJhbGci
+###
+# @name alluser
+# GET {{$dotenv API_URL}}/users
+GET https://jsonplaceholder.typicode.com/users
+Authorization: Bearer {{token}}
+
+
+###
+@alluserHeader={{alluser.response.headers.Content-Type}}
+POST {{$dotenv API_URL}}/users
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    //Request Variables
+    "name": "{{alluserHeader}}",
+    // .env Variables
+    "API_URL": "{{$dotenv API_URL}}",
+    // System Variables
+    "USERNAME": "{{$processEnv USERNAME}}",
+    "PORT": "{{$processEnv PORT}}",
+    "OS": "{{$processEnv OS}}",
+    "PASSWORD": "{{$processEnv PASSWORD}}",
+    "TOKEN": "{{$processEnv TOKEN}}"
+}
+###
+
+
+### Prompt Variables
+# @prompt username
+POST {{$dotenv API_URL}}/users
+Content-Type: application/json
+
+{
+    //Prompt Variables
+    "username": "{{username}}"
+}

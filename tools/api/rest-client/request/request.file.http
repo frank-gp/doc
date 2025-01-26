@@ -1,0 +1,40 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNzM4MGJlOS0xMmRhLTRkYWMtODhiOC0zNmFkZTVhZGQxZTAiLCJpZCI6IjI3MzgwYmU5LTEyZGEtNGRhYy04OGI4LTM2YWRlNWFkZDFlMCIsImVtYWlsIjoidXNlcjFAZ21haWwuY29tIiwicm9sZXMiOlsiYWRtaW4iXSwiaWF0IjoxNzIxNzk2Njc2LCJleHAiOjE3MjI2NjA2NzZ9.fAz381sJ44eh3-TdaFTwHcW0i1Qs0nWOfJpcY8yVBV4
+
+### test ###
+GET http://localhost:3000/files
+
+###
+POST http://localhost:3000/files/uploadImage/31c1b214-60af-4280-91a2-b3974a16701f
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="image"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< binary data >
+--boundary123--
+
+###
+POST http://localhost:3000/files/test
+Authorization: Bearer {{token}}
+Content-Type: multipart/form-data; boundary=boundary123
+
+--boundary123
+Content-Disposition: form-data; name="image"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< binary data >
+--boundary123--
+
+
+###
+POST http://localhost:4000/upload
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="file"; filename="test.txt"
+Content-Type: text/plain
+
+Hello, this is a test file.
+--MyBoundary--
