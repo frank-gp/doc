@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cloudflare Turnstile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2>Cloudflare Turnstile</h2>
+        <form onsubmit="handleLogin(event)">
+          <input type="email" id="email" placeholder="Email" value="test@demo.com" required />
+          <input type="password" id="password" placeholder="Password" value="QWER_123456" required />
+
+          <div
+            class="cf-turnstile"
+            data-sitekey="3x00000000000000000000FF"
+            data-callback="onCaptchaSuccess"
+            data-theme="light"
+            data-language="es"
+          ></div>
+
+          <button type="submit">Iniciar sesión</button>
+        </form>
+      </section>
+    </main>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script>
+      let captchaToken = "";
+
+      function onCaptchaSuccess(token) {
+        captchaToken = token;
+        console.log("captchaToken", captchaToken);
+      }
+
+      function handleLogin(e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        if (!captchaToken) {
+          alert("Completa el captcha primero");
+          return;
+        }
+
+        fetch("http://localhost:3000/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password, token: captchaToken }),
+        })
+          .then((res) => res.json())
+          .then((data) => alert(data.message))
+          .catch((err) => console.error(err));
+      }
+    </script>
+  </body>
+</html>

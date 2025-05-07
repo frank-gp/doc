@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cloudflare Turnstile</title>
+  </head>
+  <body>
+    <h2>Cloudflare Turnstile</h2>
+
+    <div
+      class="cf-turnstile"
+      data-sitekey="3x00000000000000000000FF"
+      data-callback="javascriptCallback"
+      data-theme="light"
+      data-size="normal"
+      data-language="es"
+    ></div>
+
+    <button id="verifyBtn" onclick="submitForm()" disabled>Verificar</button>
+    <br />
+    <textarea name="" id="output_turnstileToken"></textarea>
+
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+    <script>
+      let turnstileToken = "";
+
+      function javascriptCallback(token) {
+        console.log("Token generado por Turnstile:", token);
+        turnstileToken = token;
+        document.getElementById("output_turnstileToken").value = token;
+        document.getElementById("verifyBtn").disabled = false; // Activar botón
+      }
+
+      function submitForm() {
+        if (!turnstileToken) {
+          alert("Por favor completa el captcha.");
+          return;
+        }
+
+        fetch("http://localhost:3000/validate-turnstile", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ token: turnstileToken }),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            alert(data.message);
+          })
+          .catch((err) => {
+            console.error("Error en la verificación:", err);
+          });
+      }
+    </script>
+  </body>
+</html>
