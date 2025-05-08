@@ -12,7 +12,8 @@ Cloudflare Turnstile
 ### Install React Turnstile
 
 ```sh
-npm install @cloudflare/turnstile-react
+npm i @marsidev/react-turnstile
+
 ```
 
 ### React | Turnstile Docs | Custom props
