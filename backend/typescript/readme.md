@@ -1,4 +1,3 @@
-
 ## TypeScript
 
 https://github.com/fgp555/nodejs-typescript
@@ -21,6 +20,11 @@ node --watch dist/index.js
 npm run build
 npm run serve
 
+# build file
+npx tsc index.ts
+
+npm install -g ts-node-dev
+ts-node-dev --respawn resume/monolito_homework_simple.ts
 
 ```
 

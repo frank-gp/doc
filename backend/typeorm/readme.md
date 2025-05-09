@@ -1,18 +1,32 @@
 # typeorm
 
 - https://typeorm.io/#quick-start
-- https://www.postgresql.org/download/
-- https://fgp.one/postgresql.md
+- https://www.postgresql.org/download
+
+- https://fgp.one/postgres
+- https://fgp.one/typescript
 
 ## Command
 
 ```bash
 npx typeorm init
 
+npx typeorm init --database mysql --express
 npx typeorm init --database postgress --express
 
-npx ts-node-dev --respawn src/index.ts
 npx nodemon
+npx nodemon --exec "npx ts-node" ./test.ts
+
+node --watch ./test.ts
+
+npm install -D ts-node typescript
+npx ts-node ./server.ts
+
+npm install -g ts-node-dev
+npx ts-node-dev --respawn src/index.ts
+
+npx tsc temp.ts
+
 ```
 
 ### package.json
@@ -37,8 +51,11 @@ npx nodemon
     "typeorm": "0.3.20"
   },
   "scripts": {
-    "start": "ts-node-dev --respawn src/index.ts",
-    "typeorm": "typeorm-ts-node-commonjs"
+    "start": "node build/index.js",
+    "dev": "ts-node src/index.ts",
+    "start:dev": "ts-node-dev --respawn src/index.ts",
+    "nodemon": "npx nodemon",
+    "build": "tsc"
   }
 }
 ```
@@ -48,8 +65,8 @@ npx nodemon
 ```json
 {
   "compilerOptions": {
-    "lib": ["es5", "es6"],
-    "target": "es5",
+    "lib": ["es2021"],
+    "target": "es2021",
     "module": "commonjs",
     "moduleResolution": "node",
     "outDir": "./build",
@@ -86,10 +103,10 @@ export const AppDataSource = new DataSource({
   password: "admin",
   database: "postgres",
   synchronize: true,
+  dropSchema: true,
   logging: false,
   entities: [ProductEntity],
   migrations: [],
   subscribers: [],
-  dropSchema: true,
 });
 ```
