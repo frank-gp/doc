@@ -1,3 +1,13 @@
+const toLocaleString = new Date().toLocaleString(); // Obtener la hora de inicio del servidor
+const toUTCString = new Date().toUTCString();
+const toISOString = new Date().toISOString();
+
+/* 
+🕰 toLocaleString: 5/12/2025, 4:35:11 AM
+🕰 toUTCString___: Mon, 12 May 2025 09:35:11 GMT
+🕰 toISOString___: 2025-05-12T09:35:11.585Z
+ */
+
 const date = new Date().toISOString().replace(/-/g, "").replace(/T/g, "-").slice(0, 14); //20241201-14:50
 
 // console.log(new Date().toISOString()); // 2024-10-30T16:49:17.529Z
