@@ -1,30 +1,25 @@
-const toLocaleString = new Date().toLocaleString(); // Obtener la hora de inicio del servidor
-const toUTCString = new Date().toUTCString();
-const toISOString = new Date().toISOString();
+new Date("2025-05-13T15:39:39.035Z");
 
-/* 
-🕰 toLocaleString: 5/12/2025, 4:35:11 AM
-🕰 toUTCString___: Mon, 12 May 2025 09:35:11 GMT
-🕰 toISOString___: 2025-05-12T09:35:11.585Z
- */
+new Date().toLocaleString("en-CA", { timeZone: "America/Lima" }); //  2025-05-13, 11:06:56 a.m.
+new Date().toLocaleString("en-CA"); //                                2025-05-13, 11:06:56 a.m.
+new Date().toLocaleString("en-CA", { timeZone: "UTC" }); //           2025-05-13, 4:06:56 p.m.
 
-const date = new Date().toISOString().replace(/-/g, "").replace(/T/g, "-").slice(0, 14); //20241201-14:50
+new Date().toLocaleString(); //   5/12/2025, 4:35:11 AM
+new Date().toUTCString(); //      Mon, 12 May 2025 09:35:11 GMT
+new Date().toISOString(); //      2025-05-12T09:35:11.585Z
 
-// console.log(new Date().toISOString()); // 2024-10-30T16:49:17.529Z
-// console.log(new Date().toISOString().slice(0, 10)); // 2024-10-30
-// console.log(new Date().toISOString().split("T")[0]); // 2024-10-30
-// console.log(new Date().toISOString().split(":")[0]); // 2024-10-30T16
-// console.log(new Date().toISOString().replace(/:/g, ".")); // 2024-10-30T16.49.17.536Z
-// console.log(new Date().toISOString().replace(/[:.]/g, "-")); // 2024-10-30T16-49-17-536Z
-// console.log(new Date().toISOString().replace(/[:.\-TZ]/g, "")); //20241030165528027
-const uniqueSuffix2 = new Date().toISOString().replace(/[^0-9]/g, ""); //20241102013616943
-// console.log("uniqueSuffix2: ", uniqueSuffix2);
-console.log(
-  new Date()
-    .toISOString()
-    .replace(/[:.\-TZ]/g, "")
-    .slice(2, -3)
-); //241101120023
+new Date().toISOString(); //                            2024-10-30T16:49:17.529Z
+new Date().toISOString().slice(0, 10); //               2024-10-30
+new Date().toISOString().split("T")[0]; //              2024-10-30
+new Date().toISOString().split(":")[0]; //              2024-10-30T16
+new Date().toISOString().replace(/:/g, "."); //         2024-10-30T16.49.17.536Z
+new Date().toISOString().replace(/[:.]/g, "-"); //      2024-10-30T16-49-17-536Z
+new Date().toISOString().replace(/[:.\-TZ]/g, ""); //   20241030165528027
+new Date().toISOString().replace(/[^0-9]/g, ""); //     20241102013616943
+
+new Date().toISOString().replace(/-/g, "").replace(/T/g, "-").slice(0, 14); //  20241201-14:50
+
+new Date().toISOString().replace(/[:.\-TZ]/g, "").slice(2, -3); //241101120023
 
 const backupFile = `mysql-${new Date()
   //
