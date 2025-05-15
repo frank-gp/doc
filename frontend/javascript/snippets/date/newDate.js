@@ -1,4 +1,7 @@
-new Date("2025-05-13T15:39:39.035Z");
+new Date().getTime(); //                                1747275957844
+new Date(1711062205984); //                             2024-03-21T23:03:25.984Z
+new Date(); //                                          2025-05-15T02:22:15.392Z
+new Date("2025-05-13T15:39:39.035Z"); //                2025-05-13T15:39:39.035Z
 
 new Date().toLocaleString("en-CA", { timeZone: "America/Lima" }); //  2025-05-13, 11:06:56 a.m.
 new Date().toLocaleString("en-CA"); //                                2025-05-13, 11:06:56 a.m.
@@ -19,7 +22,10 @@ new Date().toISOString().replace(/[^0-9]/g, ""); //     20241102013616943
 
 new Date().toISOString().replace(/-/g, "").replace(/T/g, "-").slice(0, 14); //  20241201-14:50
 
-new Date().toISOString().replace(/[:.\-TZ]/g, "").slice(2, -3); //241101120023
+new Date()
+  .toISOString()
+  .replace(/[:.\-TZ]/g, "")
+  .slice(2, -3); //241101120023
 
 const backupFile = `mysql-${new Date()
   //
@@ -28,7 +34,7 @@ const backupFile = `mysql-${new Date()
   .replace("T", "-")
   .slice(0, -3)}.sql`;
 
-console.log(backupFile);
+// console.log(backupFile);
 
 // console.log(new Date().toISOString().replace(":", "-").replace(":", "-").replace(".", "-")); // 2024-10-30T16-49-17-536Z
 

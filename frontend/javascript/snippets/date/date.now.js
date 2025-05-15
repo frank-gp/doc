@@ -1,8 +1,4 @@
-new Date(1711062205984);
-
-let newDate_getTime_ = new Date().getTime();
-// console.log(newDate_getTime_);
-//1687200961827
+Date.now(); //                 1747275870048
 
 // Get the current timestamp
 const timestamp = Date.now();
@@ -256,10 +252,10 @@ const formatoFechaHora = (fechaHora) => {
 };
 
 // Mostrar fecha y hora en cada zona horaria, incluyendo la hora de la reunión
-console.log("Fecha y hora actual en UTC:", fechaHoraActualUTC);
-console.log("Fecha y hora actual en Perú:", formatoFechaHora(fechaHoraActualPeru));
-console.log("Fecha y hora actual en España:", formatoFechaHora(fechaHoraActualEspana));
-console.log("Hora de la reunión en UTC:", horaReunion.toUTCString());
-console.log("Hora de la reunión en Perú:", formatoFechaHora(horaReunion));
-horaReunion.setUTCHours(horaReunion.getUTCHours() + 7); // Ajustar a España
-console.log("Hora de la reunión en España:", formatoFechaHora(horaReunion));
+// console.log("Fecha y hora actual en UTC:", fechaHoraActualUTC);
+// console.log("Fecha y hora actual en Perú:", formatoFechaHora(fechaHoraActualPeru));
+// console.log("Fecha y hora actual en España:", formatoFechaHora(fechaHoraActualEspana));
+// console.log("Hora de la reunión en UTC:", horaReunion.toUTCString());
+// console.log("Hora de la reunión en Perú:", formatoFechaHora(horaReunion));
+// horaReunion.setUTCHours(horaReunion.getUTCHours() + 7); // Ajustar a España
+// console.log("Hora de la reunión en España:", formatoFechaHora(horaReunion));
