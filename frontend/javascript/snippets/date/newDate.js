@@ -3,9 +3,11 @@ new Date(1711062205984); //                             2024-03-21T23:03:25.984Z
 new Date(); //                                          2025-05-15T02:22:15.392Z
 new Date("2025-05-13T15:39:39.035Z"); //                2025-05-13T15:39:39.035Z
 
-new Date().toLocaleString("en-CA", { timeZone: "America/Lima" }); //  2025-05-13, 11:06:56 a.m.
-new Date().toLocaleString("en-CA"); //                                2025-05-13, 11:06:56 a.m.
-new Date().toLocaleString("en-CA", { timeZone: "UTC" }); //           2025-05-13, 4:06:56 p.m.
+new Date(item.expirationDate).toLocaleString("es-CO", { timeZone: "America/Bogota" }); //       15/5/2025, 7:00:00 p. m.
+new Date(item.expirationDate).toLocaleDateString("es-CO", { timeZone: "America/Bogota" }); //   15/5/2025
+new Date().toLocaleString("en-CA", { timeZone: "America/Lima" }); //                            2025-05-13, 11:06:56 a.m.
+new Date().toLocaleString("en-CA"); //                                                          2025-05-13, 11:06:56 a.m.
+new Date().toLocaleString("en-CA", { timeZone: "UTC" }); //                                     2025-05-13, 4:06:56 p.m.
 
 new Date().toLocaleString(); //   5/12/2025, 4:35:11 AM
 new Date().toUTCString(); //      Mon, 12 May 2025 09:35:11 GMT
