@@ -3,9 +3,11 @@
 ```sh
 sudo apt update
 
+# Descarga de Node.js
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 # curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 
+# Instala Node.js
 sudo apt install -y nodejs
 # sudo apt remove nodejs
 
@@ -25,14 +27,23 @@ npm install express
 ```js
 const express = require("express");
 const app = express();
-const port = 3000;
+const path = require("path");
+
+const PORT = process.env.PORT || 3000;
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.listen(port, () => {
-  console.log(`App running on http://localhost:${port}`);
+const buildPath = path.join(__dirname, "./frontend/");
+app.use(express.static(buildPath));
+
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(buildPath, "index.html"));
+});
+
+app.listen(PORT, () => {
+  console.log(`App running on http://localhost:${PORT}`);
 });
 ```
 
