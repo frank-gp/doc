@@ -39,6 +39,8 @@ cd /var/www/html
 
 sudo rm index.html
 
+sudo rm -r folder123/
+
 sudo git clone https://github.com/fgp555/hml-todolist.git .
 
 sudo systemctl status apache2
