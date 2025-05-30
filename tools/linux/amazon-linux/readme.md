@@ -1,16 +1,11 @@
 ```sh
-sudo yum install htop -y
-htop
-
-sudo yum update
-
 sudo yum install nginx -y
 nginx -v
 
 sudo systemctl status nginx
 sudo systemctl start nginx
-sudo systemctl restart nginx
 sudo systemctl reload nginx
+sudo systemctl restart nginx
 # Activa Nginx al reiniciar el servidor
 sudo systemctl enable nginx
 
@@ -21,6 +16,7 @@ sudo systemctl enable nginx
 ```sh
 sudo mkdir -p /var/www/giomr.site/html
 sudo vim /var/www/giomr.site/html/index.html
+# https://github.com/frank-gp/designer.git
 ```
 
 ```sh
