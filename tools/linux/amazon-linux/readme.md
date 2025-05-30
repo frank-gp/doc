@@ -16,6 +16,8 @@ sudo systemctl enable nginx
 ```sh
 sudo mkdir -p /var/www/giomr.site/html
 sudo vim /var/www/giomr.site/html/index.html
+ls -l /var/www/giomr.site/html/index.html
+
 # https://github.com/frank-gp/designer.git
 ```
 
@@ -27,7 +29,7 @@ sudo vim /etc/nginx/conf.d/giomr.site.conf
 ```nginx
 server {
     listen 80;
-    server_name giomr.site www.giomr.site;
+    server_name giomr.site;
 
     root /var/www/giomr.site/html;
     index index.html index.htm;
@@ -44,20 +46,22 @@ sudo systemctl reload nginx
 sudo yum install certbot python3-certbot-nginx -y
 
 sudo certbot --nginx -d giomr.site
-sudo certbot --nginx -d giomr.site -d www.giomr.site
+# sudo certbot --nginx -d giomr.site -d www.giomr.site
+
+sudo nginx -t       # Verifica que no haya errores
+sudo systemctl reload nginx
+
+# 🌐 Verifica con curl o navegador:
+curl -I https://giomr.site
+nslookup giomr.site
+
 ```
 
 # Node JS
 
 ```sh
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.4/install.sh | bash
-source ~/.nvm/nvm.sh
-
-nvm install 20
-nvm use 20
-
-nvm install --lts
-nvm use --lts
+curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+sudo yum install -y nodejs
 
 node -v
 npm -v
@@ -79,7 +83,7 @@ const express = require("express");
 const app = express();
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World! 👋" + new Date());
 });
 
 app.listen(3000, () => {
@@ -128,7 +132,7 @@ server {
 ```
 
 ```sh
-sudo certbot --nginx -d giomr.site -d www.giomr.site
+sudo certbot --nginx -d giomr.site
 
 
 sudo nginx -t
@@ -140,17 +144,15 @@ sudo systemctl reload nginx
 
 ```sh
 npm install -g pm2
+sudo npm install -g pm2
 pm2 -v
 
 pm2 start app.js --name giomr
 pm2 save
 pm2 startup
 
-# copia y pega un comando similar a este
-# sudo env PATH=$PATH:/home/ec2-user/.nvm/versions/node/v22.16.0/bin /usr/lib/nodejs18/lib/node_modules/pm2/bin/pm2 startup systemd -u ec2-user --hp /home/ec2-user
+# copia y pega el comando que se te muestra
 
 pm2 list
 sudo reboot
-
-
 ```

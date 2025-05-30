@@ -35,6 +35,7 @@ sudo systemctl enable mariadb
 ```sh
 sudo mariadb
 mariadb -u root -p
+mariadb -u aws_user -p
 
 ```
 
@@ -47,7 +48,22 @@ exit;
 # 📂 Crea la base de datos
 
 ```sql
-CREATE DATABASE frankgp_db;
+CREATE DATABASE aws_db;
 SHOW DATABASES;
+
+-- Dentro del cliente de MariaDB
+CREATE DATABASE aws_db;
+
+-- Crear usuario (cambia 'usuario_app' y 'contraseña_segura' por lo que necesites)
+CREATE USER 'aws_user'@'%' IDENTIFIED BY 'PA5SWorD123';
+
+-- Otorgar permisos al usuario sobre la base de datos
+GRANT ALL PRIVILEGES ON aws_db.* TO 'aws_user'@'%';
+
+-- Aplicar los cambios
+FLUSH PRIVILEGES;
+
+
+
 
 ```
