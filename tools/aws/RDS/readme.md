@@ -16,6 +16,7 @@ SELECT VERSION();
 CREATE DATABASE my_database;
 USE my_database;
 SHOW DATABASES;
+USE my_database;
 SHOW TABLES;
 
 ```

@@ -5,6 +5,9 @@ cat /etc/os-release
 # Monitorear en tiempo real  RAM y CPU
 free -m
 
+# Para recuperar la clave publica desde la clave privada
+ssh-keygen -y -f fgpone_key_pair.pem
+
 ```
 
 ### usuario de Amazon Linux
@@ -24,9 +27,9 @@ sudo passwd giomr
 sudo sh -c 'sync; echo 3 > /proc/sys/vm/drop_caches'
 ```
 
-
-# Instalar Git en Amazon Linux 
+# Instalar Git en Amazon Linux
 
 ```sh
 sudo yum install git -y
 git --version
+```

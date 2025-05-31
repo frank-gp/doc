@@ -1,3 +1,11 @@
+
+# ✅ Reemplazar en texto
+
+```sh
+:%s/oldText/newText/g
+```
+
+
 # ✅ Método directo para borrar todo:
 
 ```sh

@@ -33,6 +33,9 @@ SendMode("Input")
 ^#y:: Send("{WheelLeft}")
 ^#p:: Send("{WheelRight}")
 
+#c:: Send("console.log(){NumpadLeft}")
+
+
 #+Up::
 {
     SetKeyDelay 65, 65
@@ -94,42 +97,6 @@ SendMode("Input")
     return
 }
 
-:*:bdd::border{:} 1px dashed {#}0808{;}
-
-:*:link..:: {
-    SetKeyDelay 15, 15
-    SendEvent '<link rel="stylesheet" http{bs 4}href="./style.css"/>'
-}
-
-:*:essential..:: {
-    SetKeyDelay 20, 20
-    SendEvent '<link rel="stylesheet" http{bs 4}href="https://fgp.one/essential.css"/>'
-}
-
-:*:icon..:: {
-    SetKeyDelay 20, 20
-    SendEvent '<link rel="stylesheet" http{bs 4}href="https://fgp.one/icon.css"/>'
-}
-
-:*:script..:: {
-    SetKeyDelay 65, 65
-    SendEvent '<script>'
-    loop 1
-        Send("{Left}")
-    SendEvent ' src="{Left}./script.js{Right} defer'
-    return
-}
-
-:*:c..:: {
-    SetKeyDelay 50, 50
-    SendEvent '<style>{Enter}'
-}
-
-:*:j..:: {
-    SetKeyDelay 50, 50
-    SendEvent '<script>{Enter}'
-}
-
 :*://.:: {
     SetKeyDelay 15, 15
     SendEvent '========== =========='
@@ -139,18 +106,10 @@ SendMode("Input")
     return
 }
 
-:*:v..::var(--){NumpadLeft}
-:*:v-::var(-){NumpadLeft}
 
-:*:log..::console.log(){NumpadLeft}
-:*:api..::https://api.1rodemayo.com/movies
-:*:api3..::https://api.1rodemayo.com/movies?quantity=3
-:*:discord..::https://fgp.one/discord_soyhenry
-:*:crud..::https://api.1rodemayo.com/crud/api
 :*:cl..::console.log(){NumpadLeft}
-:*:cccc::console.log(){NumpadLeft}
+:*:log..::console.log(){NumpadLeft}
 :*:yyy::https://www.youtube.com/results?search_query=
-:*:ggg::https://github.com/fgp555/tutorial.git
 
 :*:php..::<?php ?>{NumpadLeft}{NumpadLeft}{NumpadLeft}
 :*:echo..::<?php echo ?>{NumpadLeft}{NumpadLeft}{NumpadLeft}
@@ -159,10 +118,8 @@ SendMode("Input")
 :*:get..::$_GET['']{NumpadLeft}{NumpadLeft}
 
 #b:: Run "notepad"
-#f:: Run "cmd /k cd D:\frank-gp.github.io\"
-#c:: Run "https://github.com/copilot"
+#f:: Run "cmd /k cd D:\"
 #t:: Run "https://translate.google.com/"
-#w:: Run "https://web.whatsapp.com/"
 #g:: Run "https://chatgpt.com"
 
 #NumpadDot::
@@ -195,22 +152,53 @@ SendMode("Input")
     return
 }
 
+; #Numpad5::
+; {
+;     Run("cmd.exe", "C:\")
+;     WinWait("ahk_exe WindowsTerminal.exe", , 5)
+;     WinActivate("ahk_exe WindowsTerminal.exe")
+
+;     Sleep(500)
+;     Send("ssh -i ~/.ssh/github-actions ec2-user@3.133.24.143{Enter}")
+; }
+
 #Numpad4::
 {
-    SendInput("git status && git remote -v && git log --oneline")
+    ; Ejecuta cmd en una nueva ventana (usando Windows Terminal si es por defecto)
+    Run("cmd.exe", "C:\")    
+    ; Espera a que aparezca una ventana de terminal (cmd tradicional o Windows Terminal)
+    WinWait("ahk_exe cmd.exe", , 5)  ; Intenta esperar a cmd tradicional
+    if !WinActive("ahk_exe cmd.exe") {
+        ; Si no es cmd.exe clásico, prueba Windows Terminal
+        WinWait("ahk_exe WindowsTerminal.exe", , 5)
+        WinActivate("ahk_exe WindowsTerminal.exe")
+    } else {
+        WinActivate("ahk_exe cmd.exe")
+    }
+    Sleep(600) ; espera más larga para asegurar carga
+    Send("ssh -i ~/.ssh/github-actions ec2-user@3.133.24.143{Enter}")
     return
 }
 
 #Numpad5::
 {
-    SendInput("git remote add origin2 https://github.com/frank-gp/deploy-tutorial.git")
-    return
+    Run("cmd.exe", "C:\")
+    WinWait("ahk_exe WindowsTerminal.exe", , 5)
+    WinActivate("ahk_exe WindowsTerminal.exe")
+
+    Sleep(500)
+    Send("mysql -u admin -p -h database-1.c5agq48gmlo5.us-east-2.rds.amazonaws.com{Enter}")
 }
 
 #Numpad6::
 {
-    SendInput("git push origin2 main --force")
+    SendInput("P4S5WordD123")
     return
+}
+
+#Numpad7::
+{
+    Run("powershell.exe")
 }
 
 #Numpad8::
@@ -222,7 +210,6 @@ SendMode("Input")
 #Numpad9::
 {
     SendInput("git restore . && git clean -fd")
-    ; SendInput("rm -rf .git && git init && git add . && git commit -m 'initial commit'")
     return
 }
 
@@ -238,13 +225,6 @@ SendMode("Input")
     return
 }
 
-#F5::
-{
-    command := "winver"
-    Run(A_ComSpec " /c " command)
-    return
-}
-
 #F12::
 {
     SendInput("rm -rf .git && git init && git add . && git commit -m 'initial_commit'")
@@ -253,27 +233,19 @@ SendMode("Input")
 
 #y::
 {
-    searchTerm := "yasmine js"
+    searchTerm := "frank gp"
     url := "https://www.youtube.com/results?search_query=" . searchTerm
     Run(url)
     return
 }
 
+; para la terminal de sql 
 !+l::
 {
     SendInput("system cls{Enter}{Up}{Up}{Enter}")
     return
 }
 
-#k::
-{
-    Run("cmd.exe", "C:\")
-    Sleep(500)
-    SendInput("cd\{Enter}")
-    Sleep(500)
-    SendInput('docker exec -it kafka-containers-kafka-1 /bin/bash')
-    return
-}
-
+; Suspender
 #s:: DllCall("PowrProf.dll\SetSuspendState", "UInt", 0, "UInt", 0, "UInt", 0)
 return
