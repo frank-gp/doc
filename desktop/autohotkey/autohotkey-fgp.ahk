@@ -124,31 +124,31 @@ SendMode("Input")
 
 #NumpadDot::
 {
-    SendInput("git pull --rebase")
+    SendInput(" git pull --rebase")
     return
 }
 
 #Numpad0::
 {
-    SendInput("git add . && git commit --amend --no-edit && git push --force")
+    SendInput(" git add . && git commit --amend --no-edit && git push --force")
     return
 }
 
 #Numpad1::
 {
-    SendInput("git log --oneline")
+    SendInput(" git log --oneline")
     return
 }
 
 #Numpad2::
 {
-    SendInput("git add . && git commit -m ''{Left}")
+    SendInput(" git add . && git commit -m ''{Left}")
     return
 }
 
 #Numpad3::
 {
-    SendInput("git add . && git commit --amend --no-edit")
+    SendInput(" git add . && git commit --amend --no-edit")
     return
 }
 
@@ -203,25 +203,25 @@ SendMode("Input")
 
 #Numpad8::
 {
-    SendInput("git checkout head~1")
+    SendInput(" git checkout head~1")
     return
 }
 
 #Numpad9::
 {
-    SendInput("git restore . && git clean -fd")
+    SendInput(" git restore . && git clean -fd")
     return
 }
 
 #NumpadDiv::
 {
-    SendInput("git restore .")
+    SendInput(" git restore .")
     return
 }
 
 #NumpadMult::
 {
-    SendInput("git restore . && git clean -fd")
+    SendInput(" git restore . && git clean -fd")
     return
 }
 
