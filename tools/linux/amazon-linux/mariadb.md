@@ -23,8 +23,6 @@ sudo systemctl status mariadb
 sudo systemctl start mariadb
 
 # 6. 🚀 Habilita el servicio
-sudo systemctl enable mariadb
-
 # Habilitar MariaDB para que inicie al reiniciar la instancia
 sudo systemctl enable mariadb
 
@@ -54,15 +52,22 @@ SHOW DATABASES;
 -- Dentro del cliente de MariaDB
 CREATE DATABASE aws_db;
 
--- Crear usuario (cambia 'usuario_app' y 'contraseña_segura' por lo que necesites)
-CREATE USER 'aws_user'@'%' IDENTIFIED BY 'PA5SWorD123';
+CREATE USER 'aws_user'@'localhost' IDENTIFIED BY 'P45SWorD123';
+GRANT ALL PRIVILEGES ON aws_db.* TO 'aws_user'@'localhost';
+FLUSH PRIVILEGES;
 
+-- Crear usuario
+CREATE USER 'aws_user'@'%' IDENTIFIED BY 'PA5SWorD123';
 -- Otorgar permisos al usuario sobre la base de datos
 GRANT ALL PRIVILEGES ON aws_db.* TO 'aws_user'@'%';
-
 -- Aplicar los cambios
 FLUSH PRIVILEGES;
 
+
+
+
+
+-- mysql -h <IP-Pública-EC2> -P 3306 -u aws_user -p
 
 
 

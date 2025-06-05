@@ -152,16 +152,6 @@ SendMode("Input")
     return
 }
 
-; #Numpad5::
-; {
-;     Run("cmd.exe", "C:\")
-;     WinWait("ahk_exe WindowsTerminal.exe", , 5)
-;     WinActivate("ahk_exe WindowsTerminal.exe")
-
-;     Sleep(500)
-;     Send("ssh -i ~/.ssh/github-actions ec2-user@3.133.24.143{Enter}")
-; }
-
 #Numpad4::
 {
     ; Ejecuta cmd en una nueva ventana (usando Windows Terminal si es por defecto)
@@ -176,7 +166,7 @@ SendMode("Input")
         WinActivate("ahk_exe cmd.exe")
     }
     Sleep(600) ; espera más larga para asegurar carga
-    Send("ssh -i ~/.ssh/github-actions ec2-user@3.133.24.143{Enter}")
+    Send("ssh -i ~/.ssh/github-actions ec2-user@3.21.34.49{Enter}")
     return
 }
 

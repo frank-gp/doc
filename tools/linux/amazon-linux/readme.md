@@ -1,4 +1,6 @@
 ```sh
+sudo yum update
+
 sudo yum install nginx -y
 nginx -v
 
