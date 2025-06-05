@@ -18,8 +18,7 @@ wsl --shutdown
 
 wsl --unregister Ubuntu-22.04
 
-# Verifica que la instancia esté corriendo:
-wsl -l -v
+
 ```
 
 # Snapshots
@@ -34,5 +33,7 @@ wsl -d Ubuntu-Restaurado
 # Varios
 
 ```sh
+# Verifica que la instancia esté corriendo:
+wsl -l -v
 wsl --shutdown
 ```

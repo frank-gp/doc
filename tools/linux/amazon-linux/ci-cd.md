@@ -72,7 +72,7 @@ sudo systemctl reload nginx
 # Configurar CI/CD con GitHub Actions
 
 ```sh
-# 🖥️ En Windows (tu PC)
+# 🖥️ En Windows (tu PC) C:\Users\Frank\.ssh
 ssh-keygen -t ed25519 -C "github-actions" -f ~/.ssh/github-actions
 
 # Ve al repositorio en GitHub.
@@ -89,7 +89,7 @@ vim  ~/.ssh/authorized_keys
 chmod 600 ~/.ssh/authorized_keys
 
 
-# 🖥️ En Windows Para acceder a EC2 (opcional)
+# 🖥️ En Windows Para acceder a EC2
 ssh -i ~/.ssh/github-actions ec2-user@3.139.74.168
 
 ```

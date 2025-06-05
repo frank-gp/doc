@@ -12,11 +12,21 @@ sudo apt install mariadb-server
 
 mysql --version
 
+sudo mariadb
+
 ```
 
 ```sql
 CREATE DATABASE frankgp_db;
 SHOW DATABASES;
+
+ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password;
+ALTER USER 'root'@'localhost' IDENTIFIED BY '';
+FLUSH PRIVILEGES;
+
+SELECT user, host FROM mysql.user;
+
+exit;
 
 ```
 

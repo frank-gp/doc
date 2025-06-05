@@ -56,6 +56,11 @@ CREATE USER 'aws_user'@'localhost' IDENTIFIED BY 'P45SWorD123';
 GRANT ALL PRIVILEGES ON aws_db.* TO 'aws_user'@'localhost';
 FLUSH PRIVILEGES;
 
+ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password;
+ALTER USER 'root'@'localhost' IDENTIFIED BY '';
+FLUSH PRIVILEGES;
+
+
 -- Crear usuario
 CREATE USER 'aws_user'@'%' IDENTIFIED BY 'PA5SWorD123';
 -- Otorgar permisos al usuario sobre la base de datos

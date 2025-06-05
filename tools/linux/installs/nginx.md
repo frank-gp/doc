@@ -16,10 +16,30 @@ vim ~/.bashrc
 # Al final del archivo, agrega esta línea para iniciar Nginx al abrir WSL
 sudo service nginx start
 
+# Redirigir el puerto 80 (HTTP) al puerto 3000 con Nginx
+cd /etc/nginx/sites-available
+sudo vim default
+sudo nginx -t
+sudo systemctl restart nginx
+
+curl http://localhost
 ```
 
-Test
+# nging Configuration
 
-```md
-curl http://localhost
+```nginx
+server {
+    listen 80;
+    server_name localhost;
+
+    location / {
+        proxy_pass http://localhost:3000;
+        proxy_http_version 1.1;
+
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
 ```
