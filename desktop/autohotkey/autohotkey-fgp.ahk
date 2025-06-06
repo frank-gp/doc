@@ -35,7 +35,6 @@ SendMode("Input")
 
 #c:: Send("console.log(){NumpadLeft}")
 
-
 #+Up::
 {
     SetKeyDelay 65, 65
@@ -106,7 +105,6 @@ SendMode("Input")
     return
 }
 
-
 :*:cl..::console.log(){NumpadLeft}
 :*:log..::console.log(){NumpadLeft}
 :*:yyy::https://www.youtube.com/results?search_query=
@@ -155,7 +153,7 @@ SendMode("Input")
 #Numpad4::
 {
     ; Ejecuta cmd en una nueva ventana (usando Windows Terminal si es por defecto)
-    Run("cmd.exe", "C:\")    
+    Run("cmd.exe", "C:\")
     ; Espera a que aparezca una ventana de terminal (cmd tradicional o Windows Terminal)
     WinWait("ahk_exe cmd.exe", , 5)  ; Intenta esperar a cmd tradicional
     if !WinActive("ahk_exe cmd.exe") {
@@ -188,7 +186,7 @@ SendMode("Input")
 
 #Numpad7::
 {
-    Run("powershell.exe")
+    Run("powershell.exe",  "C:\")
 }
 
 #Numpad8::
@@ -229,7 +227,7 @@ SendMode("Input")
     return
 }
 
-; para la terminal de sql 
+; para la terminal de sql
 !+l::
 {
     SendInput("system cls{Enter}{Up}{Up}{Enter}")

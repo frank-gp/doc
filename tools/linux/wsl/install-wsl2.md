@@ -14,6 +14,7 @@ Start-Process sc.exe -ArgumentList "config InstallService start= demand" -Wait
 Start-Process sc.exe -ArgumentList "start InstallService" -Wait
 
 # Desinstalar la distribución Ubuntu
+wsl --install Ubuntu
 wsl --unregister Ubuntu
 
 ```

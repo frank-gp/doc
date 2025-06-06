@@ -19,6 +19,7 @@ sudo service nginx start
 # Redirigir el puerto 80 (HTTP) al puerto 3000 con Nginx
 cd /etc/nginx/sites-available
 sudo vim default
+sudo vim /etc/nginx/sites-available/default
 sudo nginx -t
 sudo systemctl restart nginx
 
