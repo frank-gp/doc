@@ -1,6 +1,6 @@
 ```sh
-wsl --version
 wsl --install
+wsl --version
 wsl
 wsl --install Ubuntu
 wsl --unregister Ubuntu
