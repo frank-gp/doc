@@ -119,6 +119,9 @@ SendMode("Input")
 #f:: Run "cmd /k cd D:\"
 #t:: Run "https://translate.google.com/"
 #g:: Run "https://chatgpt.com"
+#Space:: {
+    Run("cmd.exe", "C:\")
+}
 
 #NumpadDot::
 {
@@ -186,7 +189,7 @@ SendMode("Input")
 
 #Numpad7::
 {
-    Run("powershell.exe",  "C:\")
+    Run("powershell.exe", "C:\")
 }
 
 #Numpad8::

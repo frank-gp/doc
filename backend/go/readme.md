@@ -20,5 +20,20 @@ func main() {
 ```sh
 go run main.go
 
-got run .
+go run .
+```
+
+# Compilando
+
+```sh
+# Compilando en Windows
+go build main.go
+
+# Compilando en Linux
+go build -o main main.go
+# open ./main.ex en power shell
+
+# Compilando en windows para linux
+$ GOOS=linux GOARCH=amd64 go build -o main_ubuntu main.go
+# open ./main_ubuntu en wsl
 ```
