@@ -2,6 +2,7 @@ https://go.dev/dl/
 
 ```sh
 go version
+go env GOPATH
 
 go mod init nombre-del-modulo
 
