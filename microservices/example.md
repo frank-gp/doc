@@ -19,6 +19,59 @@ Vamos a crear un sistema simple con tres microservicios:
 
 ---
 
+## Ventajas adicionales de FastAPI
+
+### 1. Documentación automática
+
+Con FastAPI, automáticamente tienes:
+
+- **Swagger UI**: `http://localhost:3002/docs`
+- **ReDoc**: `http://localhost:3002/redoc`
+- **OpenAPI Schema**: `http://localhost:3002/openapi.json`
+
+### 2. Validación automática
+
+Los modelos Pydantic validan automáticamente:
+
+```python
+# Esto fallará automáticamente si precio no es float
+@app.post("/products")
+async def create_product(product_data: ProductCreate):
+    # FastAPI valida que product_data tenga el formato correcto
+    pass
+```
+
+### 3. Mejor rendimiento
+
+FastAPI es hasta 2-3x más rápido que Flask gracias a:
+
+- Starlette (framework ASGI)
+- Soporte nativo para async/await
+- Validación eficiente con Pydantic
+
+### 4. Type hints y mejor IDE support
+
+```python
+# El IDE puede autocompletar y detectar errores
+async def get_product(product_id: int) -> Product:
+    # FastAPI sabe que product_id es int
+    # Y que debe devolver un Product
+```
+
+### 5. Testing más fácil
+
+```python
+from fastapi.testclient import TestClient
+
+client = TestClient(app)
+
+def test_get_products():
+    response = client.get("/products")
+    assert response.status_code == 200
+```
+
+---
+
 ## 1. Servicio de Usuarios (Node.js)
 
 ### Estructura de archivos:
@@ -144,22 +197,52 @@ product-service/
 ### requirements.txt
 
 ```
-Flask==2.3.3
-Flask-CORS==4.0.0
+fastapi==0.104.1
+uvicorn==0.24.0
+pydantic==2.5.0
 ```
 
 ### app.py
 
 ```python
-from flask import Flask, jsonify, request
-from flask_cors import CORS
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from typing import List, Optional
 import json
 import os
 
-app = Flask(__name__)
-CORS(app)
+app = FastAPI(
+    title="Servicio de Productos",
+    description="API para gestión de productos en microservicios",
+    version="1.0.0"
+)
+
+# Configurar CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 PRODUCTS_FILE = 'products.json'
+
+# Modelos Pydantic para validación automática
+class Product(BaseModel):
+    id: int
+    nombre: str
+    precio: float
+    stock: int
+
+class ProductCreate(BaseModel):
+    nombre: str
+    precio: float
+    stock: int
+
+class StockUpdate(BaseModel):
+    stock: int
 
 # Inicializar archivo de productos si no existe
 if not os.path.exists(PRODUCTS_FILE):
@@ -171,7 +254,7 @@ if not os.path.exists(PRODUCTS_FILE):
     with open(PRODUCTS_FILE, 'w', encoding='utf-8') as f:
         json.dump(initial_products, f, indent=2, ensure_ascii=False)
 
-def load_products():
+async def load_products() -> List[dict]:
     """Cargar productos desde archivo JSON"""
     try:
         with open(PRODUCTS_FILE, 'r', encoding='utf-8') as f:
@@ -180,7 +263,7 @@ def load_products():
         print(f"Error cargando productos: {e}")
         return []
 
-def save_products(products):
+async def save_products(products: List[dict]) -> bool:
     """Guardar productos en archivo JSON"""
     try:
         with open(PRODUCTS_FILE, 'w', encoding='utf-8') as f:
@@ -190,74 +273,78 @@ def save_products(products):
         print(f"Error guardando productos: {e}")
         return False
 
-@app.route('/products', methods=['GET'])
-def get_products():
+@app.get("/products", response_model=List[Product])
+async def get_products():
     """Obtener todos los productos"""
-    products = load_products()
-    return jsonify(products)
+    products = await load_products()
+    return products
 
-@app.route('/products/<int:product_id>', methods=['GET'])
-def get_product(product_id):
+@app.get("/products/{product_id}", response_model=Product)
+async def get_product(product_id: int):
     """Obtener producto por ID"""
-    products = load_products()
+    products = await load_products()
     product = next((p for p in products if p['id'] == product_id), None)
 
     if not product:
-        return jsonify({"error": "Producto no encontrado"}), 404
+        raise HTTPException(status_code=404, detail="Producto no encontrado")
 
-    return jsonify(product)
+    return product
 
-@app.route('/products', methods=['POST'])
-def create_product():
+@app.post("/products", response_model=Product, status_code=201)
+async def create_product(product_data: ProductCreate):
     """Crear nuevo producto"""
     try:
-        products = load_products()
+        products = await load_products()
         new_id = max([p['id'] for p in products], default=0) + 1
 
         new_product = {
             "id": new_id,
-            "nombre": request.json.get('nombre'),
-            "precio": float(request.json.get('precio', 0)),
-            "stock": int(request.json.get('stock', 0))
+            "nombre": product_data.nombre,
+            "precio": product_data.precio,
+            "stock": product_data.stock
         }
 
         products.append(new_product)
 
-        if save_products(products):
-            return jsonify(new_product), 201
+        if await save_products(products):
+            return new_product
         else:
-            return jsonify({"error": "Error al guardar producto"}), 500
+            raise HTTPException(status_code=500, detail="Error al guardar producto")
 
     except Exception as e:
-        return jsonify({"error": f"Error al crear producto: {str(e)}"}), 500
+        raise HTTPException(status_code=500, detail=f"Error al crear producto: {str(e)}")
 
-@app.route('/products/<int:product_id>/stock', methods=['PUT'])
-def update_stock(product_id):
+@app.put("/products/{product_id}/stock", response_model=Product)
+async def update_stock(product_id: int, stock_data: StockUpdate):
     """Actualizar stock de producto"""
     try:
-        products = load_products()
+        products = await load_products()
         product = next((p for p in products if p['id'] == product_id), None)
 
         if not product:
-            return jsonify({"error": "Producto no encontrado"}), 404
+            raise HTTPException(status_code=404, detail="Producto no encontrado")
 
-        new_stock = request.json.get('stock')
-        if new_stock is not None:
-            product['stock'] = int(new_stock)
+        product['stock'] = stock_data.stock
 
-            if save_products(products):
-                return jsonify(product)
-            else:
-                return jsonify({"error": "Error al actualizar stock"}), 500
+        if await save_products(products):
+            return product
+        else:
+            raise HTTPException(status_code=500, detail="Error al actualizar stock")
 
-        return jsonify({"error": "Stock no proporcionado"}), 400
-
+    except HTTPException:
+        raise
     except Exception as e:
-        return jsonify({"error": f"Error al actualizar stock: {str(e)}"}), 500
+        raise HTTPException(status_code=500, detail=f"Error al actualizar stock: {str(e)}")
+
+@app.get("/")
+async def root():
+    """Endpoint de health check"""
+    return {"message": "Servicio de Productos FastAPI funcionando", "status": "OK"}
 
 if __name__ == '__main__':
-    print("🚀 Servicio de Productos ejecutándose en puerto 3002")
-    app.run(host='0.0.0.0', port=3002, debug=True)
+    import uvicorn
+    print("🚀 Servicio de Productos FastAPI ejecutándose en puerto 3002")
+    uvicorn.run(app, host="0.0.0.0", port=3002)
 ```
 
 ---
@@ -438,6 +525,9 @@ npm start
 ```bash
 cd product-service
 pip install -r requirements.txt
+# Con FastAPI usa uvicorn en lugar de python directamente
+uvicorn app:app --host 0.0.0.0 --port 3002 --reload
+# O simplemente:
 python app.py
 ```
 

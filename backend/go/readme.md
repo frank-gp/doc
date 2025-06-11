@@ -2,9 +2,11 @@ https://go.dev/dl/
 
 ```sh
 go version
+go env
 go env GOPATH
 
 go mod init nombre-del-modulo
+go mod init github.com/usuario/mi-proyecto
 
 ```
 

@@ -7,4 +7,4 @@ air
 air init
 # Esto crea .air.toml, donde puedes modificar la ruta de salida, los archivos observados, comandos de compilación, etc.
 
-go mod init folder
+```

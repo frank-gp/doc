@@ -1,0 +1,36 @@
+# Archivos binarios
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Directorios y binarios generados
+/bin/
+/tmp/
+/dist/
+/build/
+
+# Archivos de Go
+*.log
+*.coverprofile
+*.test
+
+# Archivos de herramientas de desarrollo
+.air.toml
+.env
+.env.local
+
+# Dependencias externas
+vendor/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# IDEs y editores comunes
+.vscode/
+.idea/
+*.swp
