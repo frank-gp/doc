@@ -216,6 +216,7 @@ for i in range(3):
 numeros = [1, 2, 3, 4, 5]
 mixta = [1, "texto", 3.14, True]
 vacia = []
+userMock = [{"id": 1, "name": "Frank GP"}]
 
 # Acceso
 print(numeros[0])   # 1 (primer elemento)
@@ -234,6 +235,10 @@ numeros.reverse()        # Invertir
 # List comprehensions
 cuadrados = [x**2 for x in range(5)]  # [0, 1, 4, 9, 16]
 pares = [x for x in range(10) if x % 2 == 0]  # [0, 2, 4, 6, 8]
+
+# Funciones
+item = next(iter(numeros))  # Obtener el primer elemento
+user = next((u for u in userMock if u["id"] == 1), None)
 ```
 
 ### Tuplas

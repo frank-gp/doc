@@ -15,7 +15,7 @@ sqlite3 mydb.db
 ```
 
 ```sql
-create table products(id INT primary key)
+create table products(id INT primary key);
 .table
 ```
 
