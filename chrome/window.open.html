@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir URL en Modal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="abrirUrlModalBtn">Abrir URL en Ventana Modal</button>
+
+    <script>
+        document.getElementById('abrirUrlModalBtn').addEventListener('click', () => {
+            const url = 'https://github.com/frank-gp/doc'; // **Cambia esta URL por la que quieras abrir**
+            const windowName = '_blank'; // Abre en una nueva ventana/tab (es estándar)
+            const windowFeatures = 'width=800,height=600,resizable=yes,scrollbars=yes,status=no,toolbar=no,menubar=no,location=no';
+
+            window.open(url, windowName, windowFeatures);
+        });
+    </script>
+
+</body>
+</html>
