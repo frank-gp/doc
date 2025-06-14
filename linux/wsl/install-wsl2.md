@@ -13,10 +13,11 @@ wsl --install -d Ubuntu-22.04
 Start-Process sc.exe -ArgumentList "config InstallService start= demand" -Wait
 Start-Process sc.exe -ArgumentList "start InstallService" -Wait
 
-# Desinstalar la distribución Ubuntu
-wsl --install Ubuntu
+# Desinstalar la WSL
+wsl --list --verbose
 wsl --unregister Ubuntu
 
+wsl --install
 ```
 
 # Amazon Linux 2023
