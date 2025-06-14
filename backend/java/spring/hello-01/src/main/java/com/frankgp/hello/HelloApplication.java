@@ -18,3 +18,5 @@ public class HelloApplication {
         return "Hello, World! 123";
     }
 }
+
+// public, private, o protected

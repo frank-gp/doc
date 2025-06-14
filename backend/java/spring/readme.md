@@ -39,26 +39,6 @@ alias sb='./mvnw spring-boot:run'
 
 ```
 
-# Deploy
-
-```sh
-# Build: ./target/hello-0.0.1-SNAPSHOT.jar
-./mvnw clean package
-
-sudo apt update
-sudo apt install openjdk-17-jdk -y
-java -version
-
-java -jar hello-0.0.1-SNAPSHOT.jar
-
-# puerto personalizado
-java -jar hello.jar --server.port=80
-
-# Mantenerlo siempre corriendo
-nohup java -jar hello.jar > log.txt 2>&1 &
-
-```
-
 # logging
 
 ```sh
@@ -68,17 +48,4 @@ logging.level.org.springframework.web=DEBUG
 # Opcionalmente, si también quieres ver más detalle de los controladores:
 logging.level.org.springframework.web.servlet=DEBUG
 
-```
-
-# Usar Nginx como proxy
-
-```nginx
-server {
-    listen 80;
-    server_name midominio.com;
-
-    location / {
-        proxy_pass http://localhost:8080;
-    }
-}
 ```

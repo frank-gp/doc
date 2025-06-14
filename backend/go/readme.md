@@ -5,12 +5,15 @@ go version
 go env
 go env GOPATH
 
-go mod init nombre-del-modulo
+go mod init frankgp/myapp
 go mod init github.com/usuario/mi-proyecto
 
 ```
 
+# VScode Go > Go Team at Google go.dev
+
 ```go
+// main.go
 package main
 
 import "fmt"
