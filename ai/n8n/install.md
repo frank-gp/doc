@@ -4,14 +4,12 @@ sudo apt update && sudo apt upgrade -y
 
 curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash -
 sudo apt install -y nodejs
+sudo npm install -g npm@11.4.2
 node -v
 npm -v
-sudo npm install -g npm@11.4.2
 
 sudo npm install -g n8n
-
 n8n --version
-
 n8n
 
 curl http://localhost:5678
@@ -39,8 +37,8 @@ rm -rf ~/.n8n
 
 ```sh
 WEBHOOK_URL=https://n8n.giomr.site
-n8n
-
 echo $WEBHOOK_URL
+
+n8n
 
 ```

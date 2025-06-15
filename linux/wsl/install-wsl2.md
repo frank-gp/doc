@@ -9,6 +9,9 @@ wsl
 wsl --list
 wsl --list --online
 
+# Detener completamente una distro de WSL2
+wsl --shutdown
+
 # Habilitar el servicio Microsoft Store Install Service
 Start-Process sc.exe -ArgumentList "config InstallService start= demand" -Wait
 Start-Process sc.exe -ArgumentList "start InstallService" -Wait

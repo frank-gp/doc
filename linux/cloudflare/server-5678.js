@@ -6,5 +6,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(5678, () => {
-  console.log("Servidor escuchando en el puerto 5678");
+  console.log("Server running at http://localhost:5678");
 });
