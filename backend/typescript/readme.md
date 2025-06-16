@@ -7,13 +7,13 @@ npm init -y
 npm install --save-dev typescript ts-node @types/node
 npx tsc --init
 
-npm install express
-npm install --save-dev @types/express
-
-
-npm install express mysql2 typeorm cors morgan pg dotenv
+npm install express cors morgan dotenv
 npm install --save-dev @types/express @types/morgan @types/cors nodemon
 
+npm install typeorm pg mysql2
+
+# Start with nodemon
+npx nodemon src/index.ts
 
 npx ts-node-dev --respawn src/index.ts
 
@@ -27,7 +27,7 @@ npm run serve
 npx tsc index.ts
 
 npm install -g ts-node-dev
-ts-node-dev --respawn resume/monolito_homework_simple.ts
+ts-node-dev --respawn file.ts
 
 ```
 
