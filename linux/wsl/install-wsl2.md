@@ -1,20 +1,16 @@
 ```sh
-# Instalación
-wsl --install
-wsl --install -d Ubuntu-22.04
-sudo apt update && sudo apt upgrade -y
-
 # Verifica que WSL está instalado
 wsl
 wsl --list
 wsl --list --online
 
+# Instalación
+wsl --install
+wsl --install -d Ubuntu-22.04
+sudo apt update && sudo apt upgrade -y
+
 # Detener completamente una distro de WSL2
 wsl --shutdown
-
-# Habilitar el servicio Microsoft Store Install Service
-Start-Process sc.exe -ArgumentList "config InstallService start= demand" -Wait
-Start-Process sc.exe -ArgumentList "start InstallService" -Wait
 
 # Desinstalar la WSL
 wsl --list --verbose
@@ -78,4 +74,11 @@ dnf install -y vim git nginx
 ```sh
 wsl --unregister AmazonLinux2023
 Remove-Item -Recurse -Force C:\WSL\amazonlinux2023
+```
+
+# Habilitar el servicio Microsoft Store Install Service
+
+```powershell
+Start-Process sc.exe -ArgumentList "config InstallService start= demand" -Wait
+Start-Process sc.exe -ArgumentList "start InstallService" -Wait
 ```

@@ -37,6 +37,7 @@ export class EntityController {
   }
 }
 
+// entity.service.ts
 export class EntityService {
   private repo: Repository<CurrentEntity>;
 
