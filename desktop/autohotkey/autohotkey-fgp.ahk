@@ -167,18 +167,26 @@ SendMode("Input")
         WinActivate("ahk_exe cmd.exe")
     }
     Sleep(600) ; espera más larga para asegurar carga
-    Send("ssh -i ~/.ssh/github-actions ec2-user@3.21.34.49{Enter}")
+    Send("ssh -i ~/.ssh/aws-github-actions.pem ec2-user@3.21.34.49{Enter}")
     return
 }
 
 #Numpad5::
 {
+    ; Ejecuta cmd en una nueva ventana (usando Windows Terminal si es por defecto)
     Run("cmd.exe", "C:\")
-    WinWait("ahk_exe WindowsTerminal.exe", , 5)
-    WinActivate("ahk_exe WindowsTerminal.exe")
-
-    Sleep(500)
-    Send("mysql -u admin -p -h database-1.c5agq48gmlo5.us-east-2.rds.amazonaws.com{Enter}")
+    ; Espera a que aparezca una ventana de terminal (cmd tradicional o Windows Terminal)
+    WinWait("ahk_exe cmd.exe", , 5)  ; Intenta esperar a cmd tradicional
+    if !WinActive("ahk_exe cmd.exe") {
+        ; Si no es cmd.exe clásico, prueba Windows Terminal
+        WinWait("ahk_exe WindowsTerminal.exe", , 5)
+        WinActivate("ahk_exe WindowsTerminal.exe")
+    } else {
+        WinActivate("ahk_exe cmd.exe")
+    }
+    Sleep(600) ; espera más larga para asegurar carga
+    Send("ssh -i ~/.ssh/azure-key-pair.pem azureuser@4.204.40.221")
+    return
 }
 
 #Numpad6::

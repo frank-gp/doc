@@ -1,11 +1,11 @@
 const http = require("http");
 
 const server = http.createServer((req, res) => {
-  // Agrega este console.log para ver cada vez que se haga una petición
-  console.log(`Petición recibida para la URL: ${req.url} con el método: ${req.method}`);
-  res.end("hello world");
+  const log = `${new Date().toISOString()} ${req.method} ${req.url}`;
+  console.log(log);
+  res.end("Hello world\n" + log);
 });
 
 server.listen(3000, () => {
-  console.log("Servidor escuchando en el puerto 3000");
+  console.log("Server is listening on port 3000");
 });

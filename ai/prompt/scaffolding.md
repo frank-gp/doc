@@ -8,6 +8,7 @@
 │   └── entity.entity.ts
 ├── entity.controller.ts
 ├── entity.routes.ts
+├── entity.repository.ts
 └── entity.service.ts
 
 ```
