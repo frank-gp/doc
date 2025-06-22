@@ -5,10 +5,10 @@
 wsl --list --verbose
 
 # Exportar la distro a un archivo .tar (snapshot o backup):
-mkdir C:/WSL/snapshots
-wsl --export Ubuntu C:/WSL/snapshots/ubuntun8n.tar
+mkdir D:/solution/wsl-snapshots
+wsl --export Ubuntu D:/solution/wsl-snapshots/ubuntun8n.tar
 
-wsl --export Ubuntu C:/WSL/snapshots/ubuntun8ncloudflare.tar
+wsl --export Ubuntu D:/solution/wsl-snapshots/ubuntun8ncloudflare.tar
 ```
 
 # Importar un snapshot (restaurar desde backup):
@@ -19,10 +19,7 @@ mkdir D:/WSLClones/UbuntuClone
 
 # Importar la distro clonada
 wsl --unregister Ubuntu
-wsl --import Ubuntu C:/WSL/UbuntuRestored C:/WSL/snapshots/ubuntun8n.tar --version 2
-
-wsl --unregister Ubuntu
-wsl --import Ubuntu C:/WSL/UbuntuRestored C:/WSL/snapshots/ubuntun8ncloudflare.tar --version 2
+wsl --import Ubuntu C:/WSL/UbuntuRestored D:/solution/wsl-snapshots/ubuntun8ncloudflare.tar --version 2
 
 # Verifica que se importó correctamente
 wsl --list --verbose
@@ -35,4 +32,10 @@ wsl -d UbuntuClone
 
 ```sh
 wsl --set-default UbuntuClone
+```
+
+# Temp Account
+
+```sh
+user123S@mail.com
 ```

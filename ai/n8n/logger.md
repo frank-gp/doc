@@ -70,15 +70,13 @@ sudo vim /usr/bin/n8n
 // Busca esta parte
 // require("source-map-support").install();
 // require("reflect-metadata");
-
-// Log all outgoing HTTP/HTTPS requests for debugging purposes
-// const path = require('path'); // Asegúrate de que esto esté presente
 require(path.join(__dirname, "request-logger"));
 ```
 
 # 📖 Ver el contenido completo del log
 
 ```sh
+# Ver el contenido completo del log
 cat /tmp/n8n-request.log
 
 # Ver solo las últimas 20 líneas
