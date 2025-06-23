@@ -2,7 +2,7 @@
 
 ```sh
 # Generar una clave SSH (si no tienes una)
-ssh-keygen -t ed25519 -C "user555@gmail.com"
+ssh-keygen -t ed25519 -C "fgp555@gmail.com"
 
 # Mostrar la clave pública (copiar el contenido completo)
 cat ~/.ssh/id_ed25519.pub
@@ -29,4 +29,10 @@ git remote set-url origin git@github.com:user555/temp-private.git
 
 # Confirmar que se actualizó correctamente
 git remote -v
+```
+
+# Cambiar la URL del remote "origin" a SSH
+
+```sh
+git remote set-url origin git@github.com:fgp555/frankgp-dist.git
 ```

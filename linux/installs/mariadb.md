@@ -19,30 +19,14 @@ sudo mariadb
 # Opcion 1
 
 ```sql
-CREATE DATABASE my_db;
-SHOW DATABASES;
-
-ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password;
-ALTER USER 'root'@'localhost' IDENTIFIED BY '';
-FLUSH PRIVILEGES;
-
-SELECT user, host FROM mysql.user;
-
-exit;
-
-```
-
-# Opcion 2
-
-```sql
 -- Crear la base de datos
-CREATE DATABASE my_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE my_database_tutorial CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- Crear el usuario y establecer contraseña
-CREATE USER 'my_user'@'localhost' IDENTIFIED BY 'my_P45SWorD123';
+CREATE USER 'my_user_tutorial'@'localhost' IDENTIFIED BY 'my_PassWrod_tutorial123';
 
 -- Otorgar todos los privilegios sobre la base de datos al usuario
-GRANT ALL PRIVILEGES ON my_db.* TO 'my_user'@'localhost';
+GRANT ALL PRIVILEGES ON my_database_tutorial.* TO 'my_user_tutorial'@'localhost';
 
 -- Aplicar cambios de privilegios
 FLUSH PRIVILEGES;

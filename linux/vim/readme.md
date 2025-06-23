@@ -1,14 +1,23 @@
-# ✅ Reemplazar en texto
+# Guía Rápida de Vim
 
 ```sh
+# ✅ Reemplazar en texto
 :%s/oldText/newText/g
-```
 
 # ✅ Método directo para borrar todo:
-
-```sh
 :%d
 ggVGd
+
+# Modo visual para seleccionar todo el contenido y eliminarlo
+# gg      " ir al inicio del archivo
+# V       " entrar en modo visual línea
+# G       " ir al final del archivo (selecciona todo)
+
+
+# Seleccionar todo el contenido
+ggVG
+# copiar
+y
 ```
 
 # 📝 Comandos Básicos de Vim
