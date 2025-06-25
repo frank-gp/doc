@@ -185,7 +185,7 @@ SendMode("Input")
         WinActivate("ahk_exe cmd.exe")
     }
     Sleep(600) ; espera más larga para asegurar carga
-    Send("ssh -i ~/.ssh/azure-key-pair.pem azureuser@48.221.192.113")
+    Send("ssh -i ~/.ssh/azure-key-pair.pem azureuser@52.183.209.15")
     return
 }
 
