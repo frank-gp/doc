@@ -15,6 +15,9 @@
 https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets
 
 ```sh
+npm install -g expo-cli
+npx expo-doctor
+
 npx create-expo-app
 npx create-expo-app .
 npx create-expo-app --example

@@ -13,6 +13,16 @@
 
 ```
 
+# Scaffolding
+
+```bash
+
+.
+├── UserPage.tsx
+└── UserPage.scss
+
+```
+
 #
 
 ```ts

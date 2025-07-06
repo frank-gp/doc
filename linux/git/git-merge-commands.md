@@ -5,10 +5,15 @@ git merge --abort
 
 git fetch origin
 git checkout -b feature/general origin/feature/general
+git checkout -b gio origin/gio2
+git checkout -b ivana origin/ivana-formulario
 
+git branch gio origin/gio2
 
-git fetch origin
-git checkout -b franco origin/feature/general
+git checkout main
+git merge ivana
+git merge gio2
+
 
 git diff dev..feature/general
 git diff dev..franco
@@ -16,11 +21,9 @@ git diff dev..franco
 git branch -D feature/general
 git branch -D dev
 
-git checkout dev
-git checkout -b dev
 
-git merge feature/general
 git merge franco --no-commit --no-ff
 git merge --no-commit --no-ff origin/feature/general
 
 code .git/config
+```

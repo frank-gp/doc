@@ -5,7 +5,11 @@ npm install -g pm2
 sudo npm install -g pm2
 pm2 -v
 
+# Ejemplo con Node.js
 pm2 start app.js --name giomr
+# Ejemplo con Next.js
+pm2 start npm --name "nextjs-app" -- start
+
 pm2 save
 pm2 startup
 
