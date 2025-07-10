@@ -2,13 +2,14 @@
 git reset --hard HEAD@{1}
 git merge --abort
 
-
 git fetch origin
 git checkout -b feature/general origin/feature/general
 git checkout -b gio origin/gio2
 git checkout -b ivana origin/ivana-formulario
 
-git branch gio origin/gio2
+git checkout -b ivana origin/main
+
+git branch gio2 origin/gio2
 
 git checkout main
 git merge ivana

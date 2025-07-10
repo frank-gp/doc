@@ -191,7 +191,19 @@ SendMode("Input")
 
 #Numpad6::
 {
-    SendInput("P4S5WordD123")
+    ; Ejecuta cmd en una nueva ventana (usando Windows Terminal si es por defecto)
+    Run("cmd.exe", "C:\")
+    ; Espera a que aparezca una ventana de terminal (cmd tradicional o Windows Terminal)
+    WinWait("ahk_exe cmd.exe", , 5)  ; Intenta esperar a cmd tradicional
+    if !WinActive("ahk_exe cmd.exe") {
+        ; Si no es cmd.exe clásico, prueba Windows Terminal
+        WinWait("ahk_exe WindowsTerminal.exe", , 5)
+        WinActivate("ahk_exe WindowsTerminal.exe")
+    } else {
+        WinActivate("ahk_exe cmd.exe")
+    }
+    Sleep(600) ; espera más larga para asegurar carga
+    Send("ssh -i ~/.ssh/cpanel_systeapp.pem -p 21098 systssym@68.65.122.237")
     return
 }
 
@@ -214,7 +226,7 @@ SendMode("Input")
 
 #NumpadDiv::
 {
-    SendInput(" git restore .")
+    SendInput("P4S5WordD123")
     return
 }
 
