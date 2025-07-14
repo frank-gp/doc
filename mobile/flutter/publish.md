@@ -107,24 +107,6 @@ flutter build apk --release
 
 # splash screen
 
-```sh
-# Esto genera todos los íconos necesarios automáticamente
-flutter pub get
-flutter pub run flutter_launcher_icons:main
-
-# Esto modifica automáticamente archivos nativos (launch_background.xml, Info.plist, etc.).
-flutter pub get
-flutter pub run flutter_native_splash:create
-
-# para limpiar splash
-flutter pub run flutter_native_splash:remove
-
-flutter clean
-flutter run
-
-
-```
-
 ✅ Recomendaciones para imágenes:
 Archivo Tamaño sugerido Detalles
 assets/icon.png 512x512 Ícono general
@@ -133,7 +115,25 @@ assets/icon_background.png 108x108+ Fondo sólido o imagen (no debe tener transp
 assets/splash.png 300x300 Imagen centrada para splash
 
 ```sh
+# Esto genera todos los íconos necesarios automáticamente
+# Esto modifica automáticamente archivos nativos (launch_background.xml, Info.plist, etc.).
 flutter pub get
 flutter pub run flutter_launcher_icons:main
 flutter pub run flutter_native_splash:create
+
+flutter clean
+flutter run
+
+flutter clean
+flutter pub get
+flutter build appbundle --release
+
+# para limpiar splash
+flutter pub run flutter_native_splash:remove
+```
+
+### alias
+
+```sh
+alias flutter:release="node bump_version.js && flutter build appbundle --release"
 ```
