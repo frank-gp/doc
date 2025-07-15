@@ -238,7 +238,7 @@ SendMode("Input")
 
 #F12::
 {
-    SendInput("rm -rf .git && git init && git add . && git commit -m 'initial_commit'")
+    SendInput(" rm -rf .git && git init && git add . && git commit -m 'initial_commit'")
     return
 }
 
