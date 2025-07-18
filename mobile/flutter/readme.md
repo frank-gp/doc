@@ -25,6 +25,7 @@ flutter --version
 where flutter dart
 flutter create myapp
 flutter create myapp --empty
+flutter create . --org com.frankgp --platforms android --empty 
 flutter create app --org com.frankgp --platforms android,ios --empty
 
 flutter create --org com.tuempresa --project-name mylogin --platforms=android,ios mylogin
