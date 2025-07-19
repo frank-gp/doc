@@ -1,0 +1,38 @@
+### GET - Obtener todos los posts
+GET https://jsonplaceholder.typicode.com/posts
+
+### GET - Obtener un post específico
+GET https://jsonplaceholder.typicode.com/posts/1
+
+### POST - Crear un nuevo post
+POST https://jsonplaceholder.typicode.com/posts
+Content-Type: application/json
+
+{
+  "title": "Nuevo Post",
+  "body": "Este es el contenido del post.",
+  "userId": 1
+}
+
+### PUT - Actualizar un post completo
+PUT https://jsonplaceholder.typicode.com/posts/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Post Actualizado",
+  "body": "Contenido actualizado del post.",
+  "userId": 1
+}
+
+### PATCH - Actualizar parcialmente un post
+PATCH https://jsonplaceholder.typicode.com/posts/1
+Content-Type: application/json
+
+{
+  "title": "Título modificado"
+}
+
+### DELETE - Eliminar un post
+DELETE https://jsonplaceholder.typicode.com/posts/1
+Content-Type: application/json

@@ -1,0 +1,18 @@
+
+###
+GET https://ip.guide
+
+###
+GET https://ip.guide/38.250.157.61
+
+###
+GET https://fakestoreapi.com/products
+
+###
+GET https://dummyjson.com/products
+
+###
+GET https://dummyjson.com/users
+
+###
+GET https://world.openfoodfacts.org/api/v0/product/737628064502.json

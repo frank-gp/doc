@@ -1,0 +1,48 @@
+@token={{$dotenv TOKEN}}
+
+### signin
+# @name authSignin
+POST http://localhost:3000/api/auth/signin
+Content-Type: application/json
+
+{
+    "email": "demo@example.com",
+    "password": "Demo@P45ssW0rd123"
+}
+
+### dashboard / private
+@newToken={{authSignin.response.body.token}}
+GET http://localhost:3000/api/user/private/dashboard
+Authorization: Bearer {{newToken}}
+
+
+### signup
+POST http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{
+    "email": "user123@gmail.com",
+    "password": "P4ssWord@123",
+    "role": "admin"
+}
+
+### signin
+POST http://localhost:3000/api/auth/signin
+Content-Type: application/json
+
+{
+    "email": "user123@gmail.com",
+    "password": "P4ssWord@123"
+}
+
+### findAll
+GET http://localhost:3000/api/user/findAll
+Authorization: Bearer {{newToken}}
+
+
+### delete
+DELETE http://localhost:3000/api/user/delete/1
+Authorization: Bearer {{newToken}}
+
+###
+GET http://localhost:3000/swagger

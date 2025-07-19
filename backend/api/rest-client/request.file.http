@@ -1,0 +1,36 @@
+### getAll
+GET http://localhost:3000/api/file/getAll
+
+### allTypes
+POST http://localhost:3000/api/file/upload/allTypes
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="file"; filename="test.txt"
+Content-Type: text/plain
+
+Hello, this is a test file.
+--MyBoundary--
+
+### upload/image
+POST http://localhost:3000/api/file/upload/image
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="name"
+
+mi-imagen
+--MyBoundary
+Content-Disposition: form-data; name="description"
+
+Esta es una descripción de prueba
+--MyBoundary
+Content-Disposition: form-data; name="file"; filename="example.jpg"
+Content-Type: image/jpg
+
+< ../files-demo/example.jpg
+--MyBoundary--
+
+
+
+
