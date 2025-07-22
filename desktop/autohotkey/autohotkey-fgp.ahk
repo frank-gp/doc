@@ -173,19 +173,7 @@ SendMode("Input")
 
 #Numpad5::
 {
-    ; Ejecuta cmd en una nueva ventana (usando Windows Terminal si es por defecto)
-    Run("cmd.exe", "C:\")
-    ; Espera a que aparezca una ventana de terminal (cmd tradicional o Windows Terminal)
-    WinWait("ahk_exe cmd.exe", , 5)  ; Intenta esperar a cmd tradicional
-    if !WinActive("ahk_exe cmd.exe") {
-        ; Si no es cmd.exe clásico, prueba Windows Terminal
-        WinWait("ahk_exe WindowsTerminal.exe", , 5)
-        WinActivate("ahk_exe WindowsTerminal.exe")
-    } else {
-        WinActivate("ahk_exe cmd.exe")
-    }
-    Sleep(600) ; espera más larga para asegurar carga
-    Send("ssh -i ~/.ssh/azure-key-pair.pem azureuser@52.183.209.15")
+    SendInput(" flutter create myapp --empty --org com.frankgp --platforms android,ios")
     return
 }
 
