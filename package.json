@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "env": "node --env-file=.env index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/frank-gp/doc#readme",
   "dependencies": {
-    "mysql2": "^3.14.3"
+    "mysql2": "^3.14.3",
+    "typeorm": "^0.3.25"
   }
 }
