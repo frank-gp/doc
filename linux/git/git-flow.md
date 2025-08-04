@@ -6,6 +6,7 @@ git diff abc123 def456
 
 #Ver qué archivos cambiaron (sin el contenido):
 git diff 6b5ea8b 615526f --name-only
+git diff head~1 --name-only
 
 # cambios entre dos ramas
 git diff rama1 rama2

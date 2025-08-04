@@ -19,4 +19,8 @@ npm update vite
 
 # to update globally installed packages
 npm update -g
+
+# to uninstall a package
+npx npkill
+npm npkill -g
 ```
