@@ -14,9 +14,14 @@ OpenAI liberó el modelo Whisper para que puedas usarlo gratis y sin conexión, 
 pip install git+https://github.com/openai/whisper.git
 pip install torch  # o pip install torch torchvision torchaudio
 
+ffmpeg -i video.mp4 -t 16 -c copy output.mp4
+
+ffmpeg -i video.mp4 audio.mp3
+
 # 🚀 Usar Whisper (gratis y local)
-whisper audio.mp3 --model medium --output_format srt
+whisper video.mp4 --model medium --output_format srt --language Spanish
 whisper audio.mp3 --model medium --output_format srt --language Spanish
 whisper video.mp3 --model small --output_format srt --language Spanish
+whisper audio.mp3 --model medium --output_format srt
 
 ```
