@@ -1,0 +1,21 @@
+@OPENROUTER_API_KEY={{$dotenv OPENROUTER_API_KEY}}
+
+
+### Enviar contexto inicial a OpenRouter
+POST https://openrouter.ai/api/v1/chat/completions
+Authorization: Bearer {{OPENROUTER_API_KEY}}
+Content-Type: application/json
+
+{
+  "model": "mistralai/mistral-7b-instruct",  // O cualquier otro modelo permitido
+  "messages": [
+    {
+      "role": "system",
+      "content": "Responde a los mensajes como asistente de la empresa ACME S.A.C., ubicada en Lima, Perú. Proporciona información clara, concisa y profesional. La empresa se especializa en soluciones de software personalizadas."
+    },
+    {
+      "role": "user",
+      "content": "¿Cuál es el horario de atención?"
+    }
+  ]
+}

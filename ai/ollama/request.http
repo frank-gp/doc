@@ -1,0 +1,56 @@
+### Listar modelos disponibles
+GET http://localhost:11434/api/tags
+Accept: application/json
+
+###
+
+### Descargar un modelo (por ejemplo, llama3)
+POST http://localhost:11434/api/pull
+Content-Type: application/json
+
+{
+  "name": "llama3"
+}
+
+###
+
+### Generar texto con un modelo (por ejemplo, llama3)
+POST http://localhost:11434/api/generate
+Content-Type: application/json
+
+{
+  "model": "llama3",
+  "prompt": "¿Cuál es la capital de Francia?",
+  "stream": false
+}
+
+###
+
+### Crear un chat (con historial de conversación)
+POST http://localhost:11434/api/chat
+Content-Type: application/json
+
+{
+  "model": "llama3",
+  "messages": [
+    { "role": "user", "content": "Hola, ¿quién eres?" },
+    { "role": "assistant", "content": "Soy un modelo de lenguaje creado por Meta." },
+    { "role": "user", "content": "¿Qué puedes hacer?" }
+  ],
+  "stream": false
+}
+
+###
+
+### Cancelar una generación en curso
+POST http://localhost:11434/api/stop
+
+###
+
+### Eliminar un modelo descargado
+DELETE http://localhost:11434/api/delete
+Content-Type: application/json
+
+{
+  "name": "llama3"
+}

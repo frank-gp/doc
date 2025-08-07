@@ -1,0 +1,56 @@
+### https://openrouter.ai/settings/keys
+### ✅ OPENROUTER (GPT-4o de OpenAI)
+@OPENROUTER_API_KEY={{$dotenv OPENROUTER_API_KEY}}
+@REFERER=https://tusitio.com
+@TITLE=MiAppChatBot
+
+###
+GET https://openrouter.ai/api/v1/models
+
+### Enviar contexto y obtener respuesta de un modelo (por ejemplo, Mistral 7B Instruct)
+POST https://openrouter.ai/api/v1/chat/completions
+Authorization: Bearer {{OPENROUTER_API_KEY}}
+Content-Type: application/json
+HTTP-Referer: {{REFERER}}
+X-Title: {{TITLE}}
+
+{
+  "model": "mistralai/mistral-7b-instruct",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Eres un asistente amable que responde a los clientes de una tienda online. Siempre usa un lenguaje educado y útil."
+    },
+    {
+      "role": "user",
+      "content": "Contexto: El cliente dice que su pedido llegó dañado. Redacta una respuesta empática para él."
+    }
+  ]
+}
+
+###
+
+### Listar modelos disponibles en OpenRouter
+GET https://openrouter.ai/api/v1/models
+Authorization: Bearer {{OPENROUTER_API_KEY}}
+
+###
+
+### Usar otro modelo, como GPT-4 Turbo (requiere tener acceso)
+POST https://openrouter.ai/api/v1/chat/completions
+Authorization: Bearer {{OPENROUTER_API_KEY}}
+Content-Type: application/json
+
+{
+  "model": "openai/gpt-4-turbo",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Eres un agente de soporte para una tienda digital."
+    },
+    {
+      "role": "user",
+      "content": "El cliente no encuentra su número de seguimiento. Escríbele un mensaje útil."
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+### ✅ GEMINI 2.0 (Google AI)
+@GEMINI_API_KEY={{$dotenv GEMINI_API_KEY}}
+
+### https://aistudio.google.com/apikey
+### 🔹 Generar texto con Gemini 2.0 Flash
+POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={{GEMINI_API_KEY}}
+Content-Type: application/json
+
+{
+  "contents": [
+    {
+      "parts": [
+        {
+          "text": "¿Qué es un cau cau?",
+        }
+      ]
+    }
+  ]
+}
+
+### https://console.groq.com/home
+### ✅ GROQ (LLaMA 4 Scout)
+@GROQ_API_KEY={{$dotenv GROQ_API_KEY}}
+
+# 🔹 Pregunta a LLaMA 4 Scout (Meta)
+POST https://api.groq.com/openai/v1/chat/completions
+Authorization: Bearer {{GROQ_API_KEY}}
+Content-Type: application/json
+
+{
+  "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "messages": [
+    {
+      "role": "user",
+      "content": "¿Qué es un cau cau?"
+    }
+  ]
+}
+
+
+### https://openrouter.ai/settings/keys
+### ✅ OPENROUTER (GPT-4o de OpenAI)
+@OPENROUTER_API_KEY={{$dotenv OPENROUTER_API_KEY}}
+@REFERER=https://tusitio.com
+@TITLE=MiAppChatBot
+
+### 🔹 Pregunta básica con GPT-4o
+POST https://openrouter.ai/api/v1/chat/completions
+Authorization: Bearer {{OPENROUTER_API_KEY}}
+HTTP-Referer: {{REFERER}}
+X-Title: {{TITLE}}
+Content-Type: application/json
+
+{
+  "model": "openai/gpt-4o",
+  "messages": [
+    {
+      "role": "user",
+      "content": "¿Qué es un cau cau?"
+    }
+  ],
+  "max_tokens": 512
+}
+
+### 🔹 GPT-4o con sistema personalizado (modo asistente empresarial)
+POST https://openrouter.ai/api/v1/chat/completions
+Authorization: Bearer {{OPENROUTER_API_KEY}}
+HTTP-Referer: {{REFERER}}
+X-Title: {{TITLE}}
+Content-Type: application/json
+
+{
+  "model": "mistralai/mistral-7b-instruct",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Eres un asistente para la empresa 'MiAppChatBot', que vende software en Perú. Tus respuestas deben ser breves, amables y ofrecer enlaces si es necesario."
+    },
+    {
+      "role": "user",
+      "content": "¿Ofrecen planes mensuales?"
+    }
+  ]
+}
+
