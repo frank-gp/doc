@@ -1,0 +1,40 @@
+### Send push notification via Expo
+POST https://exp.host/--/api/v2/push/send
+Content-Type: application/json
+Accept: application/json
+Accept-encoding: gzip, deflate
+
+{
+  "to": "ExponentPushToken[AmUwh9HPCmkXJOwFurdlvn]",
+  "sound": "default",
+  "title": "From Request HTTP file",
+  "body": "And here is the body!",
+  "data": { "someData": "goes here" }
+}
+
+### Send push notification via Expo
+# https://docs.expo.dev/push-notifications/sending-notifications/
+POST https://exp.host/--/api/v2/push/send
+Content-Type: application/json
+Accept: application/json
+Accept-encoding: gzip, deflate
+
+[
+  {
+    "to": "ExponentPushToken[AmUwh9HPCmkXJOwFurdlvn]",
+    "sound": "default",
+    "body": "Hello world!"
+  },
+  {
+    "to": "ExponentPushToken[AmUwh9HPCmkXJOwFurdlvn]",
+    "badge": 1,
+    "body": "You've got mail"
+  },
+  {
+    "to": [
+      "ExponentPushToken[AmUwh9HPCmkXJOwFurdlvn]",
+      "ExponentPushToken[AmUwh9HPCmkXJOwFurdlvn]"
+    ],
+    "body": "Breaking news!"
+  }
+]

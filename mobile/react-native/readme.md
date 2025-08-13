@@ -1,4 +1,12 @@
+# Download and Install JDK 21 LTS
+
+https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html
+https://adoptium.net/temurin/releases
+
 ```sh
+java -version
+
+
 npm install -g expo-cli
 npx expo-doctor
 
@@ -10,6 +18,9 @@ npx create-expo-app folderName --template blank-typescript
 npx create-expo-app@latest folderName --template
 
 npm start
+
+# Iniciar el emulador mostrando los dispositivos disponibles
+npx expo run:android -d
 
 npm run reset-project
 
