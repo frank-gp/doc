@@ -1,0 +1,24 @@
+### Listar tokens guardados (si quieres añadir endpoint GET)
+GET http://192.168.18.21:3000/tokens
+
+### Guardar token
+POST http://192.168.18.21:3000/save-token
+Content-Type: application/json
+
+{
+  "token": "ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]"
+}
+
+### Enviar notificación
+POST http://192.168.18.21:3000/send-notification
+Content-Type: application/json
+
+{
+  "title": "Hola desde el backend",
+  "body": "Este es un mensaje enviado desde Express",
+  "data": {
+    "url": "/ruta-ejemplo"
+  }
+}
+
+

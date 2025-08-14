@@ -5,11 +5,11 @@ Accept: application/json
 Accept-encoding: gzip, deflate
 
 {
-  "to": "ExponentPushToken[AmUwh9HPCmkXJOwFurdlvn]",
+  "to": "ExponentPushToken[wsLqKJGtuc2cFvdDu-5goT]",
   "sound": "default",
   "title": "From Request HTTP file",
   "body": "And here is the body!",
-  "data": { "someData": "goes here" }
+  "data": { "someData": "goes here","url": "./user/1" }
 }
 
 ### Send push notification via Expo
@@ -21,19 +21,19 @@ Accept-encoding: gzip, deflate
 
 [
   {
-    "to": "ExponentPushToken[AmUwh9HPCmkXJOwFurdlvn]",
+    "to": "ExponentPushToken[wsLqKJGtuc2cFvdDu-5goT]",
     "sound": "default",
     "body": "Hello world!"
   },
   {
-    "to": "ExponentPushToken[AmUwh9HPCmkXJOwFurdlvn]",
+    "to": "ExponentPushToken[wsLqKJGtuc2cFvdDu-5goT]",
     "badge": 1,
     "body": "You've got mail"
   },
   {
     "to": [
-      "ExponentPushToken[AmUwh9HPCmkXJOwFurdlvn]",
-      "ExponentPushToken[AmUwh9HPCmkXJOwFurdlvn]"
+      "ExponentPushToken[wsLqKJGtuc2cFvdDu-5goT]",
+      "ExponentPushToken[wsLqKJGtuc2cFvdDu-5goT]"
     ],
     "body": "Breaking news!"
   }

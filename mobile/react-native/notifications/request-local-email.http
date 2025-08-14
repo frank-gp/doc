@@ -1,0 +1,32 @@
+### Ver dispositivos registrados
+GET http://192.168.18.21:3000/tokens
+
+### Guardar token
+POST http://192.168.18.21:3000/save-token
+Content-Type: application/json
+
+{
+  "token": "ExponentPushToken[xxxxxxxxxxxxxxxxxxxxxx]",
+  "email": "user123@gmail.com"
+}
+
+### Enviar notificación a TODOS
+POST http://192.168.18.21:3000/send-notification
+Content-Type: application/json
+
+{
+  "title": "Hola a todos",
+  "body": "Mensaje para todos los dispositivos"
+}
+
+### Enviar notificación a un email específico
+POST http://192.168.18.21:3000/send-notification
+Content-Type: application/json
+
+{
+  "title": "Hola usuario",
+  "body": "Mensaje solo para user123@gmail.com",
+  "email": "user123@gmail.com"
+}
+
+

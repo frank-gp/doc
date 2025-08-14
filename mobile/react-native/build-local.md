@@ -1,22 +1,4 @@
-```sh
-# https://expo.dev/accounts/username
-npm install -g eas-cli
-eas login
-eas build:configure
-eas whoami
-eas init
-eas credentials
-
-eas build
-eas build:status
-eas build --platform android
-
-npx expo prebuild
-npx expo run:android -d
-
-```
-
-# 🔹Generar el archivo AAB
+# Generar el archivo AAB (Android App Bundle)
 
 ```sh
 npx expo prebuild
@@ -27,7 +9,7 @@ gradlew.bat bundleRelease
 # android/app/build/outputs/bundle/release/app-release.aab
 ```
 
-# 🔹Generar el archivo APK
+# Generar el archivo APK (Android Package)
 
 ```sh
 
@@ -42,14 +24,22 @@ gradlew.bat assembleRelease
 ### app.json
 
 ```json
+{
+  "expo": {
+    "name": "Tutorial App",
+    "slug": "com-frankgp-tutorial",
     "android": {
       "versionCode": 4,
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      },
-      "package": "com.fgp555.transpaservic"
+      "package": "com.frankgp.tutorial"
     },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "bcacba6c-7b16-4f77-a5ce-9bbfdd281dd1"
+      }
+    }
+  }
+}
 ```
 
 ### eas.json
@@ -57,7 +47,7 @@ gradlew.bat assembleRelease
 ```json
 {
   "cli": {
-    "version": ">= 14.5.0",
+    "version": ">= 16.17.4",
     "appVersionSource": "remote"
   },
   "build": {
@@ -66,13 +56,7 @@ gradlew.bat assembleRelease
       "distribution": "internal"
     },
     "preview": {
-      "distribution": "internal",
-      "android": {
-        "buildType": "apk"
-      },
-      "ios": {
-        "simulator": true
-      }
+      "distribution": "internal"
     },
     "production": {
       "autoIncrement": true
