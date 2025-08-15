@@ -1,4 +1,3 @@
-// server.js
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
@@ -8,40 +7,52 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-// Simulación de almacenamiento de tokens en memoria
-let deviceTokens = [];
+// Almacenamiento en memoria [{ email, token }]
+let devices = [];
 
-// Ruta raíz
+// Ver todos los registros
 app.get("/tokens", (req, res) => {
-  res.json({ tokens: deviceTokens });
+  res.json({ devices });
 });
 
-// Recibir y guardar el token
+// Guardar o actualizar token por email
 app.post("/save-token", (req, res) => {
-  const { token } = req.body;
-  if (!token) {
-    return res.status(400).json({ error: "Token requerido" });
+  const authorization = req.headers.authorization;
+  console.log("authorization", authorization);
+
+  const { token, email } = req.body;
+  if (!token || !email) {
+    return res.status(400).json({ error: "Token y email son requeridos" });
   }
 
-  if (!deviceTokens.includes(token)) {
-    deviceTokens.push(token);
+  const existingIndex = devices.findIndex((d) => d.email === email);
+  if (existingIndex !== -1) {
+    // Si ya existe el email, actualizamos el token
+    devices[existingIndex].token = token;
+  } else {
+    devices.push({ email, token });
   }
 
-  console.log("Tokens guardados:", deviceTokens);
-  res.json({ success: true, tokens: deviceTokens });
+  console.log("Dispositivos guardados:", devices);
+  res.json({ success: true, devices });
 });
 
-// Enviar notificación
+// Enviar notificación a todos o a un email
 app.post("/send-notification", async (req, res) => {
-  const { title, body, data } = req.body;
+  const { title, body, data, email } = req.body;
 
-  if (deviceTokens.length === 0) {
-    return res.status(400).json({ error: "No hay tokens guardados" });
+  // Si envían email, filtra por ese usuario
+  let targetDevices = devices;
+  if (email) {
+    targetDevices = devices.filter((d) => d.email === email);
+    if (targetDevices.length === 0) {
+      return res.status(404).json({ error: "No se encontró ese email" });
+    }
   }
 
   try {
-    const messages = deviceTokens.map((token) => ({
-      to: token,
+    const messages = targetDevices.map((device) => ({
+      to: device.token,
       sound: "default",
       title: title || "Título por defecto",
       body: body || "Mensaje por defecto",

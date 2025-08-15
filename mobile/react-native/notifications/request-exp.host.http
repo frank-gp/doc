@@ -9,7 +9,7 @@ Accept-encoding: gzip, deflate
   "sound": "default",
   "title": "From Request HTTP file",
   "body": "And here is the body!",
-  "data": { "someData": "goes here","url": "./user/1" }
+  "data": { "someData": "goes here","url": "/products/123" }
 }
 
 ### Send push notification via Expo

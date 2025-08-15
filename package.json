@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/frank-gp/doc#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "morgan": "^1.10.1",
     "mysql2": "^3.14.3",
     "typeorm": "^0.3.25"
   }
