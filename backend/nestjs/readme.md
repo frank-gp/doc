@@ -10,8 +10,8 @@ nest new new-proyect
 nest new .
 
 # nest generate|g <schematic> [name] [path]
-nest generate resource user modules
-nest g res user modules
+nest generate resource user modulesFolder
+nest g res user modulesFolder
 nest g res user --no-spec
 
 

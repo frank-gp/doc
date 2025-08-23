@@ -17,6 +17,8 @@ npx expo install --check
 npx expo install expo@latest
 npx expo install expo@next
 
+npx expo-doctor
+
 rm -rf node_modules package-lock.json
 npm install
 
