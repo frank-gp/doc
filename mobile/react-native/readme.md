@@ -13,7 +13,7 @@ npx expo-doctor
 npx create-expo-app
 npx create-expo-app .
 npx create-expo-app folderName --example
-npx create-expo-app folderName --template blank
+npx create-expo-app folderName --template blank # vanilla javascript
 npx create-expo-app folderName --template blank-typescript
 npx create-expo-app@latest folderName --template
 
