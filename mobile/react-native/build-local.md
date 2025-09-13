@@ -1,5 +1,7 @@
 # Generar el archivo AAB (Android App Bundle) & APK (Android Package)
 
+descargar las credenciales de expo, y actualizar el archivo `app.json`
+
 ```sh
 npx expo prebuild
 npx expo prebuild --clean
@@ -12,18 +14,18 @@ npx expo run:android -d
 
 
 # android\gradle.properties
-MYAPP_UPLOAD_STORE_FILE=../../_credentials/@frankgp__com-frankgp-app-keystore.bak.jks
-MYAPP_UPLOAD_KEY_ALIAS=upload-key-alias
-MYAPP_UPLOAD_STORE_PASSWORD=your_password
-MYAPP_UPLOAD_KEY_PASSWORD=your_password
+MYAPP_STORE_FILE=../../_credentials/com-frankgp-app-keystore.jks
+MYAPP_STORE_PASSWORD=your_password
+MYAPP_KEY_ALIAS=upload-key-alias
+MYAPP_KEY_PASSWORD=your_password
 ```
 
 ```js
 // android\app\build.gradle
     defaultConfig {
-        applicationId 'com.ivanagbarreto.wardrobe'
-        versionCode 7
-        versionName "25.9.12"
+        applicationId 'com.frankgp.app'
+        versionCode 14
+        versionName "25.9.14"
     }
 
     signingConfigs {
@@ -44,7 +46,7 @@ MYAPP_UPLOAD_KEY_PASSWORD=your_password
     }
 ```
 
-# Generar el archivo AAB
+# Generar el archivo AAB (Android App Bundle) & APK (Android Package)
 
 ```sh
 
@@ -67,13 +69,4 @@ gradlew.bat bundleRelease
 gradlew.bat assembleRelease
 
 # android/app/build/outputs/bundle/release/app-release.aab
-```
-
-### Configura local.properties
-
-```sh
-# ./android/local.properties
-sdk.dir=C:\\Users\\TU_USUARIO\\AppData\\Local\\Android\\sdk
-
-npx expo run:android -d
 ```
