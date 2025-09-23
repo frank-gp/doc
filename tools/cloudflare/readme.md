@@ -7,6 +7,9 @@
 ### Open Command Prompt as Administrator.
 
 ```sh
+cloudflared --version
+# cloudflared service install
+
 cloudflared service uninstall
 
 # Update the cloudflared service

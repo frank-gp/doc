@@ -13,33 +13,6 @@ git diff rama1 rama2
 
 ## 1. Clonar un Repositorio
 git clone https://github.com/usuario/repositorio.git
-git clone --single-branch --branch dev https://github.com/usuario/repositorio.git
-
-## 2. Ramas
-# Crea una nueva rama.
-git branch rama2
-
-# Cambia a la rama especificada.
-git checkout rama2
-
-# Crear y cambiarse a la nueva rama
-git checkout -b rama2
-
-# ver ramas
-git branch
-
-# ver todas las ramas remotas
-git branch -r
-
-# ver Todas las ramas (all)
-git branch -a
-
-# renombrar rama (modify)
-git branch -m nuevo-nombre
-
-# eliminar rama (delete)
-git branch -d rama2
-git branch -D rama2
 
 ## 3. Agregar Cambios
 git add .
@@ -64,7 +37,7 @@ git checkout main
 git merge rama2
 git merge --abort
 
-# sí existe en el remoto 
+# sí existe en el remoto
 git merge origin/rama2
 
 
@@ -82,9 +55,6 @@ git rebase main
 # ocurre cuando Git detecta que las dos ramas que intentas fusionar no comparten un historial común.
 git pull origin dev --allow-unrelated-histories
 
-# Clonar nueva rama git
-git fetch
-git branch -r
-git branch
-git checkout -b gio-appointments origin/gio-appointments
 
+
+```

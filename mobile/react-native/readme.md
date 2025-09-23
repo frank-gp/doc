@@ -33,11 +33,18 @@ npm start -- --tunnel
 
 ```
 
+# Install Expo Router
+
+https://docs.expo.dev/router/installation/
+
+```sh
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+```
+
 ### package.json
 
 ```json
 {
-  "name": "myapp",
   "main": "expo-router/entry"
 }
 ```
@@ -46,8 +53,7 @@ npm start -- --tunnel
 
 ```json
 {
-  "icon": "./assets/images/icon.png",
-  "scheme": "myapp"
+  "scheme": "your-app-scheme"
 }
 ```
 

@@ -14,7 +14,7 @@ npx expo run:android -d
 
 
 # android\gradle.properties
-MYAPP_STORE_FILE=../../_credentials/com-frankgp-app-keystore.jks
+MYAPP_STORE_FILE=../../_credentials/app-keystore.bak.jks
 MYAPP_STORE_PASSWORD=your_password
 MYAPP_KEY_ALIAS=upload-key-alias
 MYAPP_KEY_PASSWORD=your_password

@@ -6,3 +6,5 @@ https://www.oracle.com/java/technologies/downloads/#jdk21-windows
 java -version
 javac -version
 ```
+
+C:\Program Files\Java\jdk-21\bin
