@@ -3,9 +3,14 @@
 https://docs.flutter.dev/get-started/install/windows/mobile
 
 - **Tutorial: Install Flutter** https://youtu.be/n2uK9RWdGrw?t=847
+
 - Install C++ en Visual Studio
+  https://aka.ms/vs/17/release/vc_redist.x64.exe
+
 - Install in Android Studio > ✅ Android SDK Command-line Tools
+
   - `SDK Manager > Settings > Languages & Frameworks > Android SDK > SDK Tools`
+
 - Install in Android Studio > ✅ NDK (Side by Side)
   - `SDK Manager > Settings > Languages & Frameworks > Android SDK > SDK Tools`
 - To accept the SDK licenses
@@ -25,7 +30,7 @@ flutter --version
 where flutter dart
 flutter create myapp
 flutter create myapp --empty
-flutter create myapp --empty --org com.frankgp --platforms android,ios 
+flutter create myapp --empty --org com.frankgp --platforms android,ios
 flutter create . --empty --org com.frankgp --platforms android
 
 flutter create --org com.tuempresa --project-name mylogin --platforms=android,ios mylogin

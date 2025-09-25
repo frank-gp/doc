@@ -10,17 +10,26 @@ npm install
 # Update Expo SDK
 
 https://youtu.be/HBPyP4OxVgs (source)
+https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/
 
 ```sh
+npm install expo@^54.0.0
+npx expo install expo@latest
+
+npx expo install --fix && npx expo-doctor
+
 npx expo install --check
 
-npx expo install expo@latest
-npx expo install expo@next
+npm install --legacy-peer-deps
 
 npx expo-doctor
 
+# Limpia cache y node_modules
 rm -rf node_modules package-lock.json
-npm install
+npm cache clean --force
+
+# Instala las versiones correctas según Expo SDK 54
+npx expo install
 
 npx expo prebuild -p android --clear
 npx expo run:android

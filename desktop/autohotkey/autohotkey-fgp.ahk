@@ -167,7 +167,7 @@ SendMode("Input")
         WinActivate("ahk_exe cmd.exe")
     }
     Sleep(600) ; espera más larga para asegurar carga
-    Send("ssh -i ~/.ssh/aws-github-actions.pem ec2-user@3.21.34.49{Enter}")
+    Send("ssh -i ~/.ssh/fgpone-key-pair.pem ec2-user@3.21.34.49{Enter}")
     return
 }
 
