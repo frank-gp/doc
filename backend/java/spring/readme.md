@@ -24,13 +24,15 @@ https://start.spring.io/
 # Dependencies:
 # Spring Web
 
+./mvnw --version
+
 # Usar Maven Wrapper
-./mvnw clean install
 ./mvnw spring-boot:run
+./mvnw clean install
 
 # en Windows
-mvnw.cmd clean install
 mvnw.cmd spring-boot:run
+mvnw.cmd clean install
 
 # alias
 vim ~/.bashrc

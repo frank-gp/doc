@@ -5,7 +5,7 @@
 
 ```sh
 java -version
-javac --version
+javac --version  # Compilador
 
 code ./HelloWorld.java
 
@@ -26,9 +26,10 @@ public class HelloWorld {
 # Compilar y ejecutar
 
 ```sh
+# Ejecuta el programa
+java HelloWorld
+
 # Compila el código
 javac HelloWorld.java
 
-# Ejecuta el programa
-java HelloWorld
 ```

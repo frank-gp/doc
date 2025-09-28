@@ -1,27 +1,27 @@
 # Build Maven
 
-Cambio de versión de SNAPSHOT a versión final en pom.xml
-
 ```xml
-<!-- SNAPSHOT -->
+<!-- pom.xml -->
+
+<!-- Versión SNAPSHOT -->
 <version>0.0.1-SNAPSHOT</version>
 
 <!-- Versión final -->
 <version>0.0.1</version>
 ```
 
+# Compilar el proyecto
+
 ```sh
 
-# Compilar el proyecto
-./mvnw clean install   # en Linux/Mac
-mvnw.cmd clean install # en Windows
+# Limpia builds anteriores, ejecuta pruebas y empaqueta
+./mvnw clean verify package
 
-# Ejecutar la aplicación
-./mvnw spring-boot:run   # en Linux/Mac
-mvnw.cmd spring-boot:run # en Windows
+# ver el archivo .jar generado
+target\todolist-0.0.1.jar
 
 # ejecutar el .jar generado en target/ (Maven)
-java -jar target/demo-0.0.1-SNAPSHOT.jar         # Maven
+java -jar target/todolist-0.0.1.jar         # Maven
 
 
 # http://localhost:8080/
