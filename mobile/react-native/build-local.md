@@ -14,7 +14,7 @@ npx expo run:android -d
 
 
 # android\gradle.properties
-MYAPP_STORE_FILE=../../_credentials/app-keystore.bak.jks
+MYAPP_STORE_FILE=../../_credentials/android/keystore.jks
 MYAPP_STORE_PASSWORD=your_password
 MYAPP_KEY_ALIAS=upload-key-alias
 MYAPP_KEY_PASSWORD=your_password
@@ -24,19 +24,19 @@ MYAPP_KEY_PASSWORD=your_password
 // android\app\build.gradle
     defaultConfig {
         applicationId 'com.frankgp.app'
-        versionCode 14
-        versionName "25.9.14"
+        versionCode 26
+        versionName "2025.10.26"
     }
 
     signingConfigs {
-      release {
-          if (project.hasProperty('MYAPP_STORE_FILE')) {
-              storeFile file(MYAPP_STORE_FILE)
-              storePassword MYAPP_STORE_PASSWORD
-              keyAlias MYAPP_KEY_ALIAS
-              keyPassword MYAPP_KEY_PASSWORD
-          }
-      }
+        release {
+            if (project.hasProperty('MYAPP_STORE_FILE')) {
+                storeFile file(MYAPP_STORE_FILE)
+                storePassword MYAPP_STORE_PASSWORD
+                keyAlias MYAPP_KEY_ALIAS
+                keyPassword MYAPP_KEY_PASSWORD
+            }
+        }
     }
 
     buildTypes {
