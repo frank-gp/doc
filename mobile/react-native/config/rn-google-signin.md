@@ -1,20 +1,35 @@
-# Generar el archivo AAB (Android App Bundle) & APK (Android Package)
+# Intall
 
-descargar las credenciales de expo, y actualizar el archivo `app.json`
+```sh
+# https://react-native-google-signin.github.io/
+npm install @react-native-google-signin/google-signin
+```
+
+# build
 
 ```sh
 npx expo prebuild
-npx expo prebuild --clean
 
 # android/local.properties
 sdk.dir=C:\\Users\\Frank\\AppData\\Local\\Android\\Sdk
 
 npx expo run:android
-npx expo run:android -d
+```
 
+# keystore
+
+```sh
+keytool -keystore android/app/debug.keystore -list -v -keypass android
+# 5E:8F:16:06:2E:A3:CD:2C:4A:0D:54:78:76:BA:A6:F3:8C:AB:F6:25
+
+```
+
+# Credenciales
+
+```sh
 
 # android\gradle.properties
-MYAPP_STORE_FILE=../../_credentials/android/keystore.jks
+MYAPP_STORE_FILE=../../_credentials/frankgp/app/keystore.jks
 MYAPP_STORE_PASSWORD=your_password
 MYAPP_KEY_ALIAS=upload-key-alias
 MYAPP_KEY_PASSWORD=your_password
@@ -24,8 +39,8 @@ MYAPP_KEY_PASSWORD=your_password
 // android\app\build.gradle
     defaultConfig {
         applicationId 'com.frankgp.app'
-        versionCode 26
-        versionName "2025.10.26"
+        versionCode 29
+        versionName "2025.10.29"
     }
 
     signingConfigs {
@@ -49,24 +64,10 @@ MYAPP_KEY_PASSWORD=your_password
 # Generar el archivo AAB (Android App Bundle) & APK (Android Package)
 
 ```sh
-
 cd android
-
-#
-./gradlew clean
 
 # AAB en git bash
 ./gradlew bundleRelease
-
-# APK en git bash
-./gradlew assembleRelease
-
-
-# Si estás en Windows, usa:
-gradlew.bat bundleRelease
-
-# APK en Windows
-gradlew.bat assembleRelease
 
 # android/app/build/outputs/bundle/release/app-release.aab
 ```

@@ -1,5 +1,4 @@
 ```json
-{
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.profiles.windows": {
     "Git Bash": {
@@ -7,5 +6,4 @@
       "args": ["--login", "-i"]
     }
   }
-}
 ```
