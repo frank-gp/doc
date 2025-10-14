@@ -29,10 +29,10 @@ keytool -keystore android/app/debug.keystore -list -v -keypass android
 ```sh
 
 # android\gradle.properties
-MYAPP_STORE_FILE=../../_credentials/frankgp/app/keystore.jks
-MYAPP_STORE_PASSWORD=your_password
-MYAPP_KEY_ALIAS=upload-key-alias
-MYAPP_KEY_PASSWORD=your_password
+MYAPP_STORE_FILE=../../_credentials/my_keystore_pkcs12.jks
+MYAPP_STORE_PASSWORD=my_key_store_password
+MYAPP_KEY_ALIAS=my_key_alias
+MYAPP_KEY_PASSWORD=my_key_store_password
 ```
 
 ```js

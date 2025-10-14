@@ -19,10 +19,10 @@ adb shell pm list packages | grep ivana
 adb shell pm list packages | grep frank
 
 # android\gradle.properties
-MYAPP_STORE_FILE=../../_credentials/app/keystore.jks
-MYAPP_STORE_PASSWORD=15d559dd98b993___d2dc2965d42a287a38
-MYAPP_KEY_ALIAS=030530c3fdd6535f1e6___ce0ba1cbb23a1
-MYAPP_KEY_PASSWORD=4c7cf319e49593ae___7918e76d46c618ce
+MYAPP_STORE_FILE=../../_credentials/my_keystore_pkcs12.jks
+MYAPP_STORE_PASSWORD=my_key_store_password
+MYAPP_KEY_ALIAS=my_key_alias
+MYAPP_KEY_PASSWORD=my_key_store_password
 
 ```
 

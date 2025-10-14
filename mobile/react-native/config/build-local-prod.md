@@ -14,10 +14,10 @@ npx expo run:android -d
 
 
 # android\gradle.properties
-MYAPP_STORE_FILE=../../_credentials/dev/keystore.jks
+MYAPP_STORE_FILE=../../_credentials/my_keystore_pkcs12.jks
 MYAPP_STORE_PASSWORD=my_key_store_password
 MYAPP_KEY_ALIAS=my_key_alias
-MYAPP_KEY_PASSWORD=my_key_password
+MYAPP_KEY_PASSWORD=my_key_store_password
 ```
 
 ```js
