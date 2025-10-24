@@ -14,6 +14,13 @@ npx expo run:android --variant prodRelease
 # Uninstall
 adb uninstall com.ivanagbarreto.wardrobe
 
+# Start
+adb shell am start -a android.intent.action.VIEW -d "market://details?id=com.ivanagbarreto.wardrobe"
+
+# Open / Stop
+adb shell am start -n com.ivanagbarreto.wardrobe/.MainActivity
+adb shell am force-stop com.ivanagbarreto.wardrobe
+
 # Filtrar solo tus apps
 adb shell pm list packages | grep ivana
 adb shell pm list packages | grep frank

@@ -131,7 +131,7 @@ SendMode("Input")
 
 #NumpadDiv::
 {
-    SendInput("P4S5WordD123")
+    SendInput("pm2 logs")
     return
 }
 
@@ -149,7 +149,7 @@ SendMode("Input")
 
 #Numpad1::
 {
-    SendInput(" git log --oneline -3")
+    SendInput(" git status && git remote -v && echo '' && git log -3 --pretty=format:'%h %ad %s' --date=iso")
     return
 }
 
@@ -161,7 +161,7 @@ SendMode("Input")
 
 #Numpad3::
 {
-    SendInput(" git status && git log --oneline -3")
+    SendInput(" git log --oneline -3")
     return
 }
 

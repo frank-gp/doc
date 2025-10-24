@@ -6,4 +6,7 @@ https://youtu.be/txmi9UQm7EA
 npx expo install expo-dev-client
 
 eas build --profile development --platform android
+
+eas build:run --profile development --platform android
+
 ```

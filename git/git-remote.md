@@ -28,4 +28,7 @@ git push --all origin
 # sacar todos los archivos del staging area (es decir, deshacerlos de la etapa preparada para el commit),
 git restore --staged .
 git restore . && git clean -fd
+
+# 3️⃣ Fuerza que main sea igual a frank18
+git push origin2 frank18:main --force
 ```
