@@ -23,6 +23,12 @@ new Date().toISOString().replace(/[:.\-TZ]/g, ""); //   20241030165528027
 new Date().toISOString().replace(/[^0-9]/g, ""); //     20241102013616943
 
 new Date().toISOString().replace(/-/g, "").replace(/T/g, "-").slice(0, 14); //  20241201-14:50
+const timestamp = new Date().toISOString().split(".")[0].replace(/[:.\-Z]/g, ""); // 20251125T221035063
+export const timestampID = new Date()
+  .toISOString()
+  .split(".")[0]
+  .replace(/[:.\-Z]/g, "")
+  .slice(2); // 251125T222657
 
 new Date()
   .toISOString()

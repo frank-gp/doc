@@ -1,4 +1,4 @@
-const nowDate = new Date();
+const nowDate = new Date(); // 
 const formattedDate =
   String(nowDate.getFullYear()).slice(-2) +
   String(nowDate.getMonth() + 1).padStart(2, "0") +
