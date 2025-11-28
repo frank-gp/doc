@@ -1,6 +1,8 @@
 ```sh
 # connect to cpanel
-ssh -p 21098 user123@198.50.115.200
+ssh giomr@185.27.133.19
+ssh -p 21098 etramztr@198.54.116.49
+ssh -o ConnectTimeout=30 -p 21098 fgpone@198.54.116.49
 
 # copy from cpanel to local
 scp -P 21098 -r "user123@198.50.115.200:/home/user123/tutorial" "D:\tutorial"

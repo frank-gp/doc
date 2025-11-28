@@ -1,17 +1,5 @@
 ```bash
 
-# connect to cPanel via SSH using a specific port
-ssh -p 21098 fgpone@67.223.118.47
-ssh -o ConnectTimeout=30 -p 21098 fgpone@67.223.118.47
-
-ssh giomr@185.27.133.19
-
-
-# To copy a folder from your local machine
-# to a remote server using SSH.
-scp -P 21077 -r "C:\web" user@199.188.200.111:/home/user/htdoc
-
-
 
 # Deploy a PRIVATE repository
 # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent

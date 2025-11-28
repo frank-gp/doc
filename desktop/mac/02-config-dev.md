@@ -44,6 +44,7 @@ cd ~/projects
 # Crear nueva app
 npx create-expo-app myApp
 cd myApp
+npm start
 
 # Levantar proyecto (modo túnel recomendado para dispositivos físicos)
 npx expo start --tunnel

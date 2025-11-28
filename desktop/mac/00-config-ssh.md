@@ -1,4 +1,7 @@
 ```sh
+# Cambiar la contraseña del usuario actual si es necesario
+passwd
+
 # =========================================
 # 🔹 Configuración inicial de SSH en macOS
 # =========================================
@@ -15,12 +18,11 @@ sudo systemsetup -setremotelogin on
 
 # 4️⃣ Generar una nueva clave SSH en el cliente (Windows/macOS)
 ssh-keygen -t ed25519 -C "login" -Z aes256-gcm@openssh.com
+cat ~/.ssh/id_ed25519.pub
 
 # 5️⃣ Conectarse al Mac mini vía SSH usando usuario y dirección IP
 ssh m1@62.210.166.227
 
-# 6️⃣ Cambiar la contraseña del usuario actual si es necesario
-passwd
 
 # =========================================
 # 🔹 Información del sistema (equivalente a phpinfo())
@@ -30,7 +32,7 @@ passwd
 system_profiler
 system_profiler SPHardwareDataType
 
-# 2️⃣ Versión de macOS
+# 2️⃣ Software Version
 sw_vers
 
 # 3️⃣ Detalles de CPU y memoria
@@ -49,6 +51,7 @@ system_profiler SPHardwareDataType SPSoftwareDataType SPNetworkDataType
 
 # 1️⃣ Borrar todas las claves autorizadas (elimina acceso por SSH)
 rm -f ~/.ssh/authorized_keys
+vim ~/.ssh/authorized_keys
 
 # 2️⃣ Opcional: eliminar completamente la carpeta .ssh (se perderán todas las claves)
 rm -rf ~/.ssh

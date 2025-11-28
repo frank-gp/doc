@@ -179,7 +179,7 @@ SendMode("Input")
         WinActivate("ahk_exe cmd.exe")
     }
     Sleep(600) ; espera más larga para asegurar carga
-    Send("ssh -i ~/.ssh/fgpone-key-pair.pem ec2-user@3.21.34.49{Enter}")
+    Send("ssh -i ~/.ssh/ec2_my_key_pair.pem ubuntu@3.17.156.69{Enter}")
     return
 }
 
