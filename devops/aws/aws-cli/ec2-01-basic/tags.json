@@ -1,0 +1,11 @@
+[
+  {
+    "ResourceType": "instance",
+    "Tags": [
+      {
+        "Key": "Name",
+        "Value": "ec2_my_instance"
+      }
+    ]
+  }
+]
