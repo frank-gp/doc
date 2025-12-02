@@ -22,7 +22,7 @@ security-group
 # Connect
 chmod 400 "ec2_my_key_pair.pem"
 ssh -i "ec2_my_key_pair.pem" ubuntu@ec2-18-227-111-56.us-east-2.compute.amazonaws.com
-ssh -i ~/.ssh/ec2_my_key_pair.pem ubuntu@3.17.156.69
+ssh -i ~/.ssh/ec2_my_key_pair.pem ubuntu@18.222.21.11
 ```
 
 ## Test with Server with Python
@@ -34,6 +34,31 @@ echo "hello world" > index.html
 sudo python3 -m http.server 80
 curl localhost
 curl http://localhost:80
+```
+
+## Node JS
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt install -y nodejs
+node -v
+npm -v
+```
+
+# test.js
+
+```js
+const http = require("http");
+
+const server = http.createServer((req, res) => {
+  const log = `${new Date().toISOString()} ${req.method} ${req.url}`;
+  console.log(log);
+  res.end("Hello world\n" + log);
+});
+
+server.listen(3000, () => {
+  console.log("Server is listening on port 3000");
+});
 ```
 
 ## Nginx en tu EC2
@@ -51,7 +76,7 @@ sudo vim /etc/nginx/sites-available/aws_rds
 server {
     listen 80;
 
-    server_name 3.17.156.69;
+    server_name 18.222.21.11;
 
     location / {
         proxy_pass http://127.0.0.1:3000;
@@ -70,6 +95,7 @@ server {
 sudo ln -s /etc/nginx/sites-available/aws_rds /etc/nginx/sites-enabled/
 sudo nginx -t
 sudo systemctl restart nginx
+sudo systemctl status nginx
 ```
 
 ## EC2 usando PM2
