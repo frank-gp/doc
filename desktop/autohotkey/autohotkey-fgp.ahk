@@ -179,7 +179,7 @@ SendMode("Input")
         WinActivate("ahk_exe cmd.exe")
     }
     Sleep(600) ; espera más larga para asegurar carga
-    Send("ssh -i ~/.ssh/ec2_my_key_pair.pem ubuntu@")
+    Send("ssh -i ~/.ssh/ec2_my_key_pair.pem ubuntu@18.222.21.11")
     return
 }
 

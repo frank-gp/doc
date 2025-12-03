@@ -17,3 +17,10 @@ sudo vim /etc/wsl.conf
 ```sh
 wsl --shutdown
 ```
+
+# Resetear el password
+
+```sh
+wsl -u root
+passwd frank
+```

@@ -42,7 +42,7 @@ C:\Users\Frank\.aws\
 # Copy a local folder to EC2
 
 ```sh
-# scp – Secure Copy (SSH) (Windows)
+# scp – Secure Copy (Windows)
 scp -i ~/.ssh/ec2_my_key_pair.pem -r folder ubuntu@18.222.21.11:/home/ubuntu/
 
 # rsync – Faster & resumable (better | Ubuntu)
@@ -50,9 +50,9 @@ rsync -avz \
   -e "ssh -i ec2_my_key_pair.pem" \
   ./folder/ ubuntu@18.222.21.11:/home/ubuntu/folder/
 
-# tar + ssh (Very fast for large folders)
+# tar + ssh (Very fast for large folders) (Windows)
 tar czf - folder | \
-ssh -i ec2_my_key_pair.pem ubuntu@18.222.21.11 \
+ssh -i ~/.ssh/ec2_my_key_pair.pem ubuntu@18.222.21.11 \
 "mkdir -p ~/folder && tar xzf - -C ~/"
 
 ```
