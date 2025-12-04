@@ -36,7 +36,7 @@ rm -rf ~/.n8n
 # Establecer la URL pública con WEBHOOK_URL
 
 ```sh
-WEBHOOK_URL=https://n8n.giomr.site
+WEBHOOK_URL=https://n8n.frankgp.com
 echo $WEBHOOK_URL
 
 n8n

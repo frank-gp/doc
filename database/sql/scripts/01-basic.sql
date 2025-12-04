@@ -8,12 +8,11 @@ SHOW DATABASES;
 
 DROP DATABASE my_database;
 
-CREATE DATABASE my_database;
+CREATE DATABASE my_database CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 USE my_database;
 
 SHOW TABLES;
-
 
 CREATE TABLE IF NOT EXISTS my_table (
     id_column INT PRIMARY KEY AUTO_INCREMENT,

@@ -1,6 +1,6 @@
 ```sh
 # connect to cpanel
-ssh giomr@185.27.133.19
+ssh user555@185.27.133.19
 ssh -p 21098 etramztr@198.54.116.49
 ssh -o ConnectTimeout=30 -p 21098 fgpone@198.54.116.49
 

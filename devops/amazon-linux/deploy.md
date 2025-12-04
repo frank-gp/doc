@@ -16,24 +16,24 @@ sudo systemctl enable nginx
 # create index.html
 
 ```sh
-sudo mkdir -p /var/www/giomr.site/html
-sudo vim /var/www/giomr.site/html/index.html
-ls -l /var/www/giomr.site/html/index.html
+sudo mkdir -p /var/www/frankgp.com/html
+sudo vim /var/www/frankgp.com/html/index.html
+ls -l /var/www/frankgp.com/html/index.html
 
 # https://github.com/frank-gp/designer.git
 ```
 
 ```sh
-sudo vim /etc/nginx/conf.d/giomr.site.conf
+sudo vim /etc/nginx/conf.d/frankgp.com.conf
 
 ```
 
 ```nginx
 server {
     listen 80;
-    server_name giomr.site;
+    server_name frankgp.com;
 
-    root /var/www/giomr.site/html;
+    root /var/www/frankgp.com/html;
     index index.html index.htm;
 
     location / {
@@ -47,15 +47,15 @@ sudo systemctl reload nginx
 
 sudo yum install certbot python3-certbot-nginx -y
 
-sudo certbot --nginx -d giomr.site
-# sudo certbot --nginx -d giomr.site -d www.giomr.site
+sudo certbot --nginx -d frankgp.com
+# sudo certbot --nginx -d frankgp.com -d www.frankgp.com
 
 sudo nginx -t       # Verifica que no haya errores
 sudo systemctl reload nginx
 
 # 🌐 Verifica con curl o navegador:
-curl -I https://giomr.site
-nslookup giomr.site
+curl -I https://frankgp.com
+nslookup frankgp.com
 
 ```
 
@@ -98,7 +98,7 @@ app.listen(3000, () => {
 ```sh
 curl http://localhost:3000
 
-sudo vim /etc/nginx/conf.d/giomr.site.conf
+sudo vim /etc/nginx/conf.d/frankgp.com.conf
 
 :%d
 
@@ -107,10 +107,10 @@ sudo vim /etc/nginx/conf.d/giomr.site.conf
 ```nginx
 server {
     listen 443 ssl;
-    server_name giomr.site;
+    server_name frankgp.com;
 
-    ssl_certificate /etc/letsencrypt/live/giomr.site/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/giomr.site/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/frankgp.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/frankgp.com/privkey.pem;
     include /etc/letsencrypt/options-ssl-nginx.conf;
     ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
 
@@ -126,7 +126,7 @@ server {
 
 server {
     listen 80;
-    server_name giomr.site;
+    server_name frankgp.com;
 
     # Redirigir todo HTTP a HTTPS
     return 301 https://$host$request_uri;
@@ -134,7 +134,7 @@ server {
 ```
 
 ```sh
-sudo certbot --nginx -d giomr.site
+sudo certbot --nginx -d frankgp.com
 
 
 sudo nginx -t
@@ -149,7 +149,7 @@ npm install -g pm2
 sudo npm install -g pm2
 pm2 -v
 
-pm2 start app.js --name giomr
+pm2 start app.js --name user555
 pm2 save
 pm2 startup
 

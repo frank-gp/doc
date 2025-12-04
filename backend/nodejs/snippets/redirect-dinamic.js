@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 
-const domain = "https://giomr.site";
+const domain = "https://frankgp.com";
 
 app.get("/", (req, res) => {
   res.redirect(301, domain);

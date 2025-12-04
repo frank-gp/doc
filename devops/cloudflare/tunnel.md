@@ -35,14 +35,14 @@ tunnel: 683f8b1a-9d49-4494-9b74-6870fae827b6
 credentials-file: /home/frank/.cloudflared/683f8b1a-9d49-4494-9b74-6870fae827b6.json
 
 ingress:
-  - hostname: n8n.giomr.site
+  - hostname: n8n.frankgp.com
     service: http://localhost:5678
   - service: http_status:404
 ```
 
 ```sh
 # Vincular el túnel al subdominio
-cloudflared tunnel route dns myTunnel n8n.giomr.site
+cloudflared tunnel route dns myTunnel n8n.frankgp.com
 
 # Iniciar el túnel
 cloudflared tunnel run myTunnel

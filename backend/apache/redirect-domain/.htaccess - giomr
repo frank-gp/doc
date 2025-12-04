@@ -1,5 +1,5 @@
 RewriteEngine On
 
-# Redirect to https://crefi.giomr.site
-RewriteCond %{HTTP_HOST} !^crefi.giomr\.site$ [NC]
-RewriteRule ^(.*)$ https://crefi.giomr.site/$1 [L,R=301]
+# Redirect to https://crefi.frankgp.com
+RewriteCond %{HTTP_HOST} !^crefi.user555\.site$ [NC]
+RewriteRule ^(.*)$ https://crefi.frankgp.com/$1 [L,R=301]

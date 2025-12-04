@@ -1,7 +1,0 @@
-{
-  "ImageId": "ami-0f5fcdfbd140e4ab7",
-  "InstanceType": "t2.micro",
-  "KeyName": "ec2_my_key_pair",
-  "MinCount": 1,
-  "MaxCount": 1
-}

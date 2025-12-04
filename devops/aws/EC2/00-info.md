@@ -7,5 +7,4 @@ free -h
 
 # resumen completo del sistema
 df -h
-resumen completo del sistema
 ```

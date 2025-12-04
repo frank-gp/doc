@@ -90,22 +90,22 @@ curl http://localhost:3000
 sudo vim /etc/nginx/sites-enabled/default
 
 # reemplaza esta línea server_name _;
-server_name giomr.site www.giomr.site;
+server_name frankgp.com www.frankgp.com;
 
 # Instalar Certbot para Nginx
 sudo apt install certbot python3-certbot-nginx -y
 
 # Ejecutar Certbot
-sudo certbot --nginx -d giomr.site -d www.giomr.site
+sudo certbot --nginx -d frankgp.com -d www.frankgp.com
 
 # Verifica que no haya errores
 sudo nginx -t
 sudo service nginx reload
 
 # 🌐 Verifica con curl o navegador:
-curl -I https://giomr.site
+curl -I https://frankgp.com
 # Puedes verificar que haya propagado con
-nslookup giomr.site
+nslookup frankgp.com
 nslookup fgp.one
 
 ```

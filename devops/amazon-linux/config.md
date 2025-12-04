@@ -17,8 +17,8 @@ whoami
 # ec2-user
 
 # Cambiar el usuario
-sudo usermod -l giomr giomr
-sudo passwd giomr
+sudo usermod -l user555 user555
+sudo passwd user555
 ```
 
 # liberar memoria

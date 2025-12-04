@@ -6,7 +6,7 @@ sudo npm install -g pm2
 pm2 -v
 
 # Ejemplo con Node.js
-pm2 start app.js --name giomr
+pm2 start app.js --name user555
 # Ejemplo con Next.js
 pm2 start npm --name "nextjs-app" -- start
 
@@ -15,7 +15,7 @@ pm2 startup
 
 # copia y pega el comando que se te muestra
 
-pm2 reload giomr
+pm2 reload user555
 
 pm2 list
 sudo reboot

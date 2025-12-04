@@ -1,10 +1,10 @@
 ```sh
-sudo vim /etc/systemd/system/giosite.service
+sudo vim /etc/systemd/system/frankgpcom.service
 ```
 
 ```ini
 [Unit]
-Description=Servidor Node.js - giosite
+Description=Servidor Node.js - frankgpcom
 After=network.target
 
 [Service]
@@ -29,13 +29,13 @@ which node
 
 ```sh
 sudo systemctl daemon-reload
-sudo systemctl enable giosite
-sudo systemctl start giosite
-sudo systemctl status giosite
+sudo systemctl enable frankgpcom
+sudo systemctl start frankgpcom
+sudo systemctl status frankgpcom
 ```
 
 ### 🧪 Verifica logs si falla:
 
 ```sh
-journalctl -u giosite -e
+journalctl -u frankgpcom -e
 ```

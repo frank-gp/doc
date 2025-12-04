@@ -29,14 +29,14 @@ tunnel: c8ef0ac9-45a6-4d2f-9772-a4470628ee68
 credentials-file: ~/.cloudflared/c8ef0ac9-45a6-4d2f-9772-a4470628ee68.json
 
 ingress:
-  - hostname: n8n2.giomr.site
+  - hostname: n8n2.frankgp.com
     service: http://localhost:5678
   - service: http_status:404
 ```
 
 ```sh
 # Vincular el túnel al subdominio
-cloudflared tunnel route dns myTunnel n8n2.giomr.site
+cloudflared tunnel route dns myTunnel n8n2.frankgp.com
 
 # Iniciar el túnel
 cloudflared tunnel run myTunnel
@@ -59,7 +59,7 @@ fi
 sleep 5
 
 # Establecer variable de entorno
-export WEBHOOK_URL=https://n8n2.giomr.site/
+export WEBHOOK_URL=https://n8n2.frankgp.com/
 
 # Ejecutar n8n
 n8n

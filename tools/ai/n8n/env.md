@@ -18,7 +18,7 @@ nohup cloudflared tunnel run myTunnel &
 sleep 5
 
 # Ejecutar n8n con las variables adecuadas
-export WEBHOOK_URL=https://n8n.giomr.site/
+export WEBHOOK_URL=https://n8n.frankgp.com/
 n8n
 ```
 
