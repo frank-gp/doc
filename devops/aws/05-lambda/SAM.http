@@ -1,0 +1,29 @@
+# Request para invocar la función Lambda localmente
+GET http://127.0.0.1:3000/hello
+Content-Type: application/json
+
+###
+
+# Ejemplo con parámetros en la URL (opcional)
+GET http://127.0.0.1:3000/hello?name=JohnDoe
+Content-Type: application/json
+
+###
+
+# POST request a la Lambda local (si tienes una función que soporte POST)
+POST http://127.0.0.1:3000/hello
+Content-Type: application/json
+
+{
+    "message": "Hello from POST"
+}
+
+###
+
+# Si publicas tu Lambda en AWS, puedes probarla con su endpoint
+POST https://<API-Gateway-Endpoint>/hello
+Content-Type: application/json
+
+{
+    "message": "Hello from AWS"
+}

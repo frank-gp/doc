@@ -1,0 +1,26 @@
+### Crear usuario
+POST http://3.17.156.69/users
+Content-Type: application/json
+
+{
+  "name": "Frank",
+  "email": "frank@example.com"
+}
+
+### Listar todos los usuarios
+GET http://3.17.156.69/users
+
+### Obtener usuario por ID
+GET http://3.17.156.69/users/1
+
+### Actualizar usuario
+PUT http://3.17.156.69/users/1
+Content-Type: application/json
+
+{
+  "name": "Frank GP",
+  "email": "frank.gp@example.com"
+}
+
+### Eliminar usuario
+DELETE http://3.17.156.69/users/1

@@ -1,9 +1,0 @@
-- name: Configure EC2 instance
-  hosts: all
-  become: yes
-  vars:
-    app_dir: /home/ubuntu/app
-    node_port: 3000
-
-  roles:
-    - node_app

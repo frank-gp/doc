@@ -1,3 +1,0 @@
-vite
-
-pause

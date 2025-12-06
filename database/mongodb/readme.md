@@ -69,7 +69,7 @@ db.students.find({}, { _id: false, name: true });
 db.students.find({ age: { $exists: true } });
 
 // no equale
-db.students.find({ name: { $ne: "Vane" } });
+db.students.find({ name: { $ne: "Ana" } });
 // less than (menos que)
 db.students.find({ age: { $lt: 5 } });
 // less than or equale
@@ -85,8 +85,8 @@ db.students.find({ $nor: [{ lec: 4 }, { team: { $lte: 5 } }] });
 db.students.find({ team: { $not: { $gte: 5 } } });
 
 // field is included in... comparison operator
-db.students.find({ nameField: { $in: ["Gio", "Vane"] } });
-db.students.find({ nameField: { $nin: ["Gio", "Vane"] } });
+db.students.find({ nameField: { $in: ["Alex", "Ana"] } });
+db.students.find({ nameField: { $nin: ["Alex", "Ana"] } });
 
-db.students.find({ name: "Gio" }).explain("executionStats");
+db.students.find({ name: "Alex" }).explain("executionStats");
 ```
